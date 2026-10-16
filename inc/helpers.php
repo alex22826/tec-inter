@@ -6,17 +6,21 @@ function e($s)
     return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8');
 }
 
+// Ссылка на страницу сайта на текущем языке
 function url($path = '')
 {
-    return '/' . ltrim($path, '/');
+    global $LANG;
+    return url_lang($LANG, $path);
 }
 
-// Версия файла в адресе (?v=время изменения) — браузер не держит старый CSS/JS
+// Версия файла в адресе (?v=время изменения) — браузер не держит старый CSS/JS.
+// Файлы общие для всех языков, поэтому без языкового префикса.
 function asset($path)
 {
-    $file = dirname(__DIR__) . '/' . ltrim($path, '/');
+    $path = ltrim($path, '/');
+    $file = dirname(__DIR__) . '/' . $path;
     $v = is_file($file) ? filemtime($file) : 1;
-    return url($path) . '?v=' . $v;
+    return '/' . $path . '?v=' . $v;
 }
 
 function fmt_date($ymd)
@@ -96,12 +100,12 @@ function project_card($p)
     global $DIRECTIONS, $INDUSTRIES;
     $d = $DIRECTIONS[$p['dir']];
     $h  = '<article class="card project" data-industry="' . e($p['industry']) . '" data-dir="' . e($p['dir']) . '">';
-    $h .= cover($d['icon'], 'фото проекта');
-    $h .= '<div class="project__body"><span class="tag">' . e($INDUSTRIES[$p['industry']]['title']) . '</span>';
-    $h .= '<h3>' . e($p['title']) . '</h3>';
-    $h .= '<p><b>Задача:</b> ' . e($p['task']) . '</p>';
-    $h .= '<p><b>Решение:</b> ' . e($p['solution']) . '</p>';
-    $h .= '<a class="link" href="' . dir_link($p['dir']) . '">' . e($d['title']) . ' →</a></div></article>';
+    $h .= cover($d['icon'], t('фото проекта'));
+    $h .= '<div class="project__body"><span class="tag">' . e(t($INDUSTRIES[$p['industry']]['title'])) . '</span>';
+    $h .= '<h3>' . e(t($p['title'])) . '</h3>';
+    $h .= '<p><b>' . e(t('Задача:')) . '</b> ' . e(t($p['task'])) . '</p>';
+    $h .= '<p><b>' . e(t('Решение:')) . '</b> ' . e(t($p['solution'])) . '</p>';
+    $h .= '<a class="link" href="' . dir_link($p['dir']) . '">' . e(t($d['title'])) . ' →</a></div></article>';
     return $h;
 }
 
@@ -110,11 +114,12 @@ function post_card($slug, $p)
     global $DIRECTIONS;
     $icon = isset($DIRECTIONS[$p['dir']]) ? $DIRECTIONS[$p['dir']]['icon'] : 'docs';
     $isNews = $p['type'] === 'news';
+    // data-rubric — русское значение (по нему фильтруем), подпись — перевод
     $h  = '<article class="card post" data-type="' . e($p['type']) . '" data-rubric="' . e($p['rubric']) . '" data-industry="' . e($p['industry']) . '">';
     $h .= '<a class="post__link" href="' . url('news/' . $slug . '/') . '">';
-    $h .= cover($icon, 'обложка', $isNews ? 'cover--news' : '');
-    $h .= '<div class="post__body"><div class="post__meta"><span class="tag' . ($isNews ? ' tag--dark' : '') . '">' . ($isNews ? 'Новость' : 'Статья') . '</span> ' . e($p['rubric']) . ' · ' . fmt_date($p['date']) . '</div>';
-    $h .= '<h3>' . e($p['title']) . '</h3></div></a></article>';
+    $h .= cover($icon, t('обложка'), $isNews ? 'cover--news' : '');
+    $h .= '<div class="post__body"><div class="post__meta"><span class="tag' . ($isNews ? ' tag--dark' : '') . '">' . e($isNews ? t('Новость') : t('Статья')) . '</span> ' . e(t($p['rubric'])) . ' · ' . fmt_date($p['date']) . '</div>';
+    $h .= '<h3>' . e(t_post($slug, 'title', $p['title'])) . '</h3></div></a></article>';
     return $h;
 }
 
@@ -127,52 +132,73 @@ function dir_link($slug)
 function direction_options($selected = '')
 {
     global $DIRECTIONS;
-    $h = '<option value="">Направление</option>';
+    $h = '<option value="">' . e(t('Направление')) . '</option>';
     foreach ($DIRECTIONS as $slug => $d) {
-        $h .= '<option value="' . e($slug) . '"' . ($slug === $selected ? ' selected' : '') . '>' . e($d['title']) . '</option>';
+        $h .= '<option value="' . e($slug) . '"' . ($slug === $selected ? ' selected' : '') . '>' . e(t($d['title'])) . '</option>';
     }
-    return $h . '<option value="other">Другое / не знаю</option>';
+    return $h . '<option value="other">' . e(t('Другое / не знаю')) . '</option>';
 }
 
 // Форма заявки. $variant: 'band' (тёмный блок), 'page' (контакты), 'modal'
 function lead_form($variant, $source)
 {
+    global $LANG;
     $full = $variant !== 'band';
-    $h  = '<form class="lead-form lead-form--' . e($variant) . '" action="' . url('api/lead.php') . '" method="post" novalidate>';
+    $found = array('Поиск Google / Яндекс', 'Рекомендация', 'Госзакупки', 'Выставка, мероприятие', 'Другое');
+    $h  = '<form class="lead-form lead-form--' . e($variant) . '" action="/api/lead.php" method="post" novalidate>';
     $h .= '<input type="hidden" name="source" value="' . e($source) . '">';
+    $h .= '<input type="hidden" name="lang" value="' . e($LANG) . '">';
     $h .= '<input type="hidden" name="ts" value="' . time() . '">';
     // ловушка для ботов: поле скрыто от людей
-    $h .= '<label class="hp" aria-hidden="true">Сайт <input type="text" name="website" tabindex="-1" autocomplete="off"></label>';
+    $h .= '<label class="hp" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>';
     $h .= '<div class="form-grid">';
-    $h .= '<label class="field"><span>Имя</span><input type="text" name="name" required autocomplete="name" placeholder="Имя"></label>';
-    $h .= '<label class="field"><span>Телефон</span><input type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>';
-    $h .= '<label class="field"><span>Компания</span><input type="text" name="company" autocomplete="organization" placeholder="Компания"></label>';
-    $h .= '<label class="field"><span>Направление</span><select name="direction">' . direction_options() . '</select></label>';
+    $h .= '<label class="field"><span>' . e(t('Имя')) . '</span><input type="text" name="name" required autocomplete="name" placeholder="' . e(t('Имя')) . '"></label>';
+    $h .= '<label class="field"><span>' . e(t('Телефон')) . '</span><input type="tel" name="phone" required autocomplete="tel" placeholder="+7 (___) ___-__-__"></label>';
+    $h .= '<label class="field"><span>' . e(t('Компания')) . '</span><input type="text" name="company" autocomplete="organization" placeholder="' . e(t('Компания')) . '"></label>';
+    $h .= '<label class="field"><span>' . e(t('Направление')) . '</span><select name="direction">' . direction_options() . '</select></label>';
     if ($full) {
-        $h .= '<label class="field field--wide"><span>Опишите задачу</span><textarea name="message" rows="4" placeholder="Опишите задачу"></textarea></label>';
-        $h .= '<label class="field field--wide"><span>Откуда узнали о нас</span><select name="found"><option value="">Откуда узнали о нас</option><option>Поиск Google / Яндекс</option><option>Рекомендация</option><option>Госзакупки</option><option>Выставка, мероприятие</option><option>Другое</option></select></label>';
+        $h .= '<label class="field field--wide"><span>' . e(t('Опишите задачу')) . '</span><textarea name="message" rows="4" placeholder="' . e(t('Опишите задачу')) . '"></textarea></label>';
+        $h .= '<label class="field field--wide"><span>' . e(t('Откуда узнали о нас')) . '</span><select name="found"><option value="">' . e(t('Откуда узнали о нас')) . '</option>';
+        foreach ($found as $f) {
+            // в заявку уходит русское значение — так проще считать источники
+            $h .= '<option value="' . e($f) . '">' . e(t($f)) . '</option>';
+        }
+        $h .= '</select></label>';
     }
     $h .= '</div>';
-    $h .= '<label class="consent"><input type="checkbox" name="consent" value="1" required> <span>Согласен на обработку персональных данных</span></label>';
-    $h .= '<div class="form-foot"><button class="btn btn--accent" type="submit">Отправить заявку</button><p class="form-msg" role="status" aria-live="polite"></p></div>';
+    $h .= '<label class="consent"><input type="checkbox" name="consent" value="1" required> <span>' . e(t('Согласен на обработку персональных данных')) . '</span></label>';
+    $h .= '<div class="form-foot"><button class="btn btn--accent" type="submit">' . e(t('Отправить заявку')) . '</button><p class="form-msg" role="status" aria-live="polite"></p></div>';
     $h .= '</form>';
     return $h;
 }
 
 function breadcrumbs($items)
 {
-    $h = '<nav class="crumbs" aria-label="Хлебные крошки"><a href="' . url() . '">Главная</a>';
+    $h = '<nav class="crumbs" aria-label="' . e(t('Хлебные крошки')) . '"><a href="' . url() . '">' . e(t('Главная')) . '</a>';
     foreach ($items as $label => $href) {
         $h .= ' <span>/</span> ' . ($href ? '<a href="' . e($href) . '">' . e($label) . '</a>' : '<span aria-current="page">' . e($label) . '</span>');
     }
     return $h . '</nav>';
 }
 
+// Переключатель языков: ведёт на ту же страницу на другом языке
+function lang_switch($cls = '')
+{
+    global $LANGS, $LANG, $PAGE_PATH;
+    $h = '<div class="lang ' . e($cls) . '" role="group" aria-label="' . e(t('Язык сайта')) . '"' . ($cls ? '' : note('Языки RU / KZ / EN — в шапке. KZ и EN — ручной перевод ключевых страниц')) . '>';
+    $i = 0;
+    foreach ($LANGS as $code => $L) {
+        $h .= ($i++ ? '<span>·</span>' : '') . '<a href="' . e(url_lang($code, $PAGE_PATH)) . '" hreflang="' . e($L['html']) . '" lang="' . e($L['html']) . '" data-lang-link'
+            . ($code === $LANG ? ' class="is-active" aria-current="true"' : '') . '>' . e($L['label']) . '</a>';
+    }
+    return $h . '</div>';
+}
+
 function page_start($meta)
 {
-    global $CFG;
+    global $CFG, $LANG, $LANGS, $PAGE_PATH;
     $nav = isset($meta['nav']) ? $meta['nav'] : '';
-    $canonical = $CFG['site_url'] . (isset($meta['path']) ? $meta['path'] : '/');
+    $canonical = $CFG['site_url'] . url($PAGE_PATH);
     $menu = array(
         ''          => 'Главная',
         'solutions' => 'Решения',
@@ -193,7 +219,7 @@ function page_start($meta)
         'address' => array('@type' => 'PostalAddress', 'addressLocality' => 'Астана', 'addressCountry' => 'KZ', 'streetAddress' => 'район Сарыарка, микрорайон Самал, здание 12'),
     );
     ?><!doctype html>
-<html lang="ru">
+<html lang="<?= e($LANGS[$LANG]['html']) ?>">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -202,7 +228,10 @@ function page_start($meta)
 <?php if ($CFG['demo']): ?><meta name="robots" content="noindex, nofollow">
 <?php endif; ?>
 <link rel="canonical" href="<?= e($canonical) ?>">
+<?php foreach ($LANGS as $code => $L): ?><link rel="alternate" hreflang="<?= e($L['html']) ?>" href="<?= e($CFG['site_url'] . url_lang($code, $PAGE_PATH)) ?>">
+<?php endforeach; ?><link rel="alternate" hreflang="x-default" href="<?= e($CFG['site_url'] . url_lang('ru', $PAGE_PATH)) ?>">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="<?= e($LANGS[$LANG]['locale']) ?>">
 <meta property="og:title" content="<?= e($meta['title']) ?>">
 <meta property="og:description" content="<?= e($meta['description']) ?>">
 <meta property="og:url" content="<?= e($canonical) ?>">
@@ -220,65 +249,91 @@ function page_start($meta)
 <?php if ($CFG['demo']): ?>
 <div class="demo-bar">
   <div class="container demo-bar__in">
-    <span><b>Демо по презентации.</b> Тексты, цифры, статусы и фото — примеры для обсуждения.</span>
-    <button class="demo-bar__btn" type="button" data-notes-toggle aria-pressed="false">Показать пометки ТЗ</button>
+    <span><b><?= e(t('Демо по презентации.')) ?></b> <?= e(t('Тексты, цифры, статусы и фото — примеры для обсуждения.')) ?></span>
+    <button class="demo-bar__btn" type="button" data-notes-toggle aria-pressed="false"><?= e(t('Показать пометки ТЗ')) ?></button>
   </div>
 </div>
 <?php endif; ?>
 <header class="header">
   <div class="container header__in">
-    <a class="logo" href="<?= url() ?>" aria-label="TEC International — на главную">TEC<i>.</i> <span>International</span></a>
-    <nav class="nav" id="nav" aria-label="Главное меню">
+    <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International — на главную')) ?>">TEC<i>.</i> <span>International</span></a>
+    <nav class="nav" id="nav" aria-label="<?= e(t('Главное меню')) ?>">
       <?php foreach ($menu as $slug => $label): ?>
-        <a href="<?= url($slug ? $slug . '/' : '') ?>"<?= $slug === $nav ? ' class="is-active" aria-current="page"' : '' ?>><?= e($label) ?></a>
+        <a href="<?= url($slug ? $slug . '/' : '') ?>"<?= $slug === $nav ? ' class="is-active" aria-current="page"' : '' ?>><?= e(t_menu($label)) ?></a>
       <?php endforeach; ?>
       <div class="nav__mobile-extra">
+        <?= lang_switch('lang--mobile') ?>
         <a class="btn btn--ghost" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener">Service Desk</a>
         <a class="nav__phone" href="tel:<?= e($CFG['phone_href']) ?>"><?= e($CFG['phone']) ?></a>
       </div>
     </nav>
     <div class="header__side">
-      <div class="lang"<?= note('Языки RU / KZ / EN — в шапке. KZ и EN — ручной перевод ключевых страниц') ?>>
-        <a class="is-active" href="<?= url() ?>">RU</a><span>·</span><button type="button" data-soon="Казахская версия — после утверждения русской">KZ</button><span>·</span><button type="button" data-soon="Английская версия — после утверждения русской">EN</button>
-      </div>
+      <?= lang_switch() ?>
       <a class="btn btn--ghost btn--sm header__sd" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener"<?= note('Service Desk остаётся отдельной кнопкой в шапке') ?>>Service Desk</a>
-      <button class="btn btn--accent btn--sm" type="button" data-lead<?= note('Кнопка открывает форму заявки (сейчас на сайте ведёт на «О компании»)') ?>>Обсудить проект</button>
-      <button class="burger" type="button" aria-label="Меню" aria-controls="nav" aria-expanded="false"><?= icon('menu') ?></button>
+      <button class="btn btn--accent btn--sm" type="button" data-lead<?= note('Кнопка открывает форму заявки (сейчас на сайте ведёт на «О компании»)') ?>><?= e(t('Обсудить проект')) ?></button>
+      <button class="burger" type="button" aria-label="<?= e(t('Меню')) ?>" aria-controls="nav" aria-expanded="false"><?= icon('menu') ?></button>
     </div>
   </div>
 </header>
+<script>
+// Если меню не влезает в шапку (длинные подписи на казахском) — «бургер» и на широком экране.
+// Встроено сразу после шапки, чтобы сработать до первой отрисовки.
+(function () {
+  var h = document.querySelector('.header'), row = h.querySelector('.header__in');
+  function fit() {
+    h.classList.remove('is-compact');
+    if (row.scrollWidth > row.clientWidth + 1) h.classList.add('is-compact');
+  }
+  fit();
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
 <main id="main">
 <?php
 }
 
 function page_end()
 {
-    global $CFG, $DIRECTIONS;
+    global $CFG, $DIRECTIONS, $LANG, $I18N_MISSING;
+    // строки для main.js на текущем языке
+    $js = array(
+        'fill'      => t('Заполните имя, телефон и отметьте согласие'),
+        'sending'   => t('Отправляем…'),
+        'sent'      => t('Заявка отправлена'),
+        'sentText'  => t('Свяжемся с вами в течение рабочего дня.'),
+        'fail'      => t('Не удалось отправить. Позвоните нам.'),
+        'industry'  => t('Отрасль:'),
+        'picker'    => t('Для отрасли «%1» обычно нужны: %2.'),
+        'notesShow' => t('Показать пометки ТЗ'),
+        'notesHide' => t('Скрыть пометки ТЗ'),
+        'note'      => t('Пометка'),
+    );
     ?>
 </main>
 <footer class="footer">
   <div class="container footer__grid">
     <div>
       <a class="logo logo--light" href="<?= url() ?>">TEC<i>.</i> <span>International</span></a>
-      <p class="footer__tag">Системный интегратор полного цикла с <?= (int)$CFG['founded'] ?> года: от проекта и поставки до поддержки 24/7.</p>
+      <p class="footer__tag"><?= e(sprintf(t('Системный интегратор полного цикла с %d года: от проекта и поставки до поддержки 24/7.'), $CFG['founded'])) ?></p>
     </div>
     <div>
-      <h3>Компания</h3>
-      <a href="<?= url('about/') ?>">О компании</a>
-      <a href="<?= url('projects/') ?>">Проекты</a>
-      <a href="<?= url('partners/') ?>">Партнёры</a>
-      <a href="<?= url('news/') ?>">Новости и статьи</a>
-      <a href="<?= url('contacts/') ?>">Контакты</a>
+      <h3><?= e(t('Компания')) ?></h3>
+      <a href="<?= url('about/') ?>"><?= e(t('О компании')) ?></a>
+      <a href="<?= url('projects/') ?>"><?= e(t('Проекты')) ?></a>
+      <a href="<?= url('partners/') ?>"><?= e(t('Партнёры')) ?></a>
+      <a href="<?= url('news/') ?>"><?= e(t('Новости и статьи')) ?></a>
+      <a href="<?= url('contacts/') ?>"><?= e(t('Контакты')) ?></a>
     </div>
     <div>
-      <h3>Решения</h3>
+      <h3><?= e(t('Решения')) ?></h3>
       <?php $i = 0; foreach ($DIRECTIONS as $slug => $d): if ($i++ >= 5) break; ?>
-        <a href="<?= dir_link($slug) ?>"><?= e($d['title']) ?></a>
+        <a href="<?= dir_link($slug) ?>"><?= e(t($d['title'])) ?></a>
       <?php endforeach; ?>
-      <a href="<?= url('solutions/') ?>">Все направления →</a>
+      <a href="<?= url('solutions/') ?>"><?= e(t('Все направления')) ?> →</a>
     </div>
     <div>
-      <h3>Связаться</h3>
+      <h3><?= e(t('Связаться')) ?></h3>
       <a class="footer__strong" href="tel:<?= e($CFG['phone_href']) ?>"><?= e($CFG['phone']) ?></a>
       <a href="mailto:<?= e($CFG['email']) ?>"><?= e($CFG['email']) ?></a>
       <a href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener">Service Desk 24/7</a>
@@ -286,30 +341,35 @@ function page_end()
   </div>
   <div class="container footer__bottom">
     <span>© <?= date('Y') ?> TEC International</span>
-    <span>Адрес — на странице <a href="<?= url('contacts/') ?>">«Контакты»</a></span>
+    <span><?= e(t('Адрес — на странице')) ?> <a href="<?= url('contacts/') ?>">«<?= e(t('Контакты')) ?>»</a></span>
   </div>
 </footer>
 
 <div class="modal" id="lead-modal" hidden>
   <div class="modal__backdrop" data-close></div>
   <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
-    <button class="modal__close" type="button" data-close aria-label="Закрыть"><?= icon('close') ?></button>
-    <h2 id="lead-modal-title">Обсудить проект</h2>
-    <p class="muted">Ответим в течение рабочего дня и предложим 2–3 варианта решения.</p>
+    <button class="modal__close" type="button" data-close aria-label="<?= e(t('Закрыть')) ?>"><?= icon('close') ?></button>
+    <h2 id="lead-modal-title"><?= e(t('Обсудить проект')) ?></h2>
+    <p class="muted"><?= e(t('Ответим в течение рабочего дня и предложим 2–3 варианта решения.')) ?></p>
     <?= lead_form('modal', 'modal') ?>
   </div>
 </div>
 <div class="lightbox" id="lightbox" hidden>
   <div class="modal__backdrop" data-close></div>
   <figure class="lightbox__box">
-    <button class="modal__close" type="button" data-close aria-label="Закрыть"><?= icon('close') ?></button>
+    <button class="modal__close" type="button" data-close aria-label="<?= e(t('Закрыть')) ?>"><?= icon('close') ?></button>
     <div class="lightbox__img"></div>
     <figcaption></figcaption>
   </figure>
 </div>
 <div class="toast" role="status" aria-live="polite"></div>
+<script>window.TEC_I18N = <?= json_encode($js, JSON_UNESCAPED_UNICODE) ?>;</script>
 <script src="<?= asset('assets/js/main.js') ?>" defer></script>
 </body>
 </html>
 <?php
+    // Проверка переводов: /en/...?i18n_missing=1 — список строк без перевода в комментарии
+    if ($CFG['demo'] && $LANG !== 'ru' && isset($_GET['i18n_missing'])) {
+        echo "<!--I18N_MISSING\n" . json_encode(array_keys($I18N_MISSING), JSON_UNESCAPED_UNICODE) . "\n-->";
+    }
 }

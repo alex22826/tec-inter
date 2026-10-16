@@ -43,6 +43,7 @@ $lead = array(
     'message'   => field('message', 3000),
     'found'     => field('found', 100),
     'source'    => field('source', 40),
+    'lang'      => field('lang', 5),
     'page'      => field('page', 300),
     'utm'       => field('utm', 500),
     'ip'        => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '',
@@ -75,7 +76,7 @@ $text = "Заявка с сайта TEC\n"
     . "Компания: " . ($lead['company'] ?: '—') . "\nНаправление: {$dirTitle}\n"
     . ($lead['message'] !== '' ? "Задача: {$lead['message']}\n" : '')
     . ($lead['found'] !== '' ? "Откуда узнали: {$lead['found']}\n" : '')
-    . "Форма: {$lead['source']} · {$lead['page']}\n"
+    . "Форма: {$lead['source']} · {$lead['page']} · язык " . strtoupper($lead['lang'] ?: 'ru') . "\n"
     . ($lead['utm'] !== '' ? "UTM: {$lead['utm']}\n" : '');
 
 if ($CFG['lead_mail_to'] !== '') {

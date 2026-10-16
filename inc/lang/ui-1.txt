@@ -1,0 +1,149 @@
+# Переводы интерфейса: русский ⟫ английский ⟫ казахский (одна строка — одна фраза).
+# Из этих файлов scripts/build-lang.py собирает inc/lang/en.php и inc/lang/kz.php.
+# Казахский — черновой перевод, нужна вычитка носителем языка.
+
+TEC International — системный интегратор в Казахстане ⟫ TEC International — system integrator in Kazakhstan ⟫ TEC International — Қазақстандағы жүйелік интегратор
+Любая IT-задача под ключ: проектирование, поставка оборудования и ПО, интеграция, запуск и поддержка 24/7. Системный интегратор полного цикла с 2008 года. ⟫ Any IT task, turnkey: design, supply of equipment and software, integration, launch and 24/7 support. Full-cycle system integrator since 2008. ⟫ Кез келген IT-міндет дайын күйінде: жобалау, жабдық пен БҚ жеткізу, интеграция, іске қосу және 24/7 қолдау. 2008 жылдан бері толық циклді жүйелік интегратор.
+Демо по презентации. ⟫ Demo based on the presentation. ⟫ Презентация бойынша демо.
+Тексты, цифры, статусы и фото — примеры для обсуждения. ⟫ Texts, figures, statuses and photos are examples for discussion. ⟫ Мәтіндер, сандар, мәртебелер мен фотолар — талқылауға арналған мысалдар.
+Показать пометки ТЗ ⟫ Show spec notes ⟫ ТТ белгілерін көрсету
+Скрыть пометки ТЗ ⟫ Hide spec notes ⟫ ТТ белгілерін жасыру
+Пометка ⟫ Note ⟫ Белгі
+TEC International — на главную ⟫ TEC International — home ⟫ TEC International — басты бет
+Главное меню ⟫ Main menu ⟫ Басты мәзір
+Главная ⟫ Home ⟫ Басты бет
+Решения ⟫ Solutions ⟫ Шешімдер
+Проекты ⟫ Projects ⟫ Жобалар
+Партнёры ⟫ Partners ⟫ Серіктестер
+О компании ⟫ About us ⟫ Компания туралы
+Новости и статьи ⟫ News and articles ⟫ Жаңалықтар мен мақалалар
+Контакты ⟫ Contacts ⟫ Байланыс
+Язык сайта ⟫ Site language ⟫ Сайт тілі
+Обсудить проект ⟫ Discuss a project ⟫ Жобаны талқылау
+Меню ⟫ Menu ⟫ Мәзір
+Системный интегратор полного цикла ⟫ Full-cycle system integrator ⟫ Толық циклді жүйелік интегратор
+Любая IT-задача — под ключ. От проекта до поддержки 24/7 ⟫ Any IT task, turnkey. From design to 24/7 support ⟫ Кез келген IT-міндет — дайын күйінде. Жобадан 24/7 қолдауға дейін
+Проектирование, оборудование, ПО, интеграция, настройка и запуск — для госсектора, промышленности и бизнеса с 2008 года. ⟫ Design, equipment, software, integration, configuration and launch for the public sector, industry and business since 2008. ⟫ Жобалау, жабдық, БҚ, интеграция, баптау және іске қосу — 2008 жылдан бері мемлекеттік сектор, өнеркәсіп және бизнес үшін.
+Подобрать решение ⟫ Find a solution ⟫ Шешім таңдау
+фото: ЦОД / инженеры на объекте ⟫ photo: data centre / engineers on site ⟫ фото: деректер орталығы / нысандағы инженерлер
+Почему нам доверяют ⟫ Why clients trust us ⟫ Неліктен бізге сенеді
+с 2008 ⟫ since 2008 ⟫ 2008 жылдан
+года на рынке IT-интеграции ⟫ in the IT integration market ⟫ IT-интеграция нарығында
+реализованных проектов ⟫ completed projects ⟫ жүзеге асырылған жоба
+филиалов в одном проекте — опыт крупных распределённых проектов ⟫ branches in one project: experience with large distributed projects ⟫ бір жобадағы филиал — ірі таралған жобалар тәжірибесі
+Эксперты ⟫ Experts ⟫ Сарапшылар
+сертифицированные инженеры, партнёрские статусы вендоров ⟫ certified engineers, vendor partner statuses ⟫ сертификатталған инженерлер, вендорлардың серіктестік мәртебелері
+Полный цикл ⟫ Full cycle ⟫ Толық цикл
+компетенции системного интегратора: от проекта до поддержки ⟫ system integrator expertise: from design to support ⟫ жүйелік интегратор құзыреті: жобадан қолдауға дейін
+Направления ⟫ Solution areas ⟫ Бағыттар
+Направление ⟫ Solution area ⟫ Бағыт
+Все решения ⟫ All solutions ⟫ Барлық шешімдер
+Все направления ⟫ All areas ⟫ Барлық бағыттар
+Подробнее ⟫ Learn more ⟫ Толығырақ
+Сети передачи данных ⟫ Data networks ⟫ Деректер беру желілері
+Серверы и СХД ⟫ Servers and storage ⟫ Серверлер және деректер қоймалары
+ЦОД и инженерная инфраструктура ⟫ Data centres and engineering infrastructure ⟫ Деректер орталығы және инженерлік инфрақұрылым
+Информационная безопасность ⟫ Information security ⟫ Ақпараттық қауіпсіздік
+ПО и лицензирование ⟫ Software and licensing ⟫ БҚ және лицензиялау
+Виртуализация и резервное копирование ⟫ Virtualisation and backup ⟫ Виртуализация және сақтық көшірме
+СКУД и видеонаблюдение ⟫ Access control and CCTV ⟫ Кіруді бақылау және бейнебақылау
+Рабочие места и оргтехника ⟫ Workplaces and office equipment ⟫ Жұмыс орындары және кеңсе техникасы
+Специализированные системы ⟫ Specialised systems ⟫ Мамандандырылған жүйелер
+Сервис и поддержка 24/7 ⟫ Service and 24/7 support ⟫ Сервис және 24/7 қолдау
+Решения для отраслей ⟫ Industry solutions ⟫ Салаларға арналған шешімдер
+Госсектор и квазигос ⟫ Public and quasi-public sector ⟫ Мемлекеттік және квазимемлекеттік сектор
+Транспорт и аэронавигация ⟫ Transport and air navigation ⟫ Көлік және аэронавигация
+Энергетика ⟫ Energy ⟫ Энергетика
+Промышленность и нефтегаз ⟫ Industry, oil and gas ⟫ Өнеркәсіп және мұнай-газ
+Финансовый сектор ⟫ Finance ⟫ Қаржы секторы
+Строительство ⟫ Construction ⟫ Құрылыс
+Телеком ⟫ Telecom ⟫ Телеком
+Крупный бизнес и ритейл ⟫ Enterprise and retail ⟫ Ірі бизнес және ритейл
+Гостиничный бизнес ⟫ Hospitality ⟫ Қонақ үй бизнесі
+Образование ⟫ Education ⟫ Білім беру
+Медицина (IT-часть) ⟫ Healthcare (IT) ⟫ Медицина (IT бөлігі)
+Комплексный подход ⟫ End-to-end approach ⟫ Кешенді тәсіл
+Проектирование ⟫ Design ⟫ Жобалау
+Обследуем объект, готовим проект ⟫ We survey the site and prepare the design ⟫ Нысанды зерттеп, жоба дайындаймыз
+Оборудование ⟫ Equipment ⟫ Жабдық
+Подбор и поставка ⟫ Selection and supply ⟫ Іріктеу және жеткізу
+ПО ⟫ Software ⟫ БҚ
+Лицензии и прикладное ПО ⟫ Licences and application software ⟫ Лицензиялар және қолданбалы БҚ
+Интеграция ⟫ Integration ⟫ Интеграция
+Связываем с текущими системами ⟫ Connecting with your existing systems ⟫ Қолданыстағы жүйелермен байланыстырамыз
+Настройка ⟫ Configuration ⟫ Баптау
+Конфигурация и тесты ⟫ Configuration and testing ⟫ Конфигурация және тестілеу
+Запуск ⟫ Launch ⟫ Іске қосу
+Ввод в эксплуатацию, обучение ⟫ Commissioning and training ⟫ Пайдалануға беру, оқыту
+Поддержка ⟫ Support ⟫ Қолдау
+Сервис и SLA 24/7 ⟫ Service and 24/7 SLA ⟫ Сервис және SLA 24/7
+Наши проекты ⟫ Our projects ⟫ Біздің жобалар
+Все проекты ⟫ All projects ⟫ Барлық жобалар
+фото проекта ⟫ project photo ⟫ жоба фотосы
+Задача: ⟫ Task: ⟫ Міндет:
+Решение: ⟫ Solution: ⟫ Шешім:
+Видеонаблюдение и звукозапись диспетчерских пунктов ⟫ Video surveillance and voice recording for dispatch centres ⟫ Диспетчерлік пункттердің бейнебақылауы мен дыбыс жазбасы
+оснастить диспетчерские пункты в 4 городах ⟫ equip dispatch centres in 4 cities ⟫ 4 қаладағы диспетчерлік пункттерді жабдықтау
+поставка, монтаж, пусконаладка под ключ ⟫ turnkey supply, installation and commissioning ⟫ жеткізу, монтаж және іске қосу-баптау жұмыстары дайын күйінде
+Резервное копирование для энергопредприятия ⟫ Backup for a power company ⟫ Энергетикалық кәсіпорынға арналған сақтық көшірме
+защитить данные от потери ⟫ protect data against loss ⟫ деректерді жоғалудан қорғау
+Veeam Backup & Replication, внедрение ⟫ Veeam Backup & Replication, deployment ⟫ Veeam Backup & Replication, енгізу
+Администрирование сетевой безопасности ⟫ Network security administration ⟫ Желілік қауіпсіздікті әкімшілендіру
+поддерживать защиту сети госоргана ⟫ maintain network protection for a government agency ⟫ мемлекеттік органның желісін қорғауды қамтамасыз ету
+администрирование средств ИБ в течение года ⟫ administration of security tools for one year ⟫ бір жыл бойы АҚ құралдарын әкімшілендіру
+Единая сеть для 19 филиалов ⟫ A single network for 19 branches ⟫ 19 филиалға арналған бірыңғай желі
+объединить филиалы в защищённую сеть с централизованным управлением ⟫ connect branches into a secure, centrally managed network ⟫ филиалдарды орталықтан басқарылатын қорғалған желіге біріктіру
+проект, поставка оборудования, настройка, поддержка ⟫ design, equipment supply, configuration, support ⟫ жоба, жабдық жеткізу, баптау, қолдау
+Оборудование связи для аэронавигации ⟫ Communication equipment for air navigation ⟫ Аэронавигацияға арналған байланыс жабдығы
+обновить оборудование связи на объектах ⟫ upgrade communication equipment on site ⟫ нысандардағы байланыс жабдығын жаңарту
+поставка, монтаж и ввод в эксплуатацию ⟫ supply, installation and commissioning ⟫ жеткізу, монтаж және пайдалануға беру
+Модернизация серверной ⟫ Server room upgrade ⟫ Серверлік бөлмені жаңғырту
+заменить устаревшие серверы без остановки сервисов ⟫ replace outdated servers without service downtime ⟫ сервистерді тоқтатпай ескірген серверлерді ауыстыру
+новые серверы, виртуализация, поэтапная миграция ⟫ new servers, virtualisation, phased migration ⟫ жаңа серверлер, виртуализация, кезең-кезеңімен көшу
+Партнёры ⟫ Partners ⟫ Серіктестер
+Все партнёры и статусы ⟫ All partners and statuses ⟫ Барлық серіктестер мен мәртебелер
+Нас выбирают ⟫ Our clients ⟫ Бізді таңдайды
+РГП «Казаэронавигация» ⟫ RSE Kazaeronavigatsia ⟫ «Қазаэронавигация» РМК
+Аэронавигация ⟫ Air navigation ⟫ Аэронавигация
+Национальный Банк РК ⟫ National Bank of Kazakhstan ⟫ Қазақстан Республикасының Ұлттық Банкі
+Финансовый сектор ⟫ Finance ⟫ Қаржы секторы
+Агентство РК по делам государственной службы ⟫ Civil Service Affairs Agency of Kazakhstan ⟫ ҚР Мемлекеттік қызмет істері агенттігі
+Госсектор ⟫ Public sector ⟫ Мемлекеттік сектор
+АО «ЦРТР» (Enbek.kz) ⟫ Workforce Development Center JSC (Enbek.kz) ⟫ «Еңбек ресурстарын дамыту орталығы» АҚ (Enbek.kz)
+Квазигос ⟫ Quasi-public ⟫ Квазимемлекеттік
+ТОО «Согринская ТЭЦ» ⟫ Sogrinskaya CHP LLP ⟫ «Согринская ТЭЦ» ЖШС
+Промышленность ⟫ Industry ⟫ Өнеркәсіп
+ТОО «Мечта Маркет» ⟫ Mechta Market LLP ⟫ «Мечта Маркет» ЖШС
+Ритейл ⟫ Retail ⟫ Ритейл
+Обсудить техническую задачу ⟫ Discuss a technical task ⟫ Техникалық міндетті талқылау
+Ответим в течение рабочего дня, проконсультируем и предложим 2–3 варианта решения. ⟫ We will reply within one business day, advise you and offer 2–3 solution options. ⟫ Жұмыс күні ішінде жауап беріп, кеңес береміз және 2–3 шешім нұсқасын ұсынамыз.
+Ответим в течение рабочего дня и предложим 2–3 варианта решения. ⟫ We will reply within one business day and offer 2–3 solution options. ⟫ Жұмыс күні ішінде жауап беріп, 2–3 шешім нұсқасын ұсынамыз.
+Имя ⟫ Name ⟫ Аты
+Телефон ⟫ Phone ⟫ Телефон
+Компания ⟫ Company ⟫ Компания
+Другое / не знаю ⟫ Other / not sure ⟫ Басқа / білмеймін
+Опишите задачу ⟫ Describe your task ⟫ Міндетті сипаттаңыз
+Откуда узнали о нас ⟫ How did you hear about us? ⟫ Біз туралы қайдан білдіңіз?
+Поиск Google / Яндекс ⟫ Google / Yandex search ⟫ Google / Яндекс іздеуі
+Рекомендация ⟫ Recommendation ⟫ Ұсыныс
+Госзакупки ⟫ Public procurement ⟫ Мемлекеттік сатып алу
+Выставка, мероприятие ⟫ Exhibition or event ⟫ Көрме, іс-шара
+Другое ⟫ Other ⟫ Басқа
+Согласен на обработку персональных данных ⟫ I agree to the processing of my personal data ⟫ Дербес деректерімді өңдеуге келісемін
+Отправить заявку ⟫ Send request ⟫ Өтінім жіберу
+Заполните имя, телефон и отметьте согласие ⟫ Please enter your name and phone and tick the consent box ⟫ Атыңыз бен телефоныңызды толтырып, келісімді белгілеңіз
+Отправляем… ⟫ Sending… ⟫ Жіберілуде…
+Заявка отправлена ⟫ Request sent ⟫ Өтінім жіберілді
+Свяжемся с вами в течение рабочего дня. ⟫ We will contact you within one business day. ⟫ Жұмыс күні ішінде сізбен хабарласамыз.
+Не удалось отправить. Позвоните нам. ⟫ Could not send. Please call us. ⟫ Жіберу мүмкін болмады. Бізге қоңырау шалыңыз.
+Отрасль: ⟫ Industry: ⟫ Сала:
+Для отрасли «%1» обычно нужны: %2. ⟫ For “%1” we usually recommend: %2. ⟫ «%1» саласына әдетте мыналар қажет: %2.
+Системный интегратор полного цикла с %d года: от проекта и поставки до поддержки 24/7. ⟫ Full-cycle system integrator since %d: from design and supply to 24/7 support. ⟫ %d жылдан бері толық циклді жүйелік интегратор: жобалау мен жеткізуден 24/7 қолдауға дейін.
+Связаться ⟫ Contact us ⟫ Байланысу
+Адрес — на странице ⟫ Our address is on the page ⟫ Мекенжай мына бетте:
+Закрыть ⟫ Close ⟫ Жабу
+Хлебные крошки ⟫ Breadcrumbs ⟫ Навигация жолы
+
+# --- Короткие подписи для главного меню (ключ «меню: …», см. t_menu)
+меню: Новости и статьи ⟫ News & articles ⟫ Жаңалықтар
+меню: О компании ⟫ About us ⟫ Біз туралы

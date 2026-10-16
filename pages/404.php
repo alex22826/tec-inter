@@ -1,19 +1,18 @@
 <?php
 page_start(array(
-    'title' => 'Страница не найдена | TEC International',
-    'description' => 'Страница не найдена.',
+    'title' => t('Страница не найдена | TEC International'),
+    'description' => t('Страница не найдена.'),
     'nav' => '',
-    'path' => '/',
 ));
 ?>
 <section class="section notfound">
   <div class="container">
     <p class="notfound__code">404</p>
-    <h1>Страница не найдена</h1>
-    <p class="lead">Возможно, адрес изменился после обновления сайта.</p>
+    <h1><?= e(t('Страница не найдена')) ?></h1>
+    <p class="lead"><?= e(t('Возможно, адрес изменился после обновления сайта.')) ?></p>
     <div class="hero__btns">
-      <a class="btn btn--accent" href="<?= url() ?>">На главную</a>
-      <a class="btn btn--outline" href="<?= url('solutions/') ?>">Решения</a>
+      <a class="btn btn--accent" href="<?= url() ?>"><?= e(t('На главную')) ?></a>
+      <a class="btn btn--outline" href="<?= url('solutions/') ?>"><?= e(t('Решения')) ?></a>
     </div>
   </div>
 </section>

@@ -3,6 +3,9 @@
   'use strict';
 
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
+  // строки на языке страницы (выводит PHP в page_end), русский — запасной вариант
+  var I = window.TEC_I18N || {};
+  function tr(key, ru) { return I[key] || ru; }
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
 
   // sessionStorage может быть недоступен (приватный режим) — не ломаем сайт
@@ -25,6 +28,14 @@
   document.addEventListener('click', function (e) {
     var soon = e.target.closest('[data-soon]');
     if (soon) { e.preventDefault(); toast(soon.getAttribute('data-soon')); }
+  });
+
+  /* ---------- переключатель языков: та же страница, тот же якорь ---------- */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-lang-link]');
+    if (!a || a.classList.contains('is-active')) return;
+    e.preventDefault();
+    location.href = a.getAttribute('href') + location.search + location.hash;
   });
 
   /* ---------- мобильное меню ---------- */
@@ -75,7 +86,7 @@
     var dir = btn.getAttribute('data-direction');
     if (dir) $('[name=direction]', form).value = dir;
     var industry = btn.getAttribute('data-lead-industry');
-    if (industry) $('[name=message]', form).value = 'Отрасль: ' + industry + '. ';
+    if (industry) $('[name=message]', form).value = tr('industry', 'Отрасль:') + ' ' + industry + '. ';
     if (nav) { nav.classList.remove('is-open'); }
     openModal(leadModal);
   });
@@ -107,25 +118,27 @@
   $$('.lead-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!validate(form)) { setMsg(form, 'Заполните имя, телефон и отметьте согласие', false); return; }
+      if (!validate(form)) { setMsg(form, tr('fill', 'Заполните имя, телефон и отметьте согласие'), false); return; }
       var data = new FormData(form);
       data.append('page', location.pathname);
       data.append('utm', store('tec_utm') || '');
       var btn = $('button[type=submit]', form);
       btn.disabled = true;
-      setMsg(form, 'Отправляем…', true);
+      setMsg(form, tr('sending', 'Отправляем…'), true);
       fetch(form.action, { method: 'POST', body: data })
         .then(function (r) { return r.json(); })
         .then(function (res) {
-          if (!res.ok) throw new Error(res.error || 'Проверьте поля формы');
+          if (!res.ok) throw new Error(tr('fill', 'Проверьте поля формы'));
           var done = document.createElement('div');
           done.className = 'form-done';
           done.innerHTML = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>' +
-            '<p><b>Заявка отправлена</b></p><p class="muted">Свяжемся с вами в течение рабочего дня.</p>';
+            '<p><b></b></p><p class="muted"></p>';
+          $('b', done).textContent = tr('sent', 'Заявка отправлена');
+          $('p.muted', done).textContent = tr('sentText', 'Свяжемся с вами в течение рабочего дня.');
           form.hidden = true;
           form.parentNode.insertBefore(done, form.nextSibling);
         })
-        .catch(function (err) { setMsg(form, err.message || 'Не удалось отправить. Позвоните нам.', false); })
+        .catch(function (err) { setMsg(form, err.message || tr('fail', 'Не удалось отправить. Позвоните нам.'), false); })
         .then(function () { btn.disabled = false; });
     });
   });
@@ -211,8 +224,9 @@
         it.classList.toggle('is-dim', !hit);
       });
       links.forEach(function (a) { a.classList.toggle('is-dim', dirs.indexOf(a.getAttribute('data-dir-link')) === -1); });
-      text.textContent = 'Для отрасли «' + chip.textContent + '» обычно нужны: ' +
-        dirs.map(function (d) { return titles[d]; }).join(', ') + '.';
+      text.textContent = tr('picker', 'Для отрасли «%1» обычно нужны: %2.')
+        .replace('%1', chip.textContent)
+        .replace('%2', dirs.map(function (d) { return titles[d]; }).join(', '));
       $('[data-lead-industry]', result).setAttribute('data-lead-industry', chip.textContent);
       result.hidden = false;
     };
@@ -269,7 +283,7 @@
     hidePop();
     if (notesBtn) {
       notesBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      notesBtn.textContent = on ? 'Скрыть пометки ТЗ' : 'Показать пометки ТЗ';
+      notesBtn.textContent = on ? tr('notesHide', 'Скрыть пометки ТЗ') : tr('notesShow', 'Показать пометки ТЗ');
     }
     store('tec_notes', on ? '1' : '0');
     if (!on) return;
@@ -281,7 +295,7 @@
       pin.tabIndex = 0;
       pin.setAttribute('role', 'note');
       pin.setAttribute('data-text', el.getAttribute('data-note'));
-      pin.setAttribute('aria-label', 'Пометка ' + (i + 1) + ': ' + el.getAttribute('data-note'));
+      pin.setAttribute('aria-label', tr('note', 'Пометка') + ' ' + (i + 1) + ': ' + el.getAttribute('data-note'));
       pin.textContent = i + 1;
       var r = target.getBoundingClientRect();
       if (r.left < 16 || getComputedStyle(target).overflowX !== 'visible') { pin.style.top = '2px'; pin.style.left = '2px'; }

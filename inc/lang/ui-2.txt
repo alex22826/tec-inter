@@ -1,0 +1,211 @@
+# Переводы страниц: русский ⟫ английский ⟫ казахский. Казахский — черновик, нужна вычитка.
+
+# --- Решения
+Решения — 10 направлений IT-интеграции | TEC International ⟫ Solutions: 10 IT integration areas | TEC International ⟫ Шешімдер — IT-интеграцияның 10 бағыты | TEC International
+Сети, серверы и СХД, ЦОД, информационная безопасность, ПО, виртуализация и бэкап, СКУД и видеонаблюдение, рабочие места, спецсистемы, сервис 24/7. ⟫ Networks, servers and storage, data centres, information security, software, virtualisation and backup, access control and CCTV, workplaces, specialised systems, 24/7 service. ⟫ Желілер, серверлер мен деректер қоймалары, деректер орталықтары, ақпараттық қауіпсіздік, БҚ, виртуализация мен сақтық көшірме, кіруді бақылау және бейнебақылау, жұмыс орындары, арнайы жүйелер, 24/7 сервис.
+10 направлений — один подрядчик. Подбираем, поставляем, внедряем и сопровождаем. ⟫ 10 areas, one contractor. We select, supply, implement and support. ⟫ 10 бағыт — бір мердігер. Іріктейміз, жеткіземіз, енгіземіз және сүйемелдейміз.
+Выберите отрасль — подсветим направления, которые обычно нужны. ⟫ Choose your industry and we will highlight the areas it usually needs. ⟫ Саланы таңдаңыз — әдетте қажет бағыттарды белгілейміз.
+Отрасль ⟫ Industry ⟫ Сала
+Обсудить задачу ⟫ Discuss your task ⟫ Міндетті талқылау
+Сбросить ⟫ Reset ⟫ Тазалау
+Производители: ⟫ Vendors: ⟫ Өндірушілер:
+Проект ⟫ Project ⟫ Жоба
+Статьи по теме ⟫ Related articles ⟫ Тақырып бойынша мақалалар
+Строим сети любой сложности — от офиса до распределённой сети с десятками филиалов. Обследуем текущее оборудование, проектируем, поставляем и настраиваем, а после запуска берём сеть на поддержку. ⟫ We build networks of any complexity, from a single office to a distributed network with dozens of branches. We audit your existing equipment, design, supply and configure, and after launch we take the network under support. ⟫ Кез келген күрделіліктегі желілерді саламыз — бір кеңседен ондаған филиалы бар таралған желіге дейін. Қолданыстағы жабдықты зерттеп, жобалаймыз, жеткіземіз және баптаймыз, ал іске қосылғаннан кейін желіні қолдауға аламыз.
+Корпоративные сети LAN и WAN ⟫ Corporate LAN and WAN ⟫ Корпоративтік LAN және WAN желілері
+Wi-Fi для офиса, склада и гостиницы ⟫ Wi-Fi for offices, warehouses and hotels ⟫ Кеңсе, қойма және қонақ үйге арналған Wi-Fi
+Управление и мониторинг сети ⟫ Network management and monitoring ⟫ Желіні басқару және мониторинг
+IP-телефония и видеоконференции ⟫ IP telephony and video conferencing ⟫ IP-телефония және бейнеконференциялар
+Программно-определяемые сети (SDN, SD-WAN) ⟫ Software-defined networking (SDN, SD-WAN) ⟫ Бағдарламалық анықталатын желілер (SDN, SD-WAN)
+Промышленные сети ⟫ Industrial networks ⟫ Өнеркәсіптік желілер
+Подбираем серверы и системы хранения под реальную нагрузку и бюджет: от одного сервера под 1С до вычислительных кластеров. Работаем с ведущими производителями и даём несколько вариантов конфигурации. ⟫ We size servers and storage for your real workload and budget, from a single 1C server to computing clusters. We work with leading vendors and offer several configuration options. ⟫ Серверлер мен деректерді сақтау жүйелерін нақты жүктеме мен бюджетке қарай таңдаймыз: 1С-ке арналған бір серверден есептеу кластерлеріне дейін. Жетекші өндірушілермен жұмыс істеп, бірнеше конфигурация нұсқасын ұсынамыз.
+Серверы под 1С, SAP и СУБД ⟫ Servers for 1C, SAP and databases ⟫ 1С, SAP және ДҚБЖ серверлері
+Системы хранения данных ⟫ Storage systems ⟫ Деректерді сақтау жүйелері
+Вычислительные кластеры ⟫ Computing clusters ⟫ Есептеу кластерлері
+Виртуализация рабочих мест (VDI) ⟫ Desktop virtualisation (VDI) ⟫ Жұмыс орындарын виртуализациялау (VDI)
+Модернизация и расширение парка ⟫ Fleet upgrades and expansion ⟫ Серверлер паркін жаңғырту және кеңейту
+Проектируем и строим серверные помещения и сети ЦОД: структурированная кабельная система, электропитание, охлаждение и мониторинг среды — всё в одном проекте. ⟫ We design and build server rooms and data centre networks: structured cabling, power, cooling and environmental monitoring, all in one project. ⟫ Серверлік бөлмелер мен деректер орталығы желілерін жобалап, саламыз: құрылымдық кабельдік жүйе, электрмен қоректендіру, салқындату және орта мониторингі — бәрі бір жобада.
+Сети центра обработки данных ⟫ Data centre networks ⟫ Деректер орталығының желілері
+Серверные помещения под ключ ⟫ Turnkey server rooms ⟫ Дайын күйіндегі серверлік бөлмелер
+Электропитание и ИБП ⟫ Power and UPS ⟫ Электрмен қоректендіру және үздіксіз қоректендіру көздері
+Охлаждение и мониторинг среды ⟫ Cooling and environmental monitoring ⟫ Салқындату және орта мониторингі
+Структурированные кабельные системы ⟫ Structured cabling systems ⟫ Құрылымдық кабельдік жүйелер
+Комплексная защита от современных угроз: межсетевые экраны нового поколения, защита почты и веб-трафика, управление уязвимостями. Помогаем госорганам и квазигосу выполнить единые требования по ИКТ и ИБ. ⟫ Comprehensive protection against modern threats: next-generation firewalls, email and web traffic protection, vulnerability management. We help government and quasi-public organisations comply with the Unified ICT and Information Security Requirements. ⟫ Заманауи қатерлерден кешенді қорғаныс: жаңа буын желіаралық экрандар, пошта мен веб-трафикті қорғау, осалдықтарды басқару. Мемлекеттік органдар мен квазимемлекеттік секторға АКТ және АҚ саласындағы бірыңғай талаптарды орындауға көмектесеміз.
+NGFW и защита периметра ⟫ NGFW and perimeter protection ⟫ NGFW және периметрді қорғау
+Защита рабочих станций и приложений ⟫ Endpoint and application protection ⟫ Жұмыс станциялары мен қосымшаларды қорғау
+Защита почты и веб-трафика ⟫ Email and web traffic protection ⟫ Пошта мен веб-трафикті қорғау
+Управление уязвимостями ⟫ Vulnerability management ⟫ Осалдықтарды басқару
+Аудит по ЕТ ИКТ и ИБ ⟫ Audit against the Unified ICT and IS Requirements ⟫ АКТ және АҚ бірыңғай талаптары бойынша аудит
+Администрирование средств ИБ ⟫ Security tools administration ⟫ АҚ құралдарын әкімшілендіру
+Поставляем программное обеспечение десятков производителей. Разбираемся в программах корпоративного лицензирования — подскажем, как не переплатить и не нарушить условия вендора. ⟫ We supply software from dozens of vendors. We know corporate licensing programmes well and will help you avoid overpaying or breaching vendor terms. ⟫ Ондаған өндірушінің бағдарламалық қамтамасыз етуін жеткіземіз. Корпоративтік лицензиялау бағдарламаларын жақсы білеміз — артық төлемей, вендор шарттарын бұзбаудың жолын көрсетеміз.
+Корпоративное лицензирование ⟫ Corporate licensing ⟫ Корпоративтік лицензиялау
+Операционные системы и платформы ⟫ Operating systems and platforms ⟫ Операциялық жүйелер мен платформалар
+Офисное и графическое ПО ⟫ Office and graphics software ⟫ Кеңселік және графикалық БҚ
+Управление активами и документооборот ⟫ Asset management and document workflow ⟫ Активтерді басқару және құжат айналымы
+Продление подписок и техподдержки ⟫ Subscription and support renewals ⟫ Жазылымдар мен техқолдауды ұзарту
+Строим отказоустойчивую виртуальную инфраструктуру и резервное копирование по правилу 3-2-1. Помогаем с миграцией после изменений в лицензировании VMware. ⟫ We build fault-tolerant virtual infrastructure and 3-2-1 backup, and help with migration after the changes in VMware licensing. ⟫ Ақауларға төзімді виртуалды инфрақұрылым мен 3-2-1 ережесі бойынша сақтық көшірмені құрамыз. VMware лицензиялауы өзгергеннен кейін көшуге көмектесеміз.
+Серверная виртуализация ⟫ Server virtualisation ⟫ Серверлік виртуализация
+Резервное копирование по правилу 3-2-1 ⟫ 3-2-1 backup ⟫ 3-2-1 ережесі бойынша сақтық көшірме
+Аварийное восстановление (DR) ⟫ Disaster recovery (DR) ⟫ Апаттан кейін қалпына келтіру (DR)
+Миграция между платформами ⟫ Migration between platforms ⟫ Платформалар арасында көшу
+Архивирование данных ⟫ Data archiving ⟫ Деректерді мұрағаттау
+Системы видеонаблюдения и контроля доступа для предприятий и объектов с особыми требованиями. Модернизируем существующие системы без полной замены оборудования. ⟫ Video surveillance and access control systems for enterprises and high-security sites. We upgrade existing systems without replacing all the equipment. ⟫ Кәсіпорындар мен ерекше талаптары бар нысандарға арналған бейнебақылау және кіруді бақылау жүйелері. Қолданыстағы жүйелерді жабдықты толық ауыстырмай жаңғыртамыз.
+IP-видеонаблюдение ⟫ IP video surveillance ⟫ IP-бейнебақылау
+Системы контроля и управления доступом ⟫ Access control systems ⟫ Кіруді бақылау және басқару жүйелері
+Видеоаналитика ⟫ Video analytics ⟫ Бейнеаналитика
+Модернизация существующих систем ⟫ Upgrading existing systems ⟫ Қолданыстағы жүйелерді жаңғырту
+Интеграция с охранными системами ⟫ Integration with security alarm systems ⟫ Күзет жүйелерімен интеграция
+Поставляем и готовим к работе рабочие места: компьютеры, ноутбуки, мониторы, печатную технику. Берём на себя развёртывание и подключение к инфраструктуре. ⟫ We supply and set up workplaces: computers, laptops, monitors and printers. We handle deployment and connection to your infrastructure. ⟫ Жұмыс орындарын жеткізіп, жұмысқа дайындаймыз: компьютерлер, ноутбуктер, мониторлар, басып шығару техникасы. Орнатуды және инфрақұрылымға қосуды өз мойнымызға аламыз.
+Компьютеры и ноутбуки ⟫ Computers and laptops ⟫ Компьютерлер мен ноутбуктер
+Мониторы и периферия ⟫ Monitors and peripherals ⟫ Мониторлар мен перифериялық құрылғылар
+МФУ и печать ⟫ MFPs and printing ⟫ Көпфункциялы құрылғылар және басып шығару
+Подготовка и развёртывание рабочих мест ⟫ Workplace preparation and deployment ⟫ Жұмыс орындарын дайындау және орнату
+Поставка через госзакупки ⟫ Supply via public procurement ⟫ Мемлекеттік сатып алу арқылы жеткізу
+Внедряем системы для аэронавигации и диспетчерских служб — объектов с самыми высокими требованиями к надёжности. Этот опыт — доказательство уровня, который мы переносим во все проекты. ⟫ We implement systems for air navigation and dispatch services, the facilities with the highest reliability requirements. This experience proves the level we bring to every project. ⟫ Аэронавигация мен диспетчерлік қызметтерге — сенімділікке ең жоғары талап қойылатын нысандарға арналған жүйелерді енгіземіз. Бұл тәжірибе — біз барлық жобаға әкелетін деңгейдің дәлелі.
+АЗН-В (ADS-B) — системы наблюдения ⟫ ADS-B surveillance systems ⟫ АЗН-В (ADS-B) — бақылау жүйелері
+АС НОТАМ и её резервирование ⟫ NOTAM system and its redundancy ⟫ НОТАМ автоматтандырылған жүйесі және оны резервтеу
+КДВИ — запись переговоров диспетчеров ⟫ Air traffic controller voice recording ⟫ КДВИ — диспетчерлердің келіссөздерін жазу
+Резервирование критичных систем ⟫ Redundancy for critical systems ⟫ Маңызды жүйелерді резервтеу
+ВНИИРА-ОВД ⟫ VNIIRA-OVD ⟫ ВНИИРА-ОВД
+НИТА ⟫ NITA ⟫ НИТА
+Сопровождаем инфраструктуру после запуска: Service Desk 24/7, поддержка по SLA, гарантийный и постгарантийный сервис, в том числе оборудования после окончания поддержки вендора. ⟫ We support your infrastructure after launch: 24/7 Service Desk, SLA-based support, warranty and post-warranty service, including equipment past the vendor end of support. ⟫ Іске қосылғаннан кейін инфрақұрылымды сүйемелдейміз: 24/7 Service Desk, SLA бойынша қолдау, кепілдік және кепілдіктен кейінгі сервис, соның ішінде вендор қолдауы аяқталған жабдыққа.
+Поддержка по SLA ⟫ SLA-based support ⟫ SLA бойынша қолдау
+Гарантийное и постгарантийное обслуживание ⟫ Warranty and post-warranty service ⟫ Кепілдік және кепілдіктен кейінгі қызмет көрсету
+Аутсорсинг IT-поддержки ⟫ IT support outsourcing ⟫ IT-қолдау аутсорсингі
+Управление проектами ⟫ Project management ⟫ Жобаларды басқару
+Поддержка оборудования после End of Support ⟫ Support for equipment after End of Support ⟫ End of Support мерзімінен кейін жабдықты қолдау
+
+# --- Проекты
+Проекты — задача и решение | TEC International ⟫ Projects: task and solution | TEC International ⟫ Жобалар — міндет және шешім | TEC International
+Реализованные проекты TEC International: аэронавигация, энергетика, госсектор, распределённые сети. Задача → решение. ⟫ TEC International projects: air navigation, energy, public sector, distributed networks. Task → solution. ⟫ TEC International жүзеге асырған жобалар: аэронавигация, энергетика, мемлекеттік сектор, таралған желілер. Міндет → шешім.
+Задача клиента → наше решение. 120+ проектов с 2008 года — здесь подборка. ⟫ Client task → our solution. 120+ projects since 2008; here is a selection. ⟫ Клиенттің міндеті → біздің шешім. 2008 жылдан бері 120+ жоба — мұнда таңдаулылары.
+Все отрасли ⟫ All industries ⟫ Барлық салалар
+* Подборка — пример для обсуждения: добавить реальные проекты, фото и результат в цифрах; названия заказчиков — только с их согласия. ⟫ * This selection is an example for discussion: add real projects, photos and measurable results; client names only with their consent. ⟫ * Таңдау — талқылауға арналған мысал: нақты жобаларды, фотоларды және сандық нәтижені қосу керек; тапсырыс берушілердің атауы — тек олардың келісімімен.
+Похожая задача? ⟫ Have a similar task? ⟫ Ұқсас міндет бар ма?
+Расскажите о проекте — предложим 2–3 варианта решения. ⟫ Tell us about your project and we will offer 2–3 solution options. ⟫ Жоба туралы айтып беріңіз — 2–3 шешім нұсқасын ұсынамыз.
+
+# --- Партнёры
+Партнёры и статусы — Cisco, HPE, Fortinet и др. | TEC International ⟫ Partners and statuses: Cisco, HPE, Fortinet and more | TEC International ⟫ Серіктестер мен мәртебелер — Cisco, HPE, Fortinet және т.б. | TEC International
+Работаем напрямую с производителями: официальные цены, гарантия и поддержка вендора. Партнёры TEC International по направлениям. ⟫ We work directly with manufacturers: official prices, warranty and vendor support. TEC International partners by area. ⟫ Өндірушілермен тікелей жұмыс істейміз: ресми бағалар, кепілдік және вендор қолдауы. TEC International серіктестері бағыттар бойынша.
+Работаем напрямую с производителями — официальные цены, гарантия и поддержка вендора. ⟫ We work directly with manufacturers: official prices, warranty and vendor support. ⟫ Өндірушілермен тікелей жұмыс істейміз — ресми бағалар, кепілдік және вендор қолдауы.
+Сети ⟫ Networks ⟫ Желілер
+ИБ и ПО ⟫ Security and software ⟫ АҚ және БҚ
+Видео и спецсистемы ⟫ Video and specialised systems ⟫ Бейне және арнайы жүйелер
+статус ⟫ status ⟫ мәртебе
+Подставить фактический статус из партнёрского портала ⟫ Insert the actual status from the partner portal ⟫ Серіктестік порталдан нақты мәртебені қою
+* Статусы — подставить фактические (Gold / Silver / Authorized). Только действующие партнёрства, официальные логотипы из партнёрских порталов, сверка списка раз в полгода. ⟫ * Statuses: insert the actual ones (Gold / Silver / Authorized). Only active partnerships, official logos from partner portals, list reviewed every six months. ⟫ * Мәртебелер — нақтыларын қою керек (Gold / Silver / Authorized). Тек қолданыстағы серіктестіктер, серіктестік порталдардан алынған ресми логотиптер, тізім жарты жылда бір рет тексеріледі.
+Сертификаты партнёров — в разделе ⟫ Partner certificates are in ⟫ Серіктестер сертификаттары мына бөлімде:
+Сертификаты ⟫ Certificates ⟫ Сертификаттар
+
+# --- О компании
+О компании — с 2008 года | TEC International ⟫ About us: since 2008 | TEC International ⟫ Компания туралы — 2008 жылдан бері | TEC International
+TEC International — системный интегратор полного цикла с 2008 года. История, команда, сертификаты, лицензии и заказчики. ⟫ TEC International has been a full-cycle system integrator since 2008. History, team, certificates, licences and clients. ⟫ TEC International — 2008 жылдан бері толық циклді жүйелік интегратор. Тарих, команда, сертификаттар, лицензиялар және тапсырыс берушілер.
+О нас ⟫ About us ⟫ Біз туралы
+История ⟫ History ⟫ Тарих
+Команда ⟫ Team ⟫ Команда
+Сертификаты и благодарности ⟫ Certificates and acknowledgements ⟫ Сертификаттар мен алғыс хаттар
+Нам доверяют ⟫ Trusted by ⟫ Бізге сенеді
+TEC International — системный интегратор полного цикла. С 2008 года проектируем, поставляем, внедряем и поддерживаем IT-инфраструктуру для госсектора, промышленности и бизнеса по всему Казахстану. ⟫ TEC International is a full-cycle system integrator. Since 2008 we have been designing, supplying, implementing and supporting IT infrastructure for the public sector, industry and business across Kazakhstan. ⟫ TEC International — толық циклді жүйелік интегратор. 2008 жылдан бері бүкіл Қазақстан бойынша мемлекеттік сектор, өнеркәсіп және бизнес үшін IT-инфрақұрылымды жобалаймыз, жеткіземіз, енгіземіз және қолдаймыз.
+год основания ⟫ founded ⟫ құрылған жылы
+проектов ⟫ projects ⟫ жоба
+вендоров ⟫ vendors ⟫ вендор
+инженеров ⟫ engineers ⟫ инженер
+фото команды / офиса ⟫ team / office photo ⟫ команда / кеңсе фотосы
+Опыт в госзакупках ⟫ Public procurement experience ⟫ Мемлекеттік сатып алудағы тәжірибе
+Подтверждённый объём выполненных контрактов позволяет участвовать в закупках с лимитами: ⟫ Our confirmed volume of completed contracts lets us bid in public tenders with limits of: ⟫ Орындалған келісімшарттардың расталған көлемі мынадай лимиттермен сатып алуларға қатысуға мүмкіндік береді:
+1,8 млрд ₸ ⟫ ₸1.8 bn ⟫ 1,8 млрд ₸
+1,3 млрд ₸ ⟫ ₸1.3 bn ⟫ 1,3 млрд ₸
+1,6 млрд ₸ ⟫ ₸1.6 bn ⟫ 1,6 млрд ₸
+поставка товаров ⟫ supply of goods ⟫ тауарларды жеткізу
+выполнение работ ⟫ works ⟫ жұмыстарды орындау
+оказание услуг ⟫ services ⟫ қызметтер көрсету
+Миссия ⟫ Mission ⟫ Миссия
+Помочь заказчикам повысить эффективность и безопасность IT-инфраструктуры, чтобы они могли максимально реализовать потенциал своего бизнеса. ⟫ To help clients make their IT infrastructure more efficient and secure so they can realise the full potential of their business. ⟫ Тапсырыс берушілерге бизнесінің әлеуетін барынша іске асыруы үшін IT-инфрақұрылымның тиімділігі мен қауіпсіздігін арттыруға көмектесу.
+Цель ⟫ Goal ⟫ Мақсат
+Быть командой профессионалов, которой доверяют самые сложные и инновационные проекты. ⟫ To be a team of professionals trusted with the most complex and innovative projects. ⟫ Ең күрделі және инновациялық жобалар сеніп тапсырылатын кәсіпқойлар командасы болу.
+Ценности ⟫ Values ⟫ Құндылықтар
+Профессионализм, порядочность, честность, постоянное развитие, лояльность, конфиденциальность. ⟫ Professionalism, integrity, honesty, continuous development, loyalty, confidentiality. ⟫ Кәсібилік, ізеттілік, адалдық, үздіксіз даму, лоялдылық, құпиялылық.
+Основание, системы безопасности ⟫ Founded; security systems ⟫ Құрылуы, қауіпсіздік жүйелері
+Сети и ЦОД ⟫ Networks and data centres ⟫ Желілер және деректер орталықтары
+Авиационные системы ⟫ Aviation systems ⟫ Авиациялық жүйелер
+Сервис 24/7 ⟫ 24/7 service ⟫ 24/7 сервис
+Интегратор полного цикла ⟫ Full-cycle integrator ⟫ Толық циклді интегратор
+Нам доверяют / Нас выбирают ⟫ Trusted by / Our clients ⟫ Бізге сенеді / Бізді таңдайды
+История компании ⟫ Company history ⟫ Компания тарихы
+От систем безопасности — к интегратору полного цикла. Годы промежуточных этапов — уточнить. ⟫ From security systems to a full-cycle integrator. Years of the intermediate milestones are to be confirmed. ⟫ Қауіпсіздік жүйелерінен — толық циклді интеграторға дейін. Аралық кезеңдердің жылдарын нақтылау керек.
+Команда и компетенции ⟫ Team and expertise ⟫ Команда және құзыреттер
+Сертифицированные инженеры по каждому направлению. Количество специалистов и фото — подставить. ⟫ Certified engineers in every area. Headcount and photos to be added. ⟫ Әр бағыт бойынша сертификатталған инженерлер. Мамандар саны мен фотолар кейін қосылады.
+Сетевые инженеры ⟫ Network engineers ⟫ Желі инженерлері
+Проектирование и настройка корпоративных и промышленных сетей ⟫ Design and configuration of corporate and industrial networks ⟫ Корпоративтік және өнеркәсіптік желілерді жобалау және баптау
+Инженеры ИБ ⟫ Security engineers ⟫ АҚ инженерлері
+NGFW, защита периметра, управление уязвимостями ⟫ NGFW, perimeter protection, vulnerability management ⟫ NGFW, периметрді қорғау, осалдықтарды басқару
+Серверы и виртуализация ⟫ Servers and virtualisation ⟫ Серверлер және виртуализация
+Серверы, СХД, виртуализация и резервное копирование ⟫ Servers, storage, virtualisation and backup ⟫ Серверлер, деректер қоймалары, виртуализация және сақтық көшірме
+Аэронавигационное оборудование и системы связи ⟫ Air navigation equipment and communication systems ⟫ Аэронавигациялық жабдық және байланыс жүйелері
+ВНИИРА-ОВД · НИТА ⟫ VNIIRA-OVD · NITA ⟫ ВНИИРА-ОВД · НИТА
+Проектный офис ⟫ Project office ⟫ Жобалық кеңсе
+Управление проектами, документация, госзакупки ⟫ Project management, documentation, public procurement ⟫ Жобаларды басқару, құжаттама, мемлекеттік сатып алу
+PM · тендерный отдел ⟫ PM · tender team ⟫ PM · тендер бөлімі
+Сервисная служба ⟫ Service team ⟫ Сервис қызметі
+Service Desk 24/7, поддержка по SLA ⟫ 24/7 Service Desk, SLA-based support ⟫ 24/7 Service Desk, SLA бойынша қолдау
+Тип документа ⟫ Document type ⟫ Құжат түрі
+Все ⟫ All ⟫ Барлығы
+Партнёрские статусы ⟫ Partner statuses ⟫ Серіктестік мәртебелер
+Лицензии ⟫ Licences ⟫ Лицензиялар
+Специалисты ⟫ Specialists ⟫ Мамандар
+Благодарственные письма ⟫ Letters of thanks ⟫ Алғыс хаттар
+Увеличить ⟫ Enlarge ⟫ Үлкейту
+Партнёрский статус ⟫ Partner status ⟫ Серіктестік мәртебе
+действует до ⟫ valid until ⟫ мерзімі:
+истекает ⟫ expires ⟫ аяқталады:
+PDF появится после загрузки сканов через админку ⟫ The PDF will appear once the scans are uploaded via the admin panel ⟫ Сканкөшірмелер админка арқылы жүктелгеннен кейін PDF қолжетімді болады
+Лицензия ⟫ Licence ⟫ Лицензия
+Даёт право: монтаж и обслуживание систем безопасности ⟫ Permits: installation and maintenance of security systems ⟫ Құқық береді: қауіпсіздік жүйелерін монтаждау және қызмет көрсету
+Даёт право: работы по защите информации ⟫ Permits: information protection work ⟫ Құқық береді: ақпаратты қорғау жұмыстары
+Проверить на elicense.kz ⟫ Verify at elicense.kz ⟫ elicense.kz сайтында тексеру
+Инженер CCNP ⟫ CCNP engineer ⟫ CCNP инженері
+Сертификат специалиста ⟫ Specialist certificate ⟫ Маман сертификаты
+Благодарственное письмо ⟫ Letter of thanks ⟫ Алғыс хат
+Гос. предприятие · 2025 ⟫ State enterprise · 2025 ⟫ Мемлекеттік кәсіпорын · 2025
+Энергокомпания · 2025 ⟫ Energy company · 2025 ⟫ Энергетикалық компания · 2025
+Банк · 2024 ⟫ Bank · 2024 ⟫ Банк · 2024
+* По клику — увеличение скана. Подписи и сроки — пример, подставить фактические. Загрузка через админку; просроченные документы скрываются автоматически по дате. ⟫ * Click a scan to enlarge it. Captions and dates are examples; insert the actual ones. Uploads go through the admin panel; expired documents are hidden automatically. ⟫ * Басқанда сканкөшірме үлкейеді. Жазулар мен мерзімдер — мысал, нақтыларын қою керек. Админка арқылы жүктеледі; мерзімі өткен құжаттар автоматты түрде жасырылады.
+Заказчики из разных отраслей — от аэронавигации до ритейла. ⟫ Clients from many industries, from air navigation to retail. ⟫ Түрлі салалардағы тапсырыс берушілер — аэронавигациядан ритейлге дейін.
+Обсудим ваш проект? ⟫ Shall we discuss your project? ⟫ Жобаңызды талқылайық па?
+Подготовим 2–3 варианта решения под задачу и бюджет. ⟫ We will prepare 2–3 solution options for your task and budget. ⟫ Міндет пен бюджетке сай 2–3 шешім нұсқасын дайындаймыз.
+
+# --- Новости и статьи
+Новости и статьи об IT-инфраструктуре | TEC International ⟫ News and articles on IT infrastructure | TEC International ⟫ IT-инфрақұрылым туралы жаңалықтар мен мақалалар | TEC International
+Новости TEC International и экспертные статьи: сети, серверы, информационная безопасность, виртуализация, госзакупки. ⟫ TEC International news and expert articles: networks, servers, information security, virtualisation, public procurement. ⟫ TEC International жаңалықтары мен сараптамалық мақалалар: желілер, серверлер, ақпараттық қауіпсіздік, виртуализация, мемлекеттік сатып алу.
+Тип ⟫ Type ⟫ Түрі
+Новости ⟫ News ⟫ Жаңалықтар
+Статьи ⟫ Articles ⟫ Мақалалар
+Рубрика ⟫ Category ⟫ Айдар
+Рубрика: все ⟫ Category: all ⟫ Айдар: барлығы
+Отрасль: все ⟫ Industry: all ⟫ Сала: барлығы
+Виртуализация ⟫ Virtualisation ⟫ Виртуализация
+Закупки ⟫ Procurement ⟫ Сатып алу
+обложка ⟫ cover ⟫ мұқаба
+Статья ⟫ Article ⟫ Мақала
+Новость ⟫ News ⟫ Жаңалық
+По выбранным фильтрам материалов пока нет. ⟫ No materials match the selected filters yet. ⟫ Таңдалған сүзгілер бойынша әзірге материал жоқ.
+* Новости — коротко о проектах, статусах, мероприятиях. Статьи — экспертиза под поисковые запросы клиентов. На старте — минимум 5 материалов. ⟫ * News: brief updates on projects, statuses and events. Articles: expertise targeting client search queries. At launch, at least 5 items. ⟫ * Жаңалықтар — жобалар, мәртебелер, іс-шаралар туралы қысқаша. Мақалалар — клиенттердің іздеу сұраныстарына арналған сараптама. Бастапқыда кемінде 5 материал.
+%d мин чтения ⟫ %d min read ⟫ оқу уақыты: %d мин
+Поделиться: ⟫ Share: ⟫ Бөлісу:
+Получить консультацию ⟫ Get a consultation ⟫ Кеңес алу
+Решение по теме ⟫ Related solution ⟫ Тақырып бойынша шешім
+Похожие материалы ⟫ Similar materials ⟫ Ұқсас материалдар
+
+# --- Контакты и 404
+Контакты — TEC International, Астана ⟫ Contacts: TEC International, Astana ⟫ Байланыс — TEC International, Астана
+Телефон +7 (778) 975-63-35, info@tec-inter.kz. Обсудить проект или получить консультацию по IT-инфраструктуре. ⟫ Phone +7 (778) 975-63-35, info@tec-inter.kz. Discuss a project or get advice on IT infrastructure. ⟫ Телефон +7 (778) 975-63-35, info@tec-inter.kz. Жобаны талқылау немесе IT-инфрақұрылым бойынша кеңес алу.
+Пн–Пт, 9:00–18:00 ⟫ Mon–Fri, 9:00–18:00 ⟫ Дс–Жм, 9:00–18:00
+г. Астана, район Сарыарка, микрорайон Самал, здание 12 ⟫ Building 12, Samal microdistrict, Saryarka district, Astana ⟫ Астана қ., Сарыарқа ауданы, Самал шағынауданы, 12-ғимарат
+Открыть в 2ГИС ⟫ Open in 2GIS ⟫ 2GIS-те ашу
+Техническая поддержка ⟫ Technical support ⟫ Техникалық қолдау
+Действующим клиентам — заявка в Service Desk, круглосуточно. ⟫ Existing clients can submit a request to the Service Desk around the clock. ⟫ Қолданыстағы клиенттер Service Desk-ке тәулік бойы өтінім бере алады.
+Страница не найдена | TEC International ⟫ Page not found | TEC International ⟫ Бет табылмады | TEC International
+Страница не найдена. ⟫ Page not found. ⟫ Бет табылмады.
+Страница не найдена ⟫ Page not found ⟫ Бет табылмады
+Возможно, адрес изменился после обновления сайта. ⟫ The address may have changed after the site update. ⟫ Сайт жаңартылғаннан кейін мекенжай өзгерген болуы мүмкін.
+На главную ⟫ Home page ⟫ Басты бетке
