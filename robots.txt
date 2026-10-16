@@ -1,0 +1,4 @@
+# Демо-домен: закрыт от индексации, чтобы не дублировать tec-inter.kz.
+# На боевом сайте: Allow: / и Sitemap: https://tec-inter.kz/sitemap.xml
+User-agent: *
+Disallow: /

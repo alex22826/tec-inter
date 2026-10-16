@@ -1,0 +1,24 @@
+AddDefaultCharset UTF-8
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Служебные папки недоступны из браузера
+  RewriteRule ^(inc|pages|storage)(/|$) - [F,L]
+  RewriteRule ^(deploy\.sh|README\.md)$ - [F,L]
+
+  # Всё, что не файл и не папка, — в index.php (ЧПУ-адреса)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # CSS/JS/картинки идут с ?v=версия, поэтому их можно кэшировать надолго
+  <FilesMatch "\.(css|js|svg|png|jpg|jpeg|webp|woff2)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
