@@ -151,41 +151,77 @@
     });
   });
 
+  // перезапуск CSS-анимации: снять класс, дать браузеру пересчитать стили, вернуть класс
+  function replay(el, cls) {
+    el.classList.remove(cls);
+    void el.offsetWidth;
+    el.classList.add(cls);
+  }
+
   /* ---------- вкладки «О компании» ---------- */
-  var tabs = $$('[data-tab]');
-  function showTab(id, scroll) {
+  var tabs = $$('[data-tab]'), tabBar = $('.tabs'), ink = null;
+  var curTab = tabs.filter(function (t) { return t.classList.contains('is-active'); })[0] || null;
+  // полоска под активной вкладкой переезжает, а не перескакивает
+  function moveInk() {
+    if (!ink || !curTab) return;
+    ink.style.width = curTab.offsetWidth + 'px';
+    ink.style.transform = 'translateX(' + curTab.offsetLeft + 'px)';
+  }
+  function showTab(id, scroll, animate) {
     var panel = $('[data-panel="' + id + '"]');
     if (!panel) return;
+    var prev = tabs.indexOf(curTab), next = null;
     tabs.forEach(function (t) {
       var on = t.getAttribute('data-tab') === id;
+      if (on) next = t;
       t.classList.toggle('is-active', on);
       t.setAttribute('aria-selected', on ? 'true' : 'false');
     });
     $$('[data-panel]').forEach(function (p) { p.hidden = p !== panel; });
-    if (scroll) $('.tabs').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (animate && next !== curTab) {
+      // вкладка правее прежней: панель въезжает справа, левее: слева
+      panel.style.setProperty('--dx', (tabs.indexOf(next) > prev ? 28 : -28) + 'px');
+      replay(panel, 'is-enter');
+    }
+    curTab = next;
+    moveInk();
+    // на телефоне вкладки прокручиваются вбок: держим активную по центру
+    if (next) tabBar.scrollTo({ left: next.offsetLeft - (tabBar.clientWidth - next.offsetWidth) / 2, behavior: 'smooth' });
+    if (scroll) tabBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-  if (tabs.length) {
+  if (tabs.length && tabBar) {
+    ink = document.createElement('span');
+    ink.className = 'tabs__ink';
+    ink.setAttribute('aria-hidden', 'true');
+    tabBar.appendChild(ink);
+    tabBar.classList.add('has-ink');
     tabs.forEach(function (t) {
       t.addEventListener('click', function (e) {
         e.preventDefault();
         var id = t.getAttribute('data-tab');
         history.replaceState(null, '', '#' + id);
-        showTab(id, false);
+        showTab(id, false, true);
       });
     });
     // #cert-cisco (ссылка со статуса на «Партнерах»): вкладка сертификатов + подсветка карточки
-    var openHash = function () {
+    var openHash = function (animate) {
       var id = location.hash.slice(1);
       var cert = id.indexOf('cert-') === 0 ? document.getElementById(id) : null;
-      if (!cert) { if (id) showTab(id, true); return; }
-      showTab('certificates', false);
+      if (!cert) { if (id) showTab(id, true, animate); return; }
+      showTab('certificates', false, animate);
       cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      cert.classList.remove('is-flash');
-      void cert.offsetWidth; // перезапуск анимации при повторном переходе
-      cert.classList.add('is-flash');
+      cert.classList.remove('is-rise'); // анимация фильтра перебила бы подсветку
+      replay(cert, 'is-flash');
     };
-    openHash();
-    window.addEventListener('hashchange', openHash);
+    openHash(false);
+    window.addEventListener('hashchange', function () { openHash(true); });
+    // полоску ставим на место без анимации и только потом включаем переезд,
+    // иначе при загрузке она выехала бы от левого края
+    moveInk();
+    void ink.offsetWidth;
+    ink.classList.add('is-ready');
+    window.addEventListener('resize', moveInk);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInk);
   }
 
   /* ---------- фильтры (проекты, новости, сертификаты) ---------- */
@@ -194,13 +230,21 @@
     var state = {};
     var empty = $('.empty', scope);
     function apply() {
-      var shown = 0;
+      var shown = [];
       $$(':scope > *', list).forEach(function (card) {
         var ok = Object.keys(state).every(function (k) { return !state[k] || card.getAttribute('data-' + k) === state[k]; });
         card.hidden = !ok;
-        if (ok) shown++;
+        card.classList.remove('is-rise');
+        if (ok) shown.push(card);
       });
-      if (empty) empty.hidden = shown > 0;
+      if (empty) empty.hidden = shown.length > 0;
+      // один пересчет стилей на весь список, затем карточки поднимаются по очереди;
+      // задержка ограничена, чтобы длинный список не тянулся
+      void list.offsetWidth;
+      shown.forEach(function (card, i) {
+        card.style.setProperty('--i', Math.min(i, 8));
+        card.classList.add('is-rise');
+      });
     }
     $$('.filter', scope).forEach(function (group) {
       var key = group.getAttribute('data-filter');

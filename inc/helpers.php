@@ -244,6 +244,11 @@ function page_start($meta)
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= asset('assets/css/style.css') ?>">
+<script>
+// Где нет View Transitions между страницами (Firefox), страница проявляется своей анимацией.
+// Класс ставим до первой отрисовки, иначе контент мигнет.
+if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt';
+</script>
 <script type="application/ld+json"><?= json_encode($org, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
 <?php if (!empty($meta['jsonld'])): ?><script type="application/ld+json"><?= json_encode($meta['jsonld'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>
 <?php endif; ?>
