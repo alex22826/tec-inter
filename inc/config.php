@@ -13,6 +13,13 @@ return array(
     'servicedesk' => 'https://tecinternational.helpdeskeddy.com/',
     'founded'     => 2008,
 
+    // Префикс всех адресов сайта: '' на хостинге, '/tec-inter' в статической копии на GitHub Pages
+    'base_path'   => '',
+    // Статическая копия (tools/render.php): адрес Pages, формы без отправки на сервер
+    'static'      => false,
+    'pages_origin' => 'https://alex22826.github.io',
+    'pages_base'   => '/tec-inter',
+
     // Демо-режим: плашка «демо» сверху + noindex, чтобы тестовый домен
     // не попал в поиск и не конкурировал с tec-inter.kz.
     'demo'        => true,

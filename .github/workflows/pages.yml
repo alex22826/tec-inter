@@ -1,0 +1,48 @@
+# Статическая копия сайта на GitHub Pages: https://alex22826.github.io/tec-inter/
+# На Pages нет PHP, поэтому страницы рендерятся здесь (PHP есть на раннере) в готовый HTML.
+# Запускается после каждого push в main; рабочий сайт на Beget не затрагивает.
+name: GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Рендер страниц
+        run: |
+          php -v
+          bash tools/build-static.sh _site
+
+      - name: Проверка ссылок
+        run: python3 -I tools/check-static.py _site /tec-inter
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

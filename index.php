@@ -2,6 +2,12 @@
 // Единая точка входа: .htaccess отправляет сюда все адреса, здесь выбираем язык и страницу.
 
 $CFG = require __DIR__ . '/inc/config.php';
+if (defined('TEC_STATIC')) {
+    // сборка статической копии для GitHub Pages (tools/render.php)
+    $CFG['static']    = true;
+    $CFG['site_url']  = $CFG['pages_origin'];
+    $CFG['base_path'] = $CFG['pages_base'];
+}
 require __DIR__ . '/inc/data.php';
 require __DIR__ . '/inc/i18n.php';
 require __DIR__ . '/inc/helpers.php';

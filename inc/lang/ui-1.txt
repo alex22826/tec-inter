@@ -147,3 +147,7 @@ Veeam Backup & Replication, внедрение ⟫ Veeam Backup & Replication, d
 # --- Короткие подписи для главного меню (ключ «меню: …», см. t_menu)
 меню: Новости и статьи ⟫ News & articles ⟫ Жаңалықтар
 меню: О компании ⟫ About us ⟫ Біз туралы
+
+# --- Статическая копия на GitHub Pages: форма не отправляет заявки
+Это демо-копия сайта ⟫ This is a demo copy of the site ⟫ Бұл сайттың демо-көшірмесі
+Здесь заявки не отправляются. Рабочая форма — на сайте компании. ⟫ Requests are not sent from this copy. The working form is on the company website. ⟫ Бұл көшірмеден өтінімдер жіберілмейді. Жұмыс істейтін форма компания сайтында.

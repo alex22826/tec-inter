@@ -63,9 +63,10 @@ function t_post($slug, $field, $ru)
 }
 
 // Адрес страницы на нужном языке: url_lang('en', 'solutions/') → /en/solutions/
+// (на GitHub Pages с префиксом: /tec-inter/en/solutions/)
 function url_lang($lang, $path = '')
 {
-    global $LANGS;
+    global $LANGS, $CFG;
     $p = $LANGS[$lang]['prefix'];
-    return '/' . ($p !== '' ? $p . '/' : '') . ltrim($path, '/');
+    return $CFG['base_path'] . '/' . ($p !== '' ? $p . '/' : '') . ltrim($path, '/');
 }

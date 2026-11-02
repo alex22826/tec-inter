@@ -143,6 +143,8 @@ return array(
         'Хлебные крошки' => 'Breadcrumbs',
         'меню: Новости и статьи' => 'News & articles',
         'меню: О компании' => 'About us',
+        'Это демо-копия сайта' => 'This is a demo copy of the site',
+        'Здесь заявки не отправляются. Рабочая форма — на сайте компании.' => 'Requests are not sent from this copy. The working form is on the company website.',
         'Решения — 10 направлений IT-интеграции | TEC International' => 'Solutions: 10 IT integration areas | TEC International',
         'Сети, серверы и СХД, ЦОД, информационная безопасность, ПО, виртуализация и бэкап, СКУД и видеонаблюдение, рабочие места, спецсистемы, сервис 24/7.' => 'Networks, servers and storage, data centres, information security, software, virtualisation and backup, access control and CCTV, workplaces, specialised systems, 24/7 service.',
         '10 направлений — один подрядчик. Подбираем, поставляем, внедряем и сопровождаем.' => '10 areas, one contractor. We select, supply, implement and support.',

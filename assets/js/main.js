@@ -115,10 +115,25 @@
     bad.forEach(function (el) { el.classList.add('is-invalid'); });
     return bad.length === 0;
   }
+  function showDone(form, title, text) {
+    var done = document.createElement('div');
+    done.className = 'form-done';
+    done.innerHTML = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>' +
+      '<p><b></b></p><p class="muted"></p>';
+    $('b', done).textContent = title;
+    $('p.muted', done).textContent = text;
+    form.hidden = true;
+    form.parentNode.insertBefore(done, form.nextSibling);
+  }
   $$('.lead-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!validate(form)) { setMsg(form, tr('fill', 'Заполните имя, телефон и отметьте согласие'), false); return; }
+      // статическая копия на GitHub Pages: PHP нет, заявку не отправляем
+      if (form.hasAttribute('data-static')) {
+        showDone(form, tr('staticTitle', 'Это демо-копия сайта'), tr('staticText', 'Здесь заявки не отправляются. Рабочая форма — на сайте компании.'));
+        return;
+      }
       var data = new FormData(form);
       data.append('page', location.pathname);
       data.append('utm', store('tec_utm') || '');
@@ -129,14 +144,7 @@
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (!res.ok) throw new Error(tr('fill', 'Проверьте поля формы'));
-          var done = document.createElement('div');
-          done.className = 'form-done';
-          done.innerHTML = '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>' +
-            '<p><b></b></p><p class="muted"></p>';
-          $('b', done).textContent = tr('sent', 'Заявка отправлена');
-          $('p.muted', done).textContent = tr('sentText', 'Свяжемся с вами в течение рабочего дня.');
-          form.hidden = true;
-          form.parentNode.insertBefore(done, form.nextSibling);
+          showDone(form, tr('sent', 'Заявка отправлена'), tr('sentText', 'Свяжемся с вами в течение рабочего дня.'));
         })
         .catch(function (err) { setMsg(form, err.message || tr('fail', 'Не удалось отправить. Позвоните нам.'), false); })
         .then(function () { btn.disabled = false; });

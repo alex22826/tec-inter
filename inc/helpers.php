@@ -17,10 +17,11 @@ function url($path = '')
 // Файлы общие для всех языков, поэтому без языкового префикса.
 function asset($path)
 {
+    global $CFG;
     $path = ltrim($path, '/');
     $file = dirname(__DIR__) . '/' . $path;
     $v = is_file($file) ? filemtime($file) : 1;
-    return '/' . $path . '?v=' . $v;
+    return $CFG['base_path'] . '/' . $path . '?v=' . $v;
 }
 
 function fmt_date($ymd)
@@ -142,10 +143,12 @@ function direction_options($selected = '')
 // Форма заявки. $variant: 'band' (тёмный блок), 'page' (контакты), 'modal'
 function lead_form($variant, $source)
 {
-    global $LANG;
+    global $LANG, $CFG;
     $full = $variant !== 'band';
     $found = array('Поиск Google / Яндекс', 'Рекомендация', 'Госзакупки', 'Выставка, мероприятие', 'Другое');
-    $h  = '<form class="lead-form lead-form--' . e($variant) . '" action="/api/lead.php" method="post" novalidate>';
+    // на GitHub Pages нет PHP: форма не отправляется, main.js показывает пометку о демо
+    $h  = '<form class="lead-form lead-form--' . e($variant) . '" action="' . e($CFG['base_path']) . '/api/lead.php" method="post" novalidate'
+        . ($CFG['static'] ? ' data-static' : '') . '>';
     $h .= '<input type="hidden" name="source" value="' . e($source) . '">';
     $h .= '<input type="hidden" name="lang" value="' . e($LANG) . '">';
     $h .= '<input type="hidden" name="ts" value="' . time() . '">';
@@ -303,6 +306,8 @@ function page_end()
         'sent'      => t('Заявка отправлена'),
         'sentText'  => t('Свяжемся с вами в течение рабочего дня.'),
         'fail'      => t('Не удалось отправить. Позвоните нам.'),
+        'staticTitle' => t('Это демо-копия сайта'),
+        'staticText'  => t('Здесь заявки не отправляются. Рабочая форма — на сайте компании.'),
         'industry'  => t('Отрасль:'),
         'picker'    => t('Для отрасли «%1» обычно нужны: %2.'),
         'notesShow' => t('Показать пометки ТЗ'),
