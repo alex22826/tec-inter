@@ -285,6 +285,10 @@ p { margin: 0 0 12px; }
 .partner__foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 4px 2px; }
 .status { padding: 3px 9px; border-radius: 6px; background: var(--green-l); color: var(--green); font-size: 12px; font-weight: 700; }
 .status--todo { background: #fff; border: 1px dashed #b8c2d3; color: var(--muted); font-weight: 600; }
+/* статус с сертификатом: ссылка на документ во вкладке «Сертификаты» */
+.status--cert { display: inline-flex; align-items: center; gap: 4px; transition: background .15s, color .15s; }
+.status--cert .ico { width: 13px; height: 13px; }
+.status--cert:hover { background: var(--green); color: #fff; }
 
 /* о компании */
 .tabs { display: flex; gap: 4px; border-bottom: 2px solid var(--line); overflow-x: auto; scrollbar-width: none; margin-top: 8px; }
@@ -325,6 +329,10 @@ p { margin: 0 0 12px; }
 .doc { padding: 12px; display: flex; flex-direction: column; overflow: visible; position: relative; }
 .doc__scan { border: 1px solid var(--line); background: #fff; border-radius: 8px; height: 170px; padding: 14px; cursor: zoom-in; display: grid; place-items: center; transition: box-shadow .2s; }
 .doc__scan:hover { box-shadow: var(--shadow); }
+.doc--real .doc__scan { padding: 10px; }
+.doc__scan img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 2px 8px rgba(20, 33, 61, .14); }
+.doc.is-flash { animation: doc-flash 2.2s ease; }
+@keyframes doc-flash { 0%, 60% { box-shadow: 0 0 0 3px var(--orange); } 100% { box-shadow: 0 0 0 0 rgba(232, 116, 42, 0); } }
 .doc__paper { width: 96px; height: 130px; background: #fbfbfd; border: 1px solid #e6e9f0; box-shadow: 0 3px 10px rgba(20,33,61,.08); padding: 12px 10px; display: flex; flex-direction: column; gap: 6px; position: relative; }
 .doc__paper b { font-size: 8.5px; line-height: 1.2; color: var(--ink); text-align: center; overflow-wrap: anywhere; }
 .doc__paper i { display: block; height: 4px; border-radius: 2px; background: #e3e7ef; }
@@ -421,6 +429,10 @@ p { margin: 0 0 12px; }
 .lightbox__img .doc__paper i { height: 8px; }
 .lightbox__img .doc__seal { width: 56px; height: 56px; right: 22px; bottom: 26px; border-width: 3px; }
 .lightbox figcaption { text-align: center; margin-top: 14px; font-weight: 600; color: var(--ink); }
+/* настоящий скан: окно шире, картинка во всю высоту экрана */
+.lightbox--scan .lightbox__box { max-width: 980px; }
+.lightbox--scan .lightbox__img { padding: 10px; }
+.lightbox__img img { display: block; max-width: 100%; max-height: calc(100vh - 190px); height: auto; }
 .toast { position: fixed; left: 50%; bottom: 24px; z-index: 120; transform: translate(-50%, 20px); background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 14px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; max-width: calc(100% - 32px); text-align: center; }
 .toast.is-show { opacity: 1; transform: translate(-50%, 0); }
 body.is-locked { overflow: hidden; }

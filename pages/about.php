@@ -114,15 +114,36 @@ function clients_grid($items)
       <?php endforeach; ?>
     </div>
     <div class="docs" data-filter-list>
-      <?php foreach ($DOCS as $i => $doc):
+      <?php $licenseNoted = false; $vendorSeen = array();
+      foreach ($DOCS as $doc):
           $st = doc_status($doc['valid'], $now);
           if ($st === 'expired') continue; // просроченные не показываем
           $title = t($doc['title']);
+          $noteHtml = '';
+          if ($doc['type'] === 'license' && !$licenseNoted) {
+              $noteHtml = note('Лицензия с пометкой «дает право» и ссылкой на проверку в реестре');
+              $licenseNoted = true;
+          }
+          // якорь #cert-<вендор>: на него ведет статус на странице «Партнеры»
+          $anchor = '';
+          if (!empty($doc['vendor']) && !isset($vendorSeen[$doc['vendor']])) {
+              $anchor = ' id="cert-' . e($doc['vendor']) . '"';
+              $vendorSeen[$doc['vendor']] = true;
+          }
+          $file = isset($doc['file']) ? $doc['file'] : '';
+          $full = $file ? 'assets/certs/' . (isset($doc['full']) ? $doc['full'] : $file . '.jpg') : '';
+          $download = $file ? 'assets/certs/' . (isset($doc['download']) ? $doc['download'] : $file . '.pdf') : '';
       ?>
-        <article class="card doc" data-type="<?= e($doc['type']) ?>"<?= $i === 3 ? note('Лицензия с пометкой «дает право» и ссылкой на проверку в реестре') : '' ?>>
-          <button class="doc__scan" type="button" data-zoom aria-label="<?= e(t('Увеличить')) ?>: <?= e($title) ?>">
-            <span class="doc__paper"><span class="doc__seal"></span><b><?= e($title) ?></b><i></i><i></i><i class="short"></i></span>
-          </button>
+        <article class="card doc<?= $file ? ' doc--real' : '' ?>" data-type="<?= e($doc['type']) ?>"<?= $anchor ?><?= $noteHtml ?>>
+          <?php if ($file): ?>
+            <button class="doc__scan" type="button" data-zoom data-full="<?= asset($full) ?>" aria-label="<?= e(t('Увеличить')) ?>: <?= e($title) ?>">
+              <img src="<?= asset('assets/certs/' . $file . '-thumb.jpg') ?>" alt="<?= e($title . ', ' . $doc['sub']) ?>" loading="lazy">
+            </button>
+          <?php else: ?>
+            <button class="doc__scan" type="button" data-zoom aria-label="<?= e(t('Увеличить')) ?>: <?= e($title) ?>">
+              <span class="doc__paper"><span class="doc__seal"></span><b><?= e($title) ?></b><i></i><i></i><i class="short"></i></span>
+            </button>
+          <?php endif; ?>
           <h3><?= e($title) ?></h3>
           <p class="doc__sub"><?= e(t($doc['sub'])) ?></p>
           <div class="doc__foot">
@@ -132,15 +153,23 @@ function clients_grid($items)
               <span class="doc__valid doc__valid--warn"><?= e(t('истекает')) ?> <?= e(fmt_month($doc['valid'])) ?></span>
             <?php elseif ($st === 'active'): ?>
               <span class="doc__valid"><?= icon('check') ?> <?= e(t('действует до')) ?> <?= e(fmt_month($doc['valid'])) ?></span>
+            <?php elseif (!empty($doc['issued'])): ?>
+              <span class="doc__valid"><?= icon('check') ?> <?= e(t('письмо от')) ?> <?= e(fmt_date($doc['issued'])) ?></span>
+            <?php elseif (!empty($doc['period'])): ?>
+              <span class="doc__valid"><?= icon('check') ?> <?= e($doc['period']) ?></span>
             <?php else: ?>
               <span></span>
             <?php endif; ?>
-            <button class="doc__pdf" type="button" data-soon="<?= e(t('PDF появится после загрузки сканов через админку')) ?>">PDF <?= icon('download') ?></button>
+            <?php if ($download): ?>
+              <a class="doc__pdf" href="<?= asset($download) ?>" target="_blank" rel="noopener" download><?= e(strtoupper(pathinfo($download, PATHINFO_EXTENSION))) ?> <?= icon('download') ?></a>
+            <?php else: ?>
+              <button class="doc__pdf" type="button" data-soon="<?= e(t('PDF появится после загрузки сканов через админку')) ?>">PDF <?= icon('download') ?></button>
+            <?php endif; ?>
           </div>
         </article>
       <?php endforeach; ?>
     </div>
-    <p class="footnote"><?= e(t('* Скан увеличивается по клику. Подписи и сроки даны для примера, подставить фактические. Загрузка через админку; просроченные документы скрываются автоматически по дате.')) ?></p>
+    <p class="footnote"><?= e(t('* Скан увеличивается по клику. Партнерские статусы подтверждены документами вендоров, лицензии, сертификаты инженеров и письма пока даны для примера. Загрузка через админку, просроченные документы скрываются автоматически по дате.')) ?></p>
   </section>
 
   <section class="tab-panel" data-panel="clients" role="tabpanel" hidden>

@@ -173,9 +173,19 @@
         showTab(id, false);
       });
     });
-    var startTab = location.hash.slice(1);
-    if (startTab) showTab(startTab, true);
-    window.addEventListener('hashchange', function () { showTab(location.hash.slice(1), true); });
+    // #cert-cisco (ссылка со статуса на «Партнерах»): вкладка сертификатов + подсветка карточки
+    var openHash = function () {
+      var id = location.hash.slice(1);
+      var cert = id.indexOf('cert-') === 0 ? document.getElementById(id) : null;
+      if (!cert) { if (id) showTab(id, true); return; }
+      showTab('certificates', false);
+      cert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      cert.classList.remove('is-flash');
+      void cert.offsetWidth; // перезапуск анимации при повторном переходе
+      cert.classList.add('is-flash');
+    };
+    openHash();
+    window.addEventListener('hashchange', openHash);
   }
 
   /* ---------- фильтры (проекты, новости, сертификаты) ---------- */
@@ -266,8 +276,18 @@
     var z = e.target.closest('[data-zoom]');
     if (!z || !lb) return;
     var card = z.closest('.doc');
-    $('.lightbox__img', lb).innerHTML = '';
-    $('.lightbox__img', lb).appendChild($('.doc__paper', z).cloneNode(true));
+    var box = $('.lightbox__img', lb);
+    box.innerHTML = '';
+    lb.classList.toggle('lightbox--scan', z.hasAttribute('data-full'));
+    if (z.hasAttribute('data-full')) {
+      // настоящий скан сертификата крупно
+      var img = document.createElement('img');
+      img.src = z.getAttribute('data-full');
+      img.alt = $('img', z) ? $('img', z).alt : '';
+      box.appendChild(img);
+    } else {
+      box.appendChild($('.doc__paper', z).cloneNode(true));
+    }
     $('figcaption', lb).textContent = $('h3', card).textContent + ' · ' + $('.doc__sub', card).textContent;
     openModal(lb);
   });

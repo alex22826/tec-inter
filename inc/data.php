@@ -33,7 +33,7 @@ $DIRECTIONS = array(
         'short' => 'NGFW, защита рабочих мест, сканеры уязвимостей, ЕТ ИКТ и ИБ',
         'text'  => 'Комплексная защита от современных угроз: межсетевые экраны нового поколения, защита почты и веб-трафика, управление уязвимостями. Помогаем госорганам и квазигосу выполнить единые требования по ИКТ и ИБ.',
         'items' => array('NGFW и защита периметра', 'Защита рабочих станций и приложений', 'Защита почты и веб-трафика', 'Управление уязвимостями', 'Аудит по ЕТ ИКТ и ИБ', 'Администрирование средств ИБ'),
-        'vendors' => array('fortinet', 'cisco', 'huawei'),
+        'vendors' => array('fortinet', 'paloalto', 'cisco', 'huawei'),
     ),
     'software' => array(
         'title' => 'ПО и лицензирование',
@@ -120,21 +120,22 @@ $TRUST = array(
 
 // group — раздел на странице «Партнёры»; status — статус партнёрства (уточнить у TEC)
 $PARTNERS = array(
-    'cisco'     => array('name' => 'Cisco',      'group' => 'Сети',                'dir' => 'networks', 'status' => ''),
+    'cisco'     => array('name' => 'Cisco',      'group' => 'Сети',                'dir' => 'networks', 'status' => 'Registered'),
     'huawei'    => array('name' => 'Huawei',     'group' => 'Сети',                'dir' => 'networks', 'status' => ''),
     'juniper'   => array('name' => 'Juniper',    'group' => 'Сети',                'dir' => 'networks', 'status' => ''),
     'extreme'   => array('name' => 'Extreme',    'group' => 'Сети',                'dir' => 'networks', 'status' => ''),
-    'hpe'       => array('name' => 'HPE',        'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => ''),
-    'dell'      => array('name' => 'Dell',       'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => ''),
-    'lenovo'    => array('name' => 'Lenovo',     'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => ''),
+    'hpe'       => array('name' => 'HPE',        'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => 'Business Partner'),
+    'dell'      => array('name' => 'Dell',       'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => 'Authorized'),
+    'lenovo'    => array('name' => 'Lenovo',     'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => 'Authorized'),
     'ibm'       => array('name' => 'IBM',        'group' => 'Серверы и СХД',       'dir' => 'servers',  'status' => ''),
     'fortinet'  => array('name' => 'Fortinet',   'group' => 'ИБ и ПО',             'dir' => 'security', 'status' => ''),
+    'paloalto'  => array('name' => 'Palo Alto Networks', 'group' => 'ИБ и ПО',     'dir' => 'security', 'status' => 'Registered'),
     'redhat'    => array('name' => 'Red Hat',    'group' => 'ИБ и ПО',             'dir' => 'software', 'status' => ''),
     'vmware'    => array('name' => 'VMware',     'group' => 'ИБ и ПО',             'dir' => 'backup',   'status' => ''),
-    'veeam'     => array('name' => 'Veeam',      'group' => 'ИБ и ПО',             'dir' => 'backup',   'status' => ''),
+    'veeam'     => array('name' => 'Veeam',      'group' => 'ИБ и ПО',             'dir' => 'backup',   'status' => 'Authorized Reseller'),
     'veritas'   => array('name' => 'Veritas',    'group' => 'ИБ и ПО',             'dir' => 'backup',   'status' => ''),
     'adobe'     => array('name' => 'Adobe',      'group' => 'ИБ и ПО',             'dir' => 'software', 'status' => ''),
-    'milestone' => array('name' => 'Milestone',  'group' => 'Видео и спецсистемы', 'dir' => 'video',    'status' => ''),
+    'milestone' => array('name' => 'Milestone',  'group' => 'Видео и спецсистемы', 'dir' => 'video',    'status' => 'Authorized'),
     'engenius'  => array('name' => 'EnGenius',   'group' => 'Видео и спецсистемы', 'dir' => 'networks', 'status' => ''),
     'vniira'    => array('name' => 'ВНИИРА-ОВД', 'group' => 'Видео и спецсистемы', 'dir' => 'special',  'status' => ''),
     'nita'      => array('name' => 'НИТА',       'group' => 'Видео и спецсистемы', 'dir' => 'special',  'status' => ''),
@@ -179,9 +180,18 @@ $TEAM = array(
 
 // type: status | license | specialist | thanks; valid — срок действия (ГГГГ-ММ) или ''
 $DOCS = array(
-    array('type' => 'status',     'title' => 'Cisco',                   'sub' => 'Партнерский статус',     'valid' => '2027-12'),
-    array('type' => 'status',     'title' => 'Fortinet',                'sub' => 'Партнерский статус',     'valid' => '2027-06'),
-    array('type' => 'status',     'title' => 'HPE',                     'sub' => 'Партнерский статус',     'valid' => '2027-03'),
+    // Партнерские статусы: настоящие документы TEC, файлы в assets/certs (прислали 02.11.2026).
+    // file — имя без расширения: <file>-thumb.jpg превью, <file>.jpg скан, <file>.pdf для скачивания;
+    // period — срок без точной даты, issued — дата письма.
+    array('type' => 'status', 'vendor' => 'cisco',     'title' => 'Cisco',              'sub' => 'Registered Partner', 'valid' => '2027-10', 'file' => 'cisco'),
+    array('type' => 'status', 'vendor' => 'dell',      'title' => 'Dell Technologies',  'sub' => 'Authorized Tier Partner', 'valid' => '2027-01', 'file' => 'dell'),
+    array('type' => 'status', 'vendor' => 'hpe',       'title' => 'HPE',                'sub' => 'Compute, Hybrid Cloud, Networking Business Partner', 'valid' => '', 'period' => 'HPE FY2026', 'file' => 'hpe'),
+    array('type' => 'status', 'vendor' => 'hpe',       'title' => 'HPE Partner Expertise', 'sub' => 'Compute, Hybrid Cloud, Networking', 'valid' => '', 'period' => '2026', 'file' => 'hpe-badge', 'full' => 'hpe-badge.png', 'download' => 'hpe-badge.png'),
+    array('type' => 'status', 'vendor' => 'lenovo',    'title' => 'Lenovo',             'sub' => 'Lenovo 360 Authorized', 'valid' => '2027-03', 'file' => 'lenovo'),
+    array('type' => 'status', 'vendor' => 'milestone', 'title' => 'Milestone',          'sub' => 'Authorized Partner', 'valid' => '', 'period' => '2026', 'file' => 'milestone'),
+    array('type' => 'status', 'vendor' => 'paloalto',  'title' => 'Palo Alto Networks', 'sub' => 'NextWave Registered Reseller', 'valid' => '', 'issued' => '2026-10-28', 'file' => 'paloalto'),
+    array('type' => 'status', 'vendor' => 'veeam',     'title' => 'Veeam',              'sub' => 'Authorized Reseller', 'valid' => '', 'period' => '2026', 'file' => 'veeam'),
+    // Ниже примеры для макета: лицензии, сертификаты инженеров и письма заменить настоящими.
     array('type' => 'license',    'title' => 'Лицензия',                'sub' => 'Дает право: монтаж и обслуживание систем безопасности', 'valid' => ''),
     array('type' => 'license',    'title' => 'Лицензия',                'sub' => 'Дает право: работы по защите информации', 'valid' => ''),
     array('type' => 'specialist', 'title' => 'Инженер CCNP',            'sub' => 'Сертификат специалиста', 'valid' => '2028-09'),
