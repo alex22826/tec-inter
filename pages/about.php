@@ -65,9 +65,9 @@ function clients_grid($items)
     <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
     <p class="muted"><?= e(t('Подтвержденный объем выполненных контрактов позволяет участвовать в закупках с лимитами:')) ?></p>
     <div class="stats stats--3">
-      <div class="stat"><b><?= e(t('1,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>
-      <div class="stat"><b><?= e(t('1,3 млрд ₸')) ?></b><span><?= e(t('выполнение работ')) ?></span></div>
-      <div class="stat"><b><?= e(t('1,6 млрд ₸')) ?></b><span><?= e(t('оказание услуг')) ?></span></div>
+      <div class="stat"><b><?= e(t('15,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>
+      <div class="stat"><b><?= e(t('3,3 млрд ₸')) ?></b><span><?= e(t('выполнение работ')) ?></span></div>
+      <div class="stat"><b><?= e(t('3,6 млрд ₸')) ?></b><span><?= e(t('оказание услуг')) ?></span></div>
     </div>
 
     <div class="values"<?= note('Миссия и ценности перенесены с главной') ?>>
