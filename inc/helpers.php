@@ -238,11 +238,8 @@ function page_start($meta)
 <meta property="og:title" content="<?= e($meta['title']) ?>">
 <meta property="og:description" content="<?= e($meta['description']) ?>">
 <meta property="og:url" content="<?= e($canonical) ?>">
-<meta name="theme-color" content="#14213d">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="<?= asset('assets/img/favicon.svg') ?>" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= asset('assets/css/style.css') ?>">
 <script>
 // Где нет View Transitions между страницами (Firefox), страница проявляется своей анимацией.
@@ -264,7 +261,7 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
 <?php endif; ?>
 <header class="header">
   <div class="container header__in">
-    <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International: на главную')) ?>">TEC<i>.</i> <span>International</span></a>
+    <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International: на главную')) ?>"><img src="<?= asset('assets/img/logo-dark.png') ?>" width="109" height="46" alt="TEC International"></a>
     <nav class="nav" id="nav" aria-label="<?= e(t('Главное меню')) ?>">
       <?php foreach ($menu as $slug => $label): ?>
         <a href="<?= url($slug ? $slug . '/' : '') ?>"<?= $slug === $nav ? ' class="is-active" aria-current="page"' : '' ?>><?= e(t_menu($label)) ?></a>
@@ -324,7 +321,7 @@ function page_end()
 <footer class="footer">
   <div class="container footer__grid">
     <div>
-      <a class="logo logo--light" href="<?= url() ?>">TEC<i>.</i> <span>International</span></a>
+      <a class="logo" href="<?= url() ?>"><img src="<?= asset('assets/img/logo-light.png') ?>" width="123" height="52" alt="TEC International" loading="lazy"></a>
       <p class="footer__tag"><?= e(sprintf(t('Системный интегратор полного цикла с %d года: от проекта и поставки до поддержки 24/7.'), $CFG['founded'])) ?></p>
     </div>
     <div>
