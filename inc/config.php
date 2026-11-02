@@ -8,7 +8,7 @@ return array(
     'phone'       => '+7 (778) 975-63-35',
     'phone_href'  => '+77789756335',
     'email'       => 'info@tec-inter.kz',
-    'hours'       => 'Пн–Пт, 9:00–18:00',
+    'hours'       => 'Пн-Пт, 9:00-18:00',
     'address'     => 'г. Астана, район Сарыарка, микрорайон Самал, здание 12',
     'servicedesk' => 'https://tecinternational.helpdeskeddy.com/',
     'founded'     => 2008,

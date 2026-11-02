@@ -1,6 +1,6 @@
 <?php
 page_start(array(
-    'title' => t('Решения — 10 направлений IT-интеграции | TEC International'),
+    'title' => t('Решения | 10 направлений IT-интеграции | TEC International'),
     'description' => t('Сети, серверы и СХД, ЦОД, информационная безопасность, ПО, виртуализация и бэкап, СКУД и видеонаблюдение, рабочие места, спецсистемы, сервис 24/7.'),
     'nav' => 'solutions',
 ));
@@ -15,7 +15,7 @@ foreach ($PROJECTS as $p) {
   <div class="container">
     <?= breadcrumbs(array(t('Решения') => '')) ?>
     <h1><?= e(t('Решения')) ?></h1>
-    <p class="lead"><?= e(t('10 направлений — один подрядчик. Подбираем, поставляем, внедряем и сопровождаем.')) ?></p>
+    <p class="lead"><?= e(t('10 направлений и один подрядчик. Подбираем, поставляем, внедряем и сопровождаем.')) ?></p>
   </div>
 </section>
 
@@ -24,7 +24,7 @@ foreach ($PROJECTS as $p) {
     <div class="picker">
       <div class="picker__head">
         <h2><?= e(t('Подобрать решение')) ?></h2>
-        <p class="muted"><?= e(t('Выберите отрасль — подсветим направления, которые обычно нужны.')) ?></p>
+        <p class="muted"><?= e(t('Выберите отрасль, и мы подсветим направления, которые обычно нужны.')) ?></p>
       </div>
       <div class="chips" role="group" aria-label="<?= e(t('Отрасль')) ?>">
         <?php foreach ($INDUSTRIES as $slug => $ind): ?>
@@ -49,7 +49,7 @@ foreach ($PROJECTS as $p) {
     </aside>
     <div class="sol__list">
       <?php $n = 0; foreach ($DIRECTIONS as $slug => $d): $n++; ?>
-        <article class="sol-item" id="<?= e($slug) ?>" data-dir="<?= e($slug) ?>"<?= $n === 1 ? note('Каждая карточка «Подробнее» ведёт на своё направление на этой странице (сейчас все ведут на начало)') : '' ?>>
+        <article class="sol-item" id="<?= e($slug) ?>" data-dir="<?= e($slug) ?>"<?= $n === 1 ? note('Каждая карточка «Подробнее» ведет на свое направление на этой странице, а сейчас все ведут на начало') : '' ?>>
           <div class="sol-item__head">
             <span class="sol-item__ico"><?= icon($d['icon']) ?></span>
             <div>
@@ -72,7 +72,7 @@ foreach ($PROJECTS as $p) {
           <?php if (!empty($byDir[$slug])): ?>
             <div class="sol-item__projects">
               <?php foreach ($byDir[$slug] as $p): ?>
-                <p><span class="tag"><?= e(t('Проект')) ?></span> <b><?= e(t($p['title'])) ?></b> — <?= e(t($p['solution'])) ?></p>
+                <p><span class="tag"><?= e(t('Проект')) ?></span> <b><?= e(t($p['title'])) ?></b>: <?= e(t($p['solution'])) ?></p>
               <?php endforeach; ?>
             </div>
           <?php endif; ?>

@@ -188,7 +188,7 @@ function breadcrumbs($items)
 function lang_switch($cls = '')
 {
     global $LANGS, $LANG, $PAGE_PATH;
-    $h = '<div class="lang ' . e($cls) . '" role="group" aria-label="' . e(t('Язык сайта')) . '"' . ($cls ? '' : note('Языки RU / KZ / EN — в шапке. KZ и EN — ручной перевод ключевых страниц')) . '>';
+    $h = '<div class="lang ' . e($cls) . '" role="group" aria-label="' . e(t('Язык сайта')) . '"' . ($cls ? '' : note('Переключатель языков RU / KZ / EN в шапке. Ключевые страницы на KZ и EN переведены вручную')) . '>';
     $i = 0;
     foreach ($LANGS as $code => $L) {
         $h .= ($i++ ? '<span>·</span>' : '') . '<a href="' . e(url_lang($code, $PAGE_PATH)) . '" hreflang="' . e($L['html']) . '" lang="' . e($L['html']) . '" data-lang-link'
@@ -206,7 +206,7 @@ function page_start($meta)
         ''          => 'Главная',
         'solutions' => 'Решения',
         'projects'  => 'Проекты',
-        'partners'  => 'Партнёры',
+        'partners'  => 'Партнеры',
         'about'     => 'О компании',
         'news'      => 'Новости и статьи',
         'contacts'  => 'Контакты',
@@ -252,14 +252,14 @@ function page_start($meta)
 <?php if ($CFG['demo']): ?>
 <div class="demo-bar">
   <div class="container demo-bar__in">
-    <span><b><?= e(t('Демо по презентации.')) ?></b> <?= e(t('Тексты, цифры, статусы и фото — примеры для обсуждения.')) ?></span>
+    <span><b><?= e(t('Демо по презентации.')) ?></b> <?= e(t('Тексты, цифры, статусы и фото даны для примера и обсуждения.')) ?></span>
     <button class="demo-bar__btn" type="button" data-notes-toggle aria-pressed="false"><?= e(t('Показать пометки ТЗ')) ?></button>
   </div>
 </div>
 <?php endif; ?>
 <header class="header">
   <div class="container header__in">
-    <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International — на главную')) ?>">TEC<i>.</i> <span>International</span></a>
+    <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International: на главную')) ?>">TEC<i>.</i> <span>International</span></a>
     <nav class="nav" id="nav" aria-label="<?= e(t('Главное меню')) ?>">
       <?php foreach ($menu as $slug => $label): ?>
         <a href="<?= url($slug ? $slug . '/' : '') ?>"<?= $slug === $nav ? ' class="is-active" aria-current="page"' : '' ?>><?= e(t_menu($label)) ?></a>
@@ -272,8 +272,8 @@ function page_start($meta)
     </nav>
     <div class="header__side">
       <?= lang_switch() ?>
-      <a class="btn btn--ghost btn--sm header__sd" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener"<?= note('Service Desk остаётся отдельной кнопкой в шапке') ?>>Service Desk</a>
-      <button class="btn btn--accent btn--sm" type="button" data-lead<?= note('Кнопка открывает форму заявки (сейчас на сайте ведёт на «О компании»)') ?>><?= e(t('Обсудить проект')) ?></button>
+      <a class="btn btn--ghost btn--sm header__sd" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener"<?= note('Service Desk остается отдельной кнопкой в шапке') ?>>Service Desk</a>
+      <button class="btn btn--accent btn--sm" type="button" data-lead<?= note('Кнопка открывает форму заявки. На текущем сайте она ведет на «О компании»') ?>><?= e(t('Обсудить проект')) ?></button>
       <button class="burger" type="button" aria-label="<?= e(t('Меню')) ?>" aria-controls="nav" aria-expanded="false"><?= icon('menu') ?></button>
     </div>
   </div>
@@ -302,12 +302,12 @@ function page_end()
     // строки для main.js на текущем языке
     $js = array(
         'fill'      => t('Заполните имя, телефон и отметьте согласие'),
-        'sending'   => t('Отправляем…'),
+        'sending'   => t('Отправляем заявку'),
         'sent'      => t('Заявка отправлена'),
         'sentText'  => t('Свяжемся с вами в течение рабочего дня.'),
         'fail'      => t('Не удалось отправить. Позвоните нам.'),
         'staticTitle' => t('Это демо-копия сайта'),
-        'staticText'  => t('Здесь заявки не отправляются. Рабочая форма — на сайте компании.'),
+        'staticText'  => t('Здесь заявки не отправляются. Рабочая форма есть на сайте компании.'),
         'industry'  => t('Отрасль:'),
         'picker'    => t('Для отрасли «%1» обычно нужны: %2.'),
         'notesShow' => t('Показать пометки ТЗ'),
@@ -326,7 +326,7 @@ function page_end()
       <h3><?= e(t('Компания')) ?></h3>
       <a href="<?= url('about/') ?>"><?= e(t('О компании')) ?></a>
       <a href="<?= url('projects/') ?>"><?= e(t('Проекты')) ?></a>
-      <a href="<?= url('partners/') ?>"><?= e(t('Партнёры')) ?></a>
+      <a href="<?= url('partners/') ?>"><?= e(t('Партнеры')) ?></a>
       <a href="<?= url('news/') ?>"><?= e(t('Новости и статьи')) ?></a>
       <a href="<?= url('contacts/') ?>"><?= e(t('Контакты')) ?></a>
     </div>
@@ -346,7 +346,7 @@ function page_end()
   </div>
   <div class="container footer__bottom">
     <span>© <?= date('Y') ?> TEC International</span>
-    <span><?= e(t('Адрес — на странице')) ?> <a href="<?= url('contacts/') ?>">«<?= e(t('Контакты')) ?>»</a></span>
+    <span><?= e(t('Адрес указан на странице')) ?> <a href="<?= url('contacts/') ?>">«<?= e(t('Контакты')) ?>»</a></span>
   </div>
 </footer>
 
@@ -355,7 +355,7 @@ function page_end()
   <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
     <button class="modal__close" type="button" data-close aria-label="<?= e(t('Закрыть')) ?>"><?= icon('close') ?></button>
     <h2 id="lead-modal-title"><?= e(t('Обсудить проект')) ?></h2>
-    <p class="muted"><?= e(t('Ответим в течение рабочего дня и предложим 2–3 варианта решения.')) ?></p>
+    <p class="muted"><?= e(t('Ответим в течение рабочего дня и предложим 2-3 варианта решения.')) ?></p>
     <?= lead_form('modal', 'modal') ?>
   </div>
 </div>

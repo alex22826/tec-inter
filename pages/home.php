@@ -1,6 +1,6 @@
 <?php
 page_start(array(
-    'title' => t('TEC International — системный интегратор в Казахстане'),
+    'title' => t('TEC International | Системный интегратор в Казахстане'),
     'description' => t('Любая IT-задача под ключ: проектирование, поставка оборудования и ПО, интеграция, запуск и поддержка 24/7. Системный интегратор полного цикла с 2008 года.'),
     'nav' => '',
 ));
@@ -9,8 +9,8 @@ page_start(array(
   <div class="container hero__grid">
     <div class="hero__text">
       <p class="eyebrow"><?= e(t('Системный интегратор полного цикла')) ?></p>
-      <h1><?= e(t('Любая IT-задача — под ключ. От проекта до поддержки 24/7')) ?></h1>
-      <p class="hero__lead"><?= e(t('Проектирование, оборудование, ПО, интеграция, настройка и запуск — для госсектора, промышленности и бизнеса с 2008 года.')) ?></p>
+      <h1><?= e(t('Любая IT-задача под ключ. От проекта до поддержки 24/7')) ?></h1>
+      <p class="hero__lead"><?= e(t('Проектирование, оборудование, ПО, интеграция, настройка и запуск для госсектора, промышленности и бизнеса с 2008 года.')) ?></p>
       <div class="hero__btns">
         <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
         <a class="btn btn--outline-light btn--lg" href="<?= url('solutions/') ?>#picker"><?= e(t('Подобрать решение')) ?></a>
@@ -34,7 +34,7 @@ page_start(array(
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Направления — 10 плиток, каждая ведёт на своё направление на странице «Решения»') ?>>
+<section class="section section--tight"<?= note('Направления: 10 плиток, каждая ведет на свое направление на странице «Решения»') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Направления')) ?></h2>
@@ -52,7 +52,7 @@ page_start(array(
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Решения для отраслей — 11 отраслей: клиент сразу видит, что задача по адресу') ?>>
+<section class="section section--tight"<?= note('Решения для 11 отраслей: клиент сразу видит, что задача по адресу') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Решения для отраслей')) ?></h2>
     <div class="chips">
@@ -74,7 +74,7 @@ page_start(array(
   </div>
 </section>
 
-<section class="section"<?= note('Наши проекты: задача → решение (подборка из раздела «Проекты»)') ?>>
+<section class="section"<?= note('Наши проекты: задача → решение, подборка из раздела «Проекты»') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Наши проекты')) ?></h2>
@@ -86,11 +86,11 @@ page_start(array(
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Партнёры — логотипы ведут на страницу партнёров со статусами') ?>>
+<section class="section section--tight"<?= note('Партнеры: логотипы ведут на страницу партнеров со статусами') ?>>
   <div class="container">
     <div class="section__head">
-      <h2 class="h2"><?= e(t('Партнёры')) ?></h2>
-      <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнёры и статусы')) ?> →</a>
+      <h2 class="h2"><?= e(t('Партнеры')) ?></h2>
+      <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнеры и статусы')) ?> →</a>
     </div>
     <div class="logos">
       <?php foreach (array_slice($PARTNERS, 0, 12) as $slug => $pt): ?>
@@ -100,7 +100,7 @@ page_start(array(
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Строка «Нас выбирают» — названия заказчиков с отраслью (логотипы гос- и квазигос-клиентов — только с их согласия)') ?>>
+<section class="section section--tight"<?= note('Строка «Нас выбирают»: названия заказчиков с отраслью. Логотипы гос- и квазигос-клиентов только с их согласия') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Нас выбирают')) ?></h2>
     <div class="clients clients--row">
@@ -116,7 +116,7 @@ page_start(array(
     <div class="band">
       <div class="band__text">
         <h2><?= e(t('Обсудить техническую задачу')) ?></h2>
-        <p><?= e(t('Ответим в течение рабочего дня, проконсультируем и предложим 2–3 варианта решения.')) ?></p>
+        <p><?= e(t('Ответим в течение рабочего дня, проконсультируем и предложим 2-3 варианта решения.')) ?></p>
       </div>
       <?= lead_form('band', 'home') ?>
     </div>

@@ -1,6 +1,6 @@
 <?php
 page_start(array(
-    'title' => t('Контакты — TEC International, Астана'),
+    'title' => t('Контакты | TEC International, Астана'),
     'description' => t('Телефон +7 (778) 975-63-35, info@tec-inter.kz. Обсудить проект или получить консультацию по IT-инфраструктуре.'),
     'nav' => 'contacts',
 ));
@@ -15,7 +15,7 @@ page_start(array(
 <section class="section section--tight">
   <div class="container contacts">
     <div class="contacts__side">
-      <div class="box"<?= note('Контакты одним блоком. Адрес указан только здесь — при переезде меняем в одном месте') ?>>
+      <div class="box"<?= note('Контакты одним блоком. Адрес указан только здесь, при переезде меняем его в одном месте') ?>>
         <h2 class="h3"><?= e(t('Связаться')) ?></h2>
         <ul class="contact-list">
           <li><?= icon('phone') ?><a class="strong" href="tel:<?= e($CFG['phone_href']) ?>"><?= e($CFG['phone']) ?></a></li>
@@ -26,11 +26,11 @@ page_start(array(
       </div>
       <div class="box"<?= note('Ссылка на Service Desk для действующих клиентов') ?>>
         <h2 class="h3"><?= e(t('Техническая поддержка')) ?></h2>
-        <p class="muted"><?= e(t('Действующим клиентам — заявка в Service Desk, круглосуточно.')) ?></p>
+        <p class="muted"><?= e(t('Действующие клиенты могут оставить заявку в Service Desk круглосуточно.')) ?></p>
         <a class="btn btn--outline btn--sm" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener">Service Desk 24/7 <?= icon('external') ?></a>
       </div>
     </div>
-    <div class="box box--form"<?= note('Форма с полем «Направление», согласием на обработку данных и «Откуда узнали». Заявка — на почту и в Telegram, защита от спама') ?>>
+    <div class="box box--form"<?= note('Форма с полем «Направление», согласием на обработку данных и «Откуда узнали». Заявка уходит на почту и в Telegram, есть защита от спама') ?>>
       <h2 class="h3"><?= e(t('Обсудить проект')) ?></h2>
       <?= lead_form('page', 'contacts') ?>
     </div>

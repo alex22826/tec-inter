@@ -131,7 +131,7 @@
       if (!validate(form)) { setMsg(form, tr('fill', 'Заполните имя, телефон и отметьте согласие'), false); return; }
       // статическая копия на GitHub Pages: PHP нет, заявку не отправляем
       if (form.hasAttribute('data-static')) {
-        showDone(form, tr('staticTitle', 'Это демо-копия сайта'), tr('staticText', 'Здесь заявки не отправляются. Рабочая форма — на сайте компании.'));
+        showDone(form, tr('staticTitle', 'Это демо-копия сайта'), tr('staticText', 'Здесь заявки не отправляются. Рабочая форма есть на сайте компании.'));
         return;
       }
       var data = new FormData(form);
@@ -139,7 +139,7 @@
       data.append('utm', store('tec_utm') || '');
       var btn = $('button[type=submit]', form);
       btn.disabled = true;
-      setMsg(form, tr('sending', 'Отправляем…'), true);
+      setMsg(form, tr('sending', 'Отправляем заявку'), true);
       fetch(form.action, { method: 'POST', body: data })
         .then(function (r) { return r.json(); })
         .then(function (res) {
@@ -268,7 +268,7 @@
     var card = z.closest('.doc');
     $('.lightbox__img', lb).innerHTML = '';
     $('.lightbox__img', lb).appendChild($('.doc__paper', z).cloneNode(true));
-    $('figcaption', lb).textContent = $('h3', card).textContent + ' — ' + $('.doc__sub', card).textContent;
+    $('figcaption', lb).textContent = $('h3', card).textContent + ' · ' + $('.doc__sub', card).textContent;
     openModal(lb);
   });
 

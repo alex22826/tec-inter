@@ -42,7 +42,7 @@ page_start(array(
     <div class="post__meta"><span class="tag<?= $isNews ? ' tag--dark' : '' ?>"><?= e($isNews ? t('Новость') : t('Статья')) ?></span> <?= fmt_date($post['date']) ?> · <?= e(sprintf(t('%d мин чтения'), $post['read'])) ?> · TEC International</div>
     <h1<?= note('H1 с поисковым запросом, дата, время чтения') ?>><?= e($title) ?></h1>
     <?= cover($dir ? $dir['icon'] : 'docs', t('обложка'), 'cover--article' . ($isNews ? ' cover--news' : '')) ?>
-    <div class="prose"<?= note('Подзаголовки H2/H3, списки и таблицы — удобно читать и индексировать') ?>>
+    <div class="prose"<?= note('Подзаголовки H2/H3, списки и таблицы: удобно читать и индексировать') ?>>
       <?= t_post($SLUG, 'body', $post['body']) /* HTML из data.php / lang, пишется вручную */ ?>
     </div>
     <div class="share"<?= note('Кнопки «Поделиться»: WhatsApp, Telegram, LinkedIn') ?>>
@@ -54,7 +54,7 @@ page_start(array(
   </article>
 
   <aside class="article-side">
-    <div class="side-cta"<?= note('Блок заявки сбоку — статья приводит клиента') ?>>
+    <div class="side-cta"<?= note('Блок заявки сбоку, чтобы статья приводила клиента') ?>>
       <h2><?= e($cta[0]) ?></h2>
       <p><?= e($cta[1]) ?></p>
       <button class="btn btn--accent" type="button" data-lead data-direction="<?= e($post['dir']) ?>"><?= e(t('Получить консультацию')) ?></button>

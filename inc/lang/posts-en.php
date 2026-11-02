@@ -64,7 +64,7 @@ HTML
     'aeronavigation-svyaz' => array(
         'title' => 'Communication equipment project for air navigation completed',
         'excerpt' => 'Example of a project news item: the task, what was done, the result.',
-        'cta' => array('Have a similar task?', 'Tell us about your project and we will offer 2–3 solution options'),
+        'cta' => array('Have a similar task?', 'Tell us about your project and we will offer 2-3 solution options'),
         'body' => <<<'HTML'
 <p>Example format of a project news item. Task: upgrade the communication equipment at air navigation sites. What we did: supply, installation and commissioning together with the manufacturer.</p>
 <p class="post-note">Demo news item: replace with the actual text; client name only with their consent.</p>
@@ -73,7 +73,7 @@ HTML
     'server-1c-sap' => array(
         'title' => 'A server for 1C and SAP: how to choose the configuration',
         'excerpt' => 'CPU, memory and disks: what to look at so your accounting system does not slow down.',
-        'cta' => array('Need help choosing a server?', 'We will offer 2–3 configurations from HPE, Dell or Lenovo'),
+        'cta' => array('Need help choosing a server?', 'We will offer 2-3 configurations from HPE, Dell or Lenovo'),
         'body' => <<<'HTML'
 <p>Business systems load a server in different ways, so the most powerful server is not always the most suitable one.</p>
 <h2>Processor</h2>

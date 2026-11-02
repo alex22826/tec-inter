@@ -1,7 +1,7 @@
 <?php
 page_start(array(
-    'title' => t('Проекты — задача и решение | TEC International'),
-    'description' => t('Реализованные проекты TEC International: аэронавигация, энергетика, госсектор, распределённые сети. Задача → решение.'),
+    'title' => t('Проекты | Задача и решение | TEC International'),
+    'description' => t('Реализованные проекты TEC International: аэронавигация, энергетика, госсектор, распределенные сети. Задача → решение.'),
     'nav' => 'projects',
 ));
 $used = array();
@@ -13,7 +13,7 @@ foreach ($PROJECTS as $p) {
   <div class="container">
     <?= breadcrumbs(array(t('Проекты') => '')) ?>
     <h1><?= e(t('Проекты')) ?></h1>
-    <p class="lead"><?= e(t('Задача клиента → наше решение. 120+ проектов с 2008 года — здесь подборка.')) ?></p>
+    <p class="lead"><?= e(t('Задача клиента → наше решение. Здесь подборка из 120+ проектов, сделанных с 2008 года.')) ?></p>
   </div>
 </section>
 
@@ -28,7 +28,7 @@ foreach ($PROJECTS as $p) {
     <div class="grid-3" data-filter-list>
       <?php foreach ($PROJECTS as $p) echo project_card($p); ?>
     </div>
-    <p class="footnote"><?= e(t('* Подборка — пример для обсуждения: добавить реальные проекты, фото и результат в цифрах; названия заказчиков — только с их согласия.')) ?></p>
+    <p class="footnote"><?= e(t('* Подборка дана как пример для обсуждения. Добавить реальные проекты, фото и результат в цифрах; названия заказчиков указывать только с их согласия.')) ?></p>
   </div>
 </section>
 
@@ -37,7 +37,7 @@ foreach ($PROJECTS as $p) {
     <div class="band band--compact">
       <div class="band__text">
         <h2><?= e(t('Похожая задача?')) ?></h2>
-        <p><?= e(t('Расскажите о проекте — предложим 2–3 варианта решения.')) ?></p>
+        <p><?= e(t('Расскажите о проекте, и мы предложим 2-3 варианта решения.')) ?></p>
       </div>
       <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
     </div>
