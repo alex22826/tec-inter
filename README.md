@@ -47,6 +47,21 @@ bash deploy.sh
 
 Архив уходит по SSH (ключ `~/.ssh/beget_hosting`) в `~/tec-inter26.alexte1.beget.tech/public_html`, на сервере все PHP-файлы проверяются `php -l`.
 
+## Копия на GitHub Pages
+
+https://alex22826.github.io/tec-inter/ обновляется сама после каждого `git push` в `main`.
+
+На Pages нет PHP, поэтому workflow `.github/workflows/pages.yml` рендерит сайт в готовый HTML на сервере GitHub:
+
+- `tools/pages-list.php` — список адресов (все разделы и статьи на трёх языках);
+- `tools/render.php` — рендер одной страницы, каждая в отдельном процессе PHP;
+- `tools/build-static.sh` — собирает всё в `_site/`, падает, если PHP выдал хоть одно предупреждение;
+- `tools/check-static.py` — проверяет, что каждая внутренняя ссылка ведёт на существующий файл.
+
+В копии все адреса с префиксом `/tec-inter` (`base_path` в `inc/config.php`). Формы там не отправляются, а показывают «Это демо-копия сайта»: рабочий приём заявок есть только на хостинге.
+
+Для изменения файлов в `.github/workflows/` токену `gh` нужно право `workflow` (добавлено 2026-11-02).
+
 ## Перед запуском боевого сайта
 
 - `inc/config.php`: `demo => false`, `site_url`, адреса для заявок (почта + Telegram).
