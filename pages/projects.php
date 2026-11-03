@@ -17,10 +17,16 @@ $wave = '<svg class="proj__wave" viewBox="0 0 1440 120" preserveAspectRatio="non
     <?= breadcrumbs(array(t('Проекты') => '')) ?>
     <h1><?= e(t('Проекты')) ?></h1>
   </div>
+  <?php // на телефоне страница длинная: быстрый переход к группе, на компьютере скрыто (как на старом сайте) ?>
+  <nav class="container proj-jump" aria-label="<?= e(t('Группы проектов')) ?>">
+    <div class="chips">
+      <?php $gn = 0; foreach ($PROJECT_GROUPS as $g): $gn++; ?><a class="chip" href="#group-<?= $gn ?>"><?= $gn ?>. <?= e(t($g['title'])) ?></a><?php endforeach; ?>
+    </div>
+  </nav>
 </section>
 
 <?php $gn = 0; foreach ($PROJECT_GROUPS as $g): $gn++; ?>
-  <section class="proj-group"<?= $gn === 1 ? note('Проекты, оформление и тексты как на старом сайте, без деления на отрасли') : '' ?>>
+  <section class="proj-group" id="group-<?= $gn ?>"<?= $gn === 1 ? note('Проекты, оформление и тексты как на старом сайте, без деления на отрасли') : '' ?>>
     <div class="container">
       <h2 class="h2 proj-group__title"><?= $gn ?>. <?= e(t($g['title'])) ?></h2>
     </div>

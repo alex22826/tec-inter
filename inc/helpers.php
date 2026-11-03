@@ -297,7 +297,7 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
       <?= lang_switch() ?>
       <a class="btn btn--ghost btn--sm header__sd" href="<?= e($CFG['servicedesk']) ?>" target="_blank" rel="noopener"<?= note('Service Desk остается отдельной кнопкой в шапке') ?>>Service Desk</a>
       <button class="btn btn--accent btn--sm" type="button" data-lead<?= note('Кнопка открывает форму заявки. На текущем сайте она ведет на «О компании»') ?>><?= e(t('Обсудить проект')) ?></button>
-      <button class="burger" type="button" aria-label="<?= e(t('Меню')) ?>" aria-controls="nav" aria-expanded="false"><?= icon('menu') ?></button>
+      <button class="burger" type="button" aria-label="<?= e(t('Меню')) ?>" aria-controls="nav" aria-expanded="false"><?= icon('menu', 'burger__open') ?><?= icon('close', 'burger__close') ?></button>
     </div>
   </div>
 </header>
@@ -390,6 +390,7 @@ function page_end()
     <figcaption></figcaption>
   </figure>
 </div>
+<button class="to-top" type="button" aria-label="<?= e(t('Наверх')) ?>" hidden><?= icon('arrow') ?></button>
 <div class="toast" role="status" aria-live="polite"></div>
 <script>window.TEC_I18N = <?= json_encode($js, JSON_UNESCAPED_UNICODE) ?>;</script>
 <script src="<?= asset('assets/js/main.js') ?>" defer></script>

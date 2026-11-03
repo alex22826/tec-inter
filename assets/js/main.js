@@ -42,10 +42,27 @@
   var burger = $('.burger'), nav = $('#nav');
   if (burger && nav) {
     burger.addEventListener('click', function () {
+      // меню до низа экрана от нижнего края шапки: над шапкой может быть демо-полоса
+      nav.style.setProperty('--nav-top', Math.round($('.header').getBoundingClientRect().bottom) + 'px');
       var open = nav.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('is-locked', open);
     });
+  }
+
+  /* ---------- кнопка «Наверх» на длинных страницах ---------- */
+  var toTop = $('.to-top');
+  if (toTop) {
+    var topTick = false;
+    var checkTop = function () {
+      topTick = false;
+      toTop.hidden = window.scrollY < window.innerHeight * 1.5;
+    };
+    window.addEventListener('scroll', function () {
+      if (!topTick) { topTick = true; requestAnimationFrame(checkTop); }
+    }, { passive: true });
+    toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    checkTop();
   }
 
   /* ---------- UTM-метки: запоминаем при входе, отправляем с заявкой ---------- */

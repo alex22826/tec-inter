@@ -1,6 +1,6 @@
 <?php
 page_start(array(
-    'title' => t('Партнеры и статусы | Cisco, HPE, Fortinet и др. | TEC International'),
+    'title' => t('Партнеры | Cisco, HPE, Fortinet и др. | TEC International'),
     'description' => t('Работаем напрямую с производителями: официальные цены, гарантия и поддержка вендора. Партнеры TEC International по направлениям.'),
     'nav' => 'partners',
 ));

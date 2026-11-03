@@ -30,7 +30,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 /* атрибут hidden сильнее любых display: flex/grid у компонентов (фильтры, вкладки) */
 [hidden] { display: none !important; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--hh) + 20px); }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--hh) + 20px); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
   margin: 0;
   font-family: var(--font);
@@ -123,6 +123,8 @@ p { margin: 0 0 12px; }
 .lang--mobile { display: none; }
 .burger { display: none; flex: none; background: none; border: 0; padding: 6px; cursor: pointer; color: var(--ink); }
 .burger .ico { width: 26px; height: 26px; }
+.burger__close, .burger[aria-expanded="true"] .burger__open { display: none; }
+.burger[aria-expanded="true"] .burger__close { display: block; }
 
 /* ---------- первый экран ---------- */
 .hero { background: radial-gradient(1100px 520px at 80% 0%, #24276d 0%, var(--hero) 60%); color: #fff; padding: 90px 0 100px; }
@@ -157,6 +159,9 @@ p { margin: 0 0 12px; }
 .trust__item { padding: 26px 24px; }
 .trust__item b { display: block; color: var(--accent); font-size: 30px; font-weight: 700; line-height: 1.1; margin-bottom: 12px; }
 .trust__item span { font-size: 15px; line-height: 1.5; color: var(--muted); }
+/* длинные слова («сертифицированные», «Казаэронавигация») в узких карточках телефона: перенос по слогам,
+   а где браузер не умеет переносить язык, просто разрыв слова, чтобы текст не вылезал за карточку */
+.trust__item span, .client b, .client span { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
 
 .dirs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
 .dir-tile {
@@ -237,6 +242,8 @@ p { margin: 0 0 12px; }
   font-size: 15px; color: var(--ink); outline: none; transition: border-color .15s, box-shadow .15s;
 }
 .field textarea { resize: vertical; min-height: 100px; border-radius: 18px; }
+/* стрелка списка как у фильтров новостей, а не системная: одинаково на телефоне и компьютере */
+.field select { padding-right: 40px; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23222222' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center / 14px; appearance: none; -webkit-appearance: none; cursor: pointer; }
 .field input:focus, .field select:focus, .field textarea:focus, .select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(14, 137, 104, .18); }
 .field.is-invalid input, .field.is-invalid select { border-color: #d64545; }
 .consent { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--muted); cursor: pointer; }
@@ -362,6 +369,7 @@ p { margin: 0 0 12px; }
 
 /* проекты */
 .proj-group__title { margin: 8px 0 28px; }
+.proj-jump { display: none; }
 .proj { scroll-margin-top: var(--hh); }
 .proj__head { background: var(--dark); color: #fff; padding-top: 48px; }
 .proj__head h3 { color: #fff; font-size: clamp(22px, 1vw + 16px, 30px); font-weight: 700; line-height: 1.25; max-width: 680px; }
@@ -462,6 +470,14 @@ p { margin: 0 0 12px; }
 .lightbox__img img { display: block; max-width: 100%; max-height: calc(100vh - 190px); height: auto; }
 .toast { position: fixed; left: 50%; bottom: 24px; z-index: 120; transform: translate(-50%, 20px); background: var(--ink); color: #fff; padding: 12px 22px; border-radius: 30px; font-size: 14px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; max-width: calc(100% - 32px); text-align: center; }
 .toast.is-show { opacity: 1; transform: translate(-50%, 0); }
+/* «Наверх»: только на планшете и телефоне, где страницы длинные; показывает main.js после полутора экранов */
+.to-top {
+  display: none; position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 60;
+  width: 46px; height: 46px; border-radius: 50%; border: 0; background: var(--accent); color: #fff;
+  place-items: center; cursor: pointer; box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+.to-top .ico { width: 22px; height: 22px; transform: rotate(-90deg); }
+.to-top:active { background: var(--accent-d); }
 body.is-locked { overflow: hidden; }
 
 /* ---------- плавные переходы ---------- */
@@ -501,14 +517,14 @@ body.is-locked { overflow: hidden; }
   .lang { display: none; }
   .nav {
     display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 49;
-    height: calc(100vh - var(--hh)); flex-direction: column; gap: 0; background: #fff;
+    height: calc(100vh - var(--nav-top, var(--hh))); height: calc(100dvh - var(--nav-top, var(--hh))); flex-direction: column; gap: 0; background: #fff;
     padding: 12px var(--gut) 24px; overflow-y: auto; font-size: 17px; border-top: 1px solid var(--line);
   }
   .nav.is-open { display: flex; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
   .nav__mobile-extra { display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
   .nav__mobile-extra a { border: 0; }
-  .nav__mobile-extra .btn { padding: 12px; }
+  .nav__mobile-extra .btn { padding: 12px; border: 1px solid #cfcfcf; }
   .nav__phone { font-weight: 700; }
   .nav .lang--mobile { display: flex; gap: 6px; font-size: 16px; }
   .nav .lang--mobile a { border: 0; padding: 6px 8px; font-size: 16px; border-radius: 6px; }
@@ -520,14 +536,14 @@ body.is-locked { overflow: hidden; }
 .header.is-compact .lang { display: none; }
 .header.is-compact .nav {
   display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 49;
-  height: calc(100vh - var(--hh)); flex-direction: column; gap: 0; background: #fff;
+  height: calc(100vh - var(--nav-top, var(--hh))); height: calc(100dvh - var(--nav-top, var(--hh))); flex-direction: column; gap: 0; background: #fff;
   padding: 12px var(--gut) 24px; overflow-y: auto; font-size: 17px; border-top: 1px solid var(--line);
 }
 .header.is-compact .nav.is-open { display: flex; }
 .header.is-compact .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
 .header.is-compact .nav__mobile-extra { display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
 .header.is-compact .nav__mobile-extra a { border: 0; }
-.header.is-compact .nav__mobile-extra .btn { padding: 12px; }
+.header.is-compact .nav__mobile-extra .btn { padding: 12px; border: 1px solid #cfcfcf; }
 .header.is-compact .nav .lang--mobile { display: flex; gap: 6px; font-size: 16px; }
 .header.is-compact .nav .lang--mobile a { padding: 6px 8px; font-size: 16px; border-radius: 6px; }
 .header.is-compact .nav .lang--mobile a.is-active { background: var(--card); }
@@ -550,6 +566,16 @@ body.is-locked { overflow: hidden; }
   .article-side { position: static; }
   .contacts { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
+  .to-top { display: grid; }
+  /* ряды кнопок-фильтров в одну строку с прокруткой пальцем, а не простыней на полэкрана */
+  .proj-jump { display: block; margin-top: 4px; }
+  .proj-jump .chips, .picker .chips {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    margin: 0 calc(var(--gut) * -1); padding: 2px var(--gut) 8px; scroll-padding: 0 var(--gut);
+  }
+  .proj-jump .chips::-webkit-scrollbar, .picker .chips::-webkit-scrollbar { display: none; }
+  .proj-jump .chip, .picker .chip { flex: none; white-space: nowrap; }
+  .picker { padding: 24px var(--gut); }
 }
 @media (max-width: 640px) {
   :root { --gut: 16px; --hh: 64px; }
@@ -605,6 +631,36 @@ body.is-locked { overflow: hidden; }
   .modal__box { padding: 24px 18px; }
   .footer__grid { grid-template-columns: 1fr; gap: 24px; }
   .note-pin__bubble { width: 230px; }
+
+  /* кнопки и ссылки под палец: высота не меньше 38-44px */
+  .header__side .btn--accent { min-height: 38px; }
+  .burger { padding: 9px; margin-right: -9px; }
+  .footer__grid a { padding: 8px 0; }
+  .share a { padding: 8px 0; }
+  .contact-list a { display: inline-block; padding: 3px 0; }
+  /* шрифт полей не меньше 16px: иначе iPhone увеличивает страницу при нажатии на поле */
+  .field input, .field select, .field textarea, .select { font-size: 16px; }
+  .modal, .lightbox { padding: 12px; }
+  .modal__box { max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); }
+
+  /* форма-баннер: заголовок ближе к полям */
+  .band { gap: 20px; }
+  .band h2 { margin-bottom: 0; }
+
+  /* вкладки «О компании»: все три видны сразу, длинные подписи в две строки */
+  .tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; overflow: visible; }
+  .tab { display: flex; align-items: center; justify-content: center; text-align: center; white-space: normal; padding: 10px 6px 12px; font-size: 14px; line-height: 1.25; }
+
+  /* цифры компании и госзакупок: строки «число и подпись», а не три высокие карточки друг под другом */
+  .stats--3 { gap: 8px; margin-bottom: 32px; }
+  .stats--3 .stat { display: flex; align-items: baseline; gap: 14px; padding: 14px 18px; text-align: left; }
+  .stats--3 .stat b { flex: none; font-size: 24px; }
+  .stats--3 .stat span { font-size: 14px; }
+
+  /* «Нас выбирают» в карточке: меньше полей, чтобы названия заказчиков влезали */
+  .box { padding: 20px 14px; }
+  .box .clients { gap: 10px; }
+  .client span { letter-spacing: .4px; }
 }
 @media (max-width: 400px) {
   .logo img { height: 30px; }

@@ -101,7 +101,7 @@ Veeam Backup & Replication, внедрение ⟫ Veeam Backup & Replication, d
 заменить устаревшие серверы без остановки сервисов ⟫ replace outdated servers without service downtime ⟫ сервистерді тоқтатпай ескірген серверлерді ауыстыру
 новые серверы, виртуализация, поэтапная миграция ⟫ new servers, virtualisation, phased migration ⟫ жаңа серверлер, виртуализация, кезең-кезеңімен көшу
 Партнеры ⟫ Partners ⟫ Серіктестер
-Все партнеры и статусы ⟫ All partners and statuses ⟫ Барлық серіктестер мен мәртебелер
+Все партнеры ⟫ All partners ⟫ Барлық серіктестер
 Нас выбирают ⟫ Our clients ⟫ Бізді таңдайды
 РГП «Казаэронавигация» ⟫ RSE Kazaeronavigatsia ⟫ «Қазаэронавигация» РМК
 Аэронавигация ⟫ Air navigation ⟫ Аэронавигация

@@ -88,7 +88,7 @@ foreach ($PROJECT_GROUPS as $g) {
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Партнеры')) ?></h2>
-      <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнеры и статусы')) ?> →</a>
+      <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнеры')) ?> →</a>
     </div>
     <div class="logos">
       <?php foreach (array_slice($PARTNERS, 0, 12) as $slug => $pt): ?>
