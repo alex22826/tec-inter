@@ -43,7 +43,7 @@ body {
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
-h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0; font-weight: 600; }
+h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0; font-weight: 600; overflow-wrap: break-word; }
 p { margin: 0 0 12px; }
 .container { width: 100%; max-width: calc(1340px + var(--gut) * 2); margin: 0 auto; padding: 0 var(--gut); }
 .muted { color: var(--muted); }
@@ -163,7 +163,7 @@ p { margin: 0 0 12px; }
    а где браузер не умеет переносить язык, просто разрыв слова, чтобы текст не вылезал за карточку */
 .trust__item span, .client b, .client span { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
 
-.dirs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.dirs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
 .dir-tile {
   display: flex; flex-direction: column; gap: 12px;
   padding: 24px 22px; transition: border-color .2s, box-shadow .2s, transform .2s;
@@ -171,7 +171,7 @@ p { margin: 0 0 12px; }
 .dir-tile:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 .dir-tile__ico { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-l); color: var(--accent); display: grid; place-items: center; }
 .dir-tile__ico .ico { width: 24px; height: 24px; }
-.dir-tile b { color: var(--ink); font-size: 17px; font-weight: 600; line-height: 1.35; }
+.dir-tile b { color: var(--ink); font-size: 17px; font-weight: 600; line-height: 1.35; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
 .dir-tile__more { margin-top: auto; color: var(--accent-d); font-size: 15px; font-weight: 600; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -506,7 +506,7 @@ body.is-locked { overflow: hidden; }
 /* ---------- адаптив ---------- */
 @media (max-width: 1200px) {
   .header__sd { display: none; }
-  .dirs { grid-template-columns: repeat(4, 1fr); }
+  .dirs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .trust { grid-template-columns: repeat(3, 1fr); }
   .clients--row { grid-template-columns: repeat(4, 1fr); }
   .docs { grid-template-columns: repeat(4, 1fr); }
@@ -555,6 +555,8 @@ body.is-locked { overflow: hidden; }
   .steps { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
   .steps::before { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  /* «Специализированные системы» в 4 колонки планшета не помещалось и раздвигало страницу */
+  .dirs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .logos { grid-template-columns: repeat(4, 1fr); }
   .band { grid-template-columns: 1fr; }
   .sol-item, .proj__body { grid-template-columns: 1fr; gap: 28px; }
@@ -567,15 +569,21 @@ body.is-locked { overflow: hidden; }
   .contacts { grid-template-columns: 1fr; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
   .to-top { display: grid; }
-  /* ряды кнопок-фильтров в одну строку с прокруткой пальцем, а не простыней на полэкрана */
+  /* переход к группам проектов: названия длинные, поэтому все четыре столбиком */
   .proj-jump { display: block; margin-top: 4px; }
-  .proj-jump .chips, .picker .chips {
+  .proj-jump .chips { gap: 8px; }
+  .proj-jump .chip { font-size: 14px; padding: 9px 16px; }
+  /* отрасли в подборе решения: одна строка с прокруткой пальцем, а не простыня на полэкрана */
+  .picker .chips {
     flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
     margin: 0 calc(var(--gut) * -1); padding: 2px var(--gut) 8px; scroll-padding: 0 var(--gut);
   }
-  .proj-jump .chips::-webkit-scrollbar, .picker .chips::-webkit-scrollbar { display: none; }
-  .proj-jump .chip, .picker .chip { flex: none; white-space: nowrap; }
+  .picker .chips::-webkit-scrollbar { display: none; }
+  .picker .chip { flex: none; white-space: nowrap; }
   .picker { padding: 24px var(--gut); }
+}
+@media (max-width: 860px) {
+  .dirs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
   :root { --gut: 16px; --hh: 64px; }
@@ -648,7 +656,9 @@ body.is-locked { overflow: hidden; }
   .band h2 { margin-bottom: 0; }
 
   /* вкладки «О компании»: все три видны сразу, длинные подписи в две строки */
-  .tabs { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 0; overflow: visible; }
+  /* три вкладки: крайние короткие и по ширине текста, средняя «Сертификаты и благодарности» забирает остаток
+     и ломается в 2 строки */
+  .tabs { display: grid; grid-template-columns: max-content 1fr max-content; gap: 0; overflow: visible; }
   .tab { display: flex; align-items: center; justify-content: center; text-align: center; white-space: normal; padding: 10px 6px 12px; font-size: 14px; line-height: 1.25; }
 
   /* цифры компании и госзакупок: строки «число и подпись», а не три высокие карточки друг под другом */
@@ -667,6 +677,8 @@ body.is-locked { overflow: hidden; }
   .header__in { gap: 8px; }
   .header__side { gap: 6px; }
   .header__side .btn--accent { padding: 7px 10px; font-size: 12px; }
+  /* «Специализированные» в заголовке группы проектов на самых узких телефонах */
+  .h2 { font-size: 25px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }

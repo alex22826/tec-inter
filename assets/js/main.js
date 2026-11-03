@@ -43,7 +43,7 @@
   if (burger && nav) {
     burger.addEventListener('click', function () {
       // меню до низа экрана от нижнего края шапки: над шапкой может быть демо-полоса
-      nav.style.setProperty('--nav-top', Math.round($('.header').getBoundingClientRect().bottom) + 'px');
+      nav.style.setProperty('--nav-top', Math.floor($('.header').getBoundingClientRect().bottom) + 'px');
       var open = nav.classList.toggle('is-open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('is-locked', open);
