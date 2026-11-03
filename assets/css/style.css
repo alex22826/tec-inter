@@ -300,13 +300,7 @@ p { margin: 0 0 12px; }
 .partner:target { box-shadow: 0 0 0 3px var(--accent); }
 .partner__logo { height: 84px; padding: 12px 16px; display: grid; place-items: center; border-bottom: 1px solid var(--line); }
 .partner__name { display: block; text-align: center; color: var(--ink); font-size: 16px; font-weight: 600; padding-top: 12px; }
-.partner__foot { display: flex; align-items: center; justify-content: space-between; padding: 12px 4px 2px; }
-.status { padding: 3px 10px; border-radius: 4px; background: var(--green-l); color: var(--accent-d); font-size: 12px; font-weight: 600; }
-.status--todo { background: #fff; border: 1px dashed #bdbdbd; color: var(--muted); font-weight: 600; }
-/* статус с сертификатом: ссылка на документ во вкладке «Сертификаты» */
-.status--cert { display: inline-flex; align-items: center; gap: 4px; transition: background .15s, color .15s; }
-.status--cert .ico { width: 13px; height: 13px; }
-.status--cert:hover { background: var(--green); color: #fff; }
+.partner__foot { display: flex; justify-content: center; padding: 12px 4px 2px; }
 
 /* о компании */
 /* серая линия тенью, а не рамкой: так полоска активной вкладки ложится поверх нее и не обрезается прокруткой */
@@ -599,7 +593,6 @@ body.is-locked { overflow: hidden; }
   .proj__body { padding-bottom: 44px; }
   .proj__body h4 { text-align: left; }
   .partners { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .partner__foot { flex-direction: column; align-items: flex-start; gap: 8px; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats--3 { grid-template-columns: 1fr; }
   .values, .advantages { grid-template-columns: 1fr; }
