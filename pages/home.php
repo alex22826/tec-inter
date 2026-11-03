@@ -107,11 +107,11 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section" id="lead"<?= note('Форма «Обсудить техническую задачу»') ?>>
+<section class="section" id="lead"<?= note('Форма «Оставить заявку»') ?>>
   <div class="container">
     <div class="band">
       <div class="band__text">
-        <h2><?= e(t('Обсудить техническую задачу')) ?></h2>
+        <h2><?= e(t('Оставить заявку')) ?></h2>
       </div>
       <?= lead_form('band', 'home') ?>
     </div>

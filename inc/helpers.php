@@ -191,7 +191,7 @@ function lead_form($variant, $source)
     }
     $h .= '</div>';
     $h .= '<label class="consent"><input type="checkbox" name="consent" value="1" required> <span>' . e(t('Согласен на обработку персональных данных')) . '</span></label>';
-    $h .= '<div class="form-foot"><button class="btn btn--accent" type="submit">' . e(t('Отправить заявку')) . '</button><p class="form-msg" role="status" aria-live="polite"></p></div>';
+    $h .= '<div class="form-foot"><button class="btn btn--accent" type="submit">' . e(t('Отправить')) . '</button><p class="form-msg" role="status" aria-live="polite"></p></div>';
     $h .= '</form>';
     return $h;
 }

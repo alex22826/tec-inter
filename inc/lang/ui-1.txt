@@ -115,7 +115,7 @@ Veeam Backup & Replication, внедрение ⟫ Veeam Backup & Replication, d
 Промышленность ⟫ Industry ⟫ Өнеркәсіп
 ТОО «Мечта Маркет» ⟫ Mechta Market LLP ⟫ «Мечта Маркет» ЖШС
 Ритейл ⟫ Retail ⟫ Ритейл
-Обсудить техническую задачу ⟫ Discuss a technical task ⟫ Техникалық міндетті талқылау
+Оставить заявку ⟫ Leave a request ⟫ Өтінім қалдыру
 Ответим в течение рабочего дня, проконсультируем и предложим 2-3 варианта решения. ⟫ We will reply within one business day, advise you and offer 2-3 solution options. ⟫ Жұмыс күні ішінде жауап беріп, кеңес береміз және 2-3 шешім нұсқасын ұсынамыз.
 Ответим в течение рабочего дня и предложим 2-3 варианта решения. ⟫ We will reply within one business day and offer 2-3 solution options. ⟫ Жұмыс күні ішінде жауап беріп, 2-3 шешім нұсқасын ұсынамыз.
 Имя ⟫ Name ⟫ Аты
@@ -130,7 +130,7 @@ Veeam Backup & Replication, внедрение ⟫ Veeam Backup & Replication, d
 Выставка, мероприятие ⟫ Exhibition or event ⟫ Көрме, іс-шара
 Другое ⟫ Other ⟫ Басқа
 Согласен на обработку персональных данных ⟫ I agree to the processing of my personal data ⟫ Дербес деректерімді өңдеуге келісемін
-Отправить заявку ⟫ Send request ⟫ Өтінім жіберу
+Отправить ⟫ Send ⟫ Жіберу
 Заполните имя, телефон и отметьте согласие ⟫ Please enter your name and phone and tick the consent box ⟫ Атыңыз бен телефоныңызды толтырып, келісімді белгілеңіз
 Отправляем заявку ⟫ Sending your request ⟫ Өтінім жіберілуде
 Заявка отправлена ⟫ Request sent ⟫ Өтінім жіберілді
