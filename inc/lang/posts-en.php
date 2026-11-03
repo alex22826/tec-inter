@@ -31,16 +31,6 @@ return array(
 <p class="post-note">Demo text for the mock-up: check against the current version of the requirements before publishing.</p>
 HTML
     ),
-    'fortinet-partner-status' => array(
-        'title' => 'TEC International confirms its Fortinet partner status',
-        'excerpt' => 'Example of a news item about a partner status: short, dated and linked to a solution.',
-        'cta' => array('Need a Fortinet NGFW?', 'We will select the model and licences for your network'),
-        'body' => <<<'HTML'
-<p>Example news format. TEC International has confirmed its Fortinet partner status. For clients this means direct work with the manufacturer, official prices, warranty and vendor support.</p>
-<p>The partner certificate is available under “About us → Certificates”.</p>
-<p class="post-note">Demo news item: replace the text and status with the actual ones.</p>
-HTML
-    ),
     'vmware-broadcom' => array(
         'title' => 'VMware after the Broadcom acquisition: what has changed',
         'excerpt' => 'Subscriptions instead of perpetual licences, new product bundles and the alternatives available.',
@@ -59,15 +49,6 @@ HTML
 <h3>Move to an alternative platform</h3>
 <p>Migration needs a pilot and a plan, but it can reduce the total cost of ownership. Backup during the migration is a must.</p>
 <p class="post-note">Demo text for the mock-up.</p>
-HTML
-    ),
-    'aeronavigation-svyaz' => array(
-        'title' => 'Communication equipment project for air navigation completed',
-        'excerpt' => 'Example of a project news item: the task, what was done, the result.',
-        'cta' => array('Have a similar task?', 'Tell us about your project and we will offer 2-3 solution options'),
-        'body' => <<<'HTML'
-<p>Example format of a project news item. Task: upgrade the communication equipment at air navigation sites. What we did: supply, installation and commissioning together with the manufacturer.</p>
-<p class="post-note">Demo news item: replace with the actual text; client name only with their consent.</p>
 HTML
     ),
     'server-1c-sap' => array(

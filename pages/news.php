@@ -6,7 +6,9 @@ page_start(array(
 ));
 $rubrics = array();
 $inds = array();
+$types = array(); // подгруппа «Новости» видна, только когда есть хотя бы одна новость
 foreach ($POSTS as $p) {
+    $types[$p['type']] = true;
     $rubrics[$p['rubric']] = true;
     if ($p['industry']) {
         $inds[$p['industry']] = $INDUSTRIES[$p['industry']]['title'];
@@ -23,10 +25,10 @@ foreach ($POSTS as $p) {
 <section class="section section--tight">
   <div class="container">
     <div class="filters">
-      <div class="chips filter" data-filter="type" role="group" aria-label="<?= e(t('Тип')) ?>"<?= note('Вкладки: Все / Новости / Статьи') ?>>
+      <div class="chips filter" data-filter="type" role="group" aria-label="<?= e(t('Тип')) ?>"<?= note('Вкладки: Все / Новости / Статьи. «Новости» появятся сами с первой новостью компании') ?>>
         <button class="chip is-active" type="button" data-value="" aria-pressed="true"><?= e(t('Все')) ?></button>
-        <button class="chip" type="button" data-value="news" aria-pressed="false"><?= e(t('Новости')) ?></button>
-        <button class="chip" type="button" data-value="article" aria-pressed="false"><?= e(t('Статьи')) ?></button>
+        <?php if (!empty($types['news'])): ?><button class="chip" type="button" data-value="news" aria-pressed="false"><?= e(t('Новости')) ?></button><?php endif; ?>
+        <?php if (!empty($types['article'])): ?><button class="chip" type="button" data-value="article" aria-pressed="false"><?= e(t('Статьи')) ?></button><?php endif; ?>
       </div>
       <div class="selects"<?= note('Фильтр по рубрике и отрасли') ?>>
         <select class="select filter-select" data-filter="rubric" aria-label="<?= e(t('Рубрика')) ?>">

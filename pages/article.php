@@ -57,7 +57,7 @@ page_start(array(
     <div class="side-cta"<?= note('Блок заявки сбоку, чтобы статья приводила клиента') ?>>
       <h2><?= e($cta[0]) ?></h2>
       <p><?= e($cta[1]) ?></p>
-      <button class="btn btn--accent" type="button" data-lead data-direction="<?= e($post['dir']) ?>"><?= e(t('Получить консультацию')) ?></button>
+      <button class="btn btn--accent" type="button" data-lead data-direction="<?= e($post['dir']) ?>"><?= e(t('Обсудить проект')) ?></button>
     </div>
     <?php if ($dir): ?>
       <div class="side-box"<?= note('Связанное решение') ?>>

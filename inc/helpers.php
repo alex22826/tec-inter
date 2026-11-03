@@ -77,6 +77,7 @@ function icon($name, $cls = '')
         'menu'       => '<path d="M4 7h16M4 12h16M4 17h16"/>',
         'close'      => '<path d="M6 6l12 12M18 6L6 18"/>',
         'check'      => '<path d="M5 12l5 5L20 7"/>',
+        'edit'       => '<path d="M11 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6"/><path d="M17.5 3.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/>',
         'download'   => '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>',
         'external'   => '<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
     );
@@ -96,18 +97,38 @@ function cover($icon, $caption = '', $cls = '')
     return '<div class="cover ' . e($cls) . '">' . icon($icon, 'cover__ico') . ($caption ? '<span class="cover__cap">' . e($caption) . '</span>' : '') . '</div>';
 }
 
-function project_card($p)
+// Карточка проекта для главной: группа, название и первые пункты «Что получили»
+function project_teaser($p, $group)
 {
-    global $DIRECTIONS, $INDUSTRIES;
-    $d = $DIRECTIONS[$p['dir']];
-    $h  = '<article class="card project" data-industry="' . e($p['industry']) . '" data-dir="' . e($p['dir']) . '">';
-    $h .= cover($d['icon'], t('фото проекта'));
-    $h .= '<div class="project__body"><span class="tag">' . e(t($INDUSTRIES[$p['industry']]['title'])) . '</span>';
-    $h .= '<h3>' . e(t($p['title'])) . '</h3>';
-    $h .= '<p><b>' . e(t('Задача:')) . '</b> ' . e(t($p['task'])) . '</p>';
-    $h .= '<p><b>' . e(t('Решение:')) . '</b> ' . e(t($p['solution'])) . '</p>';
-    $h .= '<a class="link" href="' . dir_link($p['dir']) . '">' . e(t($d['title'])) . ' →</a></div></article>';
+    $h  = '<article class="card project"><div class="project__body">';
+    $h .= '<span class="tag">' . e(t($group)) . '</span>';
+    $h .= '<h3>' . e(t($p['title'])) . '</h3><ul class="project__got">';
+    foreach (array_slice($p['got'], 0, 4) as $g) {
+        $h .= '<li>' . icon('check') . e(t($g)) . '</li>';
+    }
+    $h .= '</ul><a class="link" href="' . url('projects/') . '#' . e($p['id']) . '">' . e(t('Подробнее')) . ' →</a></div></article>';
     return $h;
+}
+
+// Логотип партнера. $alt = false, когда название и так написано рядом
+function partner_logo($pt, $alt = true)
+{
+    return '<img src="' . asset('assets/img/partners/' . $pt['logo']) . '" alt="' . ($alt ? e(t($pt['name'])) : '') . '" loading="lazy">';
+}
+
+// Заказчик: логотип, если он есть, и название. $industry — подпись с отраслью
+function client_tile($c, $industry = true)
+{
+    $h = '<div class="client' . ($c[2] ? ' client--logo' : '') . '">';
+    if ($c[2]) {
+        // название написано рядом, поэтому alt пустой
+        $h .= '<img src="' . asset('assets/img/clients/' . $c[2]) . '" alt="" loading="lazy">';
+    }
+    $h .= '<b>' . e(t($c[0])) . '</b>';
+    if ($industry) {
+        $h .= '<span>' . e(t($c[1])) . '</span>';
+    }
+    return $h . '</div>';
 }
 
 function post_card($slug, $p)

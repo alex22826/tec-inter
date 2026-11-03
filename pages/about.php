@@ -1,42 +1,43 @@
 <?php
 page_start(array(
     'title' => t('О компании | С 2008 года | TEC International'),
-    'description' => t('Системный интегратор полного цикла TEC International работает с 2008 года. История, команда, сертификаты, лицензии и заказчики.'),
+    'description' => t('Системный интегратор полного цикла TEC International работает с 2008 года. Преимущества, сертификаты партнеров и заказчики.'),
     'nav' => 'about',
 ));
 
 $now = date('Y-m');
 $TABS = array(
     'about'        => 'О нас',
-    'history'      => 'История',
-    'team'         => 'Команда',
     'certificates' => 'Сертификаты и благодарности',
-    'clients'      => 'Нам доверяют',
+    'clients'      => 'Нас выбирают',
 );
-
-function timeline($items)
-{
-    $h = '<ol class="timeline">';
-    foreach ($items as $it) {
-        $h .= '<li><span class="timeline__dot"></span><b>' . e($it[0]) . '</b><span>' . e(t($it[1])) . '</span></li>';
-    }
-    return $h . '</ol>';
-}
 
 function clients_grid($items)
 {
     $h = '<div class="clients">';
     foreach ($items as $c) {
-        $h .= '<div class="client"><b>' . e(t($c[0])) . '</b><span>' . e(t($c[1])) . '</span></div>';
+        $h .= client_tile($c);
     }
     return $h . '</div>';
+}
+
+// документы, которые показываем: просроченные скрыты (ТЗ, слайд 12)
+$docs = array();
+$docTypes = array(); // подгруппы, в которых есть хотя бы один документ
+foreach ($DOCS as $doc) {
+    $doc['st'] = doc_status($doc['valid'], $now);
+    if ($doc['st'] === 'expired') {
+        continue;
+    }
+    $docs[] = $doc;
+    $docTypes[$doc['type']] = true;
 }
 ?>
 <section class="page-head page-head--tabs">
   <div class="container">
     <?= breadcrumbs(array(t('О компании') => '')) ?>
     <h1><?= e(t('О компании')) ?></h1>
-    <div class="tabs" role="tablist"<?= note('Вкладки подразделов: О нас, История, Команда, Сертификаты и благодарности, Нам доверяют') ?>>
+    <div class="tabs" role="tablist"<?= note('Вкладки подразделов: О нас, Сертификаты и благодарности, Нас выбирают') ?>>
       <?php $first = true; foreach ($TABS as $id => $label): ?>
         <a class="tab<?= $first ? ' is-active' : '' ?>" href="#<?= $id ?>" role="tab" data-tab="<?= $id ?>" aria-selected="<?= $first ? 'true' : 'false' ?>"><?= e(t($label)) ?></a>
       <?php $first = false; endforeach; ?>
@@ -49,11 +50,10 @@ function clients_grid($items)
     <div class="about-intro">
       <div>
         <p class="lead"><?= e(t('TEC International, системный интегратор полного цикла, с 2008 года проектирует, поставляет, внедряет и поддерживает IT-инфраструктуру для госсектора, промышленности и бизнеса по всему Казахстану.')) ?></p>
-        <div class="stats"<?= note('Ключевые цифры компании, число инженеров подставить') ?>>
+        <div class="stats stats--3"<?= note('Ключевые цифры компании') ?>>
           <div class="stat"><b>2008</b><span><?= e(t('год основания')) ?></span></div>
           <div class="stat"><b>120+</b><span><?= e(t('проектов')) ?></span></div>
           <div class="stat"><b>20+</b><span><?= e(t('вендоров')) ?></span></div>
-          <div class="stat stat--todo"><b>___</b><span><?= e(t('инженеров')) ?></span></div>
         </div>
       </div>
       <div class="photo-ph">
@@ -63,61 +63,42 @@ function clients_grid($items)
     </div>
 
     <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
-    <p class="muted"><?= e(t('Подтвержденный объем выполненных контрактов позволяет участвовать в закупках с лимитами:')) ?></p>
-    <div class="stats stats--3">
+    <div class="stats stats--3"<?= note('Актуальные суммы пришлет TEC') ?>>
       <div class="stat"><b><?= e(t('15,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>
       <div class="stat"><b><?= e(t('3,3 млрд ₸')) ?></b><span><?= e(t('выполнение работ')) ?></span></div>
       <div class="stat"><b><?= e(t('3,6 млрд ₸')) ?></b><span><?= e(t('оказание услуг')) ?></span></div>
     </div>
 
-    <div class="values"<?= note('Миссия и ценности перенесены с главной') ?>>
+    <div class="values"<?= note('Миссия, цель и ценности со старого сайта') ?>>
       <div class="value"><h3><?= e(t('Миссия')) ?></h3><p><?= e(t('Помочь заказчикам повысить эффективность и безопасность IT-инфраструктуры, чтобы они могли максимально реализовать потенциал своего бизнеса.')) ?></p></div>
       <div class="value"><h3><?= e(t('Цель')) ?></h3><p><?= e(t('Быть командой профессионалов, которой доверяют самые сложные и инновационные проекты.')) ?></p></div>
       <div class="value"><h3><?= e(t('Ценности')) ?></h3><p><?= e(t('Профессионализм, порядочность, честность, постоянное развитие, лояльность, конфиденциальность.')) ?></p></div>
     </div>
 
-    <h2 class="h3"><?= e(t('История')) ?></h2>
-    <?= timeline($HISTORY) ?>
+    <h2 class="h3"<?= note('Преимущества нашей компании со страницы «О компании» старого сайта') ?>><?= e(t('Преимущества нашей компании')) ?></h2>
+    <div class="advantages">
+      <?php foreach ($ADVANTAGES as $adv): ?>
+        <div class="advantage"><?= icon('check', 'advantage__ico') ?><p><?= e(t($adv)) ?></p></div>
+      <?php endforeach; ?>
+    </div>
 
     <div class="box">
-      <h2 class="h3"><?= e(t('Нам доверяют / Нас выбирают')) ?></h2>
+      <h2 class="h3"><?= e(t('Нас выбирают')) ?></h2>
       <?= clients_grid(array_slice($CLIENTS, 0, 6)) ?>
     </div>
   </section>
 
-  <section class="tab-panel" data-panel="history" role="tabpanel" hidden>
-    <h2 class="h3"><?= e(t('История компании')) ?></h2>
-    <p class="muted"<?= note('История в виде таймлайна с 2008 года, годы заполнить') ?>><?= e(t('Путь от систем безопасности к интегратору полного цикла. Годы промежуточных этапов уточнить.')) ?></p>
-    <?= timeline($HISTORY) ?>
-  </section>
-
-  <section class="tab-panel" data-panel="team" role="tabpanel" hidden>
-    <h2 class="h3"><?= e(t('Команда и компетенции')) ?></h2>
-    <p class="muted"><?= e(t('Сертифицированные инженеры по каждому направлению. Количество специалистов и фото добавим позже.')) ?></p>
-    <div class="team">
-      <?php foreach ($TEAM as $tm): ?>
-        <div class="team__item">
-          <span class="team__ico"><?= icon($tm[0]) ?></span>
-          <h3><?= e(t($tm[1])) ?></h3>
-          <p><?= e(t($tm[2])) ?></p>
-          <span class="tag tag--light"><?= e(t($tm[3])) ?></span>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-
   <section class="tab-panel" data-panel="certificates" role="tabpanel" hidden>
-    <div class="chips filter" data-filter="type" role="group" aria-label="<?= e(t('Тип документа')) ?>"<?= note('Фильтр по типу документа') ?>>
+    <div class="chips filter" data-filter="type" role="group" aria-label="<?= e(t('Тип документа')) ?>"<?= note('Подгруппы лицензий и благодарственных писем скрыты, пока в них нет документов, и появятся сами с первым документом') ?>>
       <button class="chip is-active" type="button" data-value="" aria-pressed="true"><?= e(t('Все')) ?></button>
-      <?php foreach ($DOC_TYPES as $k => $label): ?>
+      <?php foreach ($DOC_TYPES as $k => $label): if (empty($docTypes[$k])) continue; ?>
         <button class="chip" type="button" data-value="<?= e($k) ?>" aria-pressed="false"><?= e(t($label)) ?></button>
       <?php endforeach; ?>
     </div>
     <div class="docs" data-filter-list>
       <?php $licenseNoted = false; $vendorSeen = array();
-      foreach ($DOCS as $doc):
-          $st = doc_status($doc['valid'], $now);
-          if ($st === 'expired') continue; // просроченные не показываем
+      foreach ($docs as $doc):
+          $st = $doc['st'];
           $title = t($doc['title']);
           $noteHtml = '';
           if ($doc['type'] === 'license' && !$licenseNoted) {
@@ -169,7 +150,7 @@ function clients_grid($items)
         </article>
       <?php endforeach; ?>
     </div>
-    <p class="footnote"><?= e(t('* Скан увеличивается по клику. Партнерские статусы подтверждены документами вендоров, лицензии, сертификаты инженеров и письма пока даны для примера. Загрузка через админку, просроченные документы скрываются автоматически по дате.')) ?></p>
+    <p class="footnote"><?= e(t('* Скан увеличивается по клику. Просроченные документы скрываются автоматически по дате.')) ?></p>
   </section>
 
   <section class="tab-panel" data-panel="clients" role="tabpanel" hidden>
@@ -180,14 +161,8 @@ function clients_grid($items)
 </div>
 
 <section class="section">
-  <div class="container">
-    <div class="band band--compact">
-      <div class="band__text">
-        <h2><?= e(t('Обсудим ваш проект?')) ?></h2>
-        <p><?= e(t('Подготовим 2-3 варианта решения под задачу и бюджет.')) ?></p>
-      </div>
-      <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
-    </div>
+  <div class="container cta-only">
+    <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
   </div>
 </section>
 <?php page_end();

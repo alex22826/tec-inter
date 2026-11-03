@@ -1,0 +1,40 @@
+# Проверка ветки перед слиянием в main: рендер всех страниц на PHP 5.6, как на Beget.
+# Локально PHP нет, поэтому готовый HTML скачивается артефактом (gh run download) и смотрится в браузере.
+# На Pages ничего не публикует.
+name: Проверка ветки
+
+on:
+  push:
+    branches-ignore: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '5.6'
+          tools: none
+
+      - name: Синтаксис PHP 5.6
+        run: find . -name '*.php' -not -path './_site/*' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: Рендер страниц
+        run: bash tools/build-static.sh _site
+
+      - name: Проверка ссылок
+        if: always()
+        run: python3 -I tools/check-static.py _site /tec-inter
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: site
+          path: _site
+          retention-days: 3

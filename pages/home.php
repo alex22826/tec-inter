@@ -4,8 +4,18 @@ page_start(array(
     'description' => t('Любая IT-задача под ключ: проектирование, поставка оборудования и ПО, интеграция, запуск и поддержка 24/7. Системный интегратор полного цикла с 2008 года.'),
     'nav' => '',
 ));
+
+// проекты для блока «Наши проекты»: id из $PROJECTS_HOME, группа нужна для подписи
+$homeProjects = array();
+foreach ($PROJECT_GROUPS as $g) {
+    foreach ($g['projects'] as $p) {
+        if (in_array($p['id'], $PROJECTS_HOME, true)) {
+            $homeProjects[$p['id']] = array($p, $g['title']);
+        }
+    }
+}
 ?>
-<section class="hero"<?= note('Первый экран: заголовок, кнопки «Обсудить проект» и «Подобрать решение»') ?>>
+<section class="hero"<?= note('Первый экран: заголовок и одна кнопка «Обсудить проект»') ?>>
   <div class="container hero__grid">
     <div class="hero__text">
       <p class="eyebrow"><?= e(t('Системный интегратор полного цикла')) ?></p>
@@ -13,7 +23,6 @@ page_start(array(
       <p class="hero__lead"><?= e(t('Проектирование, оборудование, ПО, интеграция, настройка и запуск для госсектора, промышленности и бизнеса с 2008 года.')) ?></p>
       <div class="hero__btns">
         <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
-        <a class="btn btn--outline-light btn--lg" href="<?= url('solutions/') ?>#picker"><?= e(t('Подобрать решение')) ?></a>
       </div>
     </div>
     <div class="hero__media">
@@ -52,17 +61,6 @@ page_start(array(
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Решения для 11 отраслей: клиент сразу видит, что задача по адресу') ?>>
-  <div class="container">
-    <h2 class="h2"><?= e(t('Решения для отраслей')) ?></h2>
-    <div class="chips">
-      <?php foreach ($INDUSTRIES as $slug => $ind): ?>
-        <a class="chip" href="<?= url('solutions/') ?>?industry=<?= e($slug) ?>#picker"><?= e(t($ind['title'])) ?></a>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
 <section class="section section--gray"<?= note('Комплексный подход: проектирование → оборудование → ПО → интеграция → настройка → запуск → поддержка') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Комплексный подход')) ?></h2>
@@ -74,14 +72,14 @@ page_start(array(
   </div>
 </section>
 
-<section class="section"<?= note('Наши проекты: задача → решение, подборка из раздела «Проекты»') ?>>
+<section class="section"<?= note('Наши проекты: подборка со страницы «Проекты»') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Наши проекты')) ?></h2>
       <a class="btn btn--outline btn--sm" href="<?= url('projects/') ?>"><?= e(t('Все проекты')) ?> →</a>
     </div>
     <div class="grid-3">
-      <?php foreach (array_slice($PROJECTS, 0, 3) as $p) echo project_card($p); ?>
+      <?php foreach ($PROJECTS_HOME as $id) echo project_teaser($homeProjects[$id][0], $homeProjects[$id][1]); ?>
     </div>
   </div>
 </section>
@@ -94,19 +92,17 @@ page_start(array(
     </div>
     <div class="logos">
       <?php foreach (array_slice($PARTNERS, 0, 12) as $slug => $pt): ?>
-        <a class="logo-tile" href="<?= url('partners/') ?>#<?= e($slug) ?>"><?= e(t($pt['name'])) ?></a>
+        <a class="logo-tile" href="<?= url('partners/') ?>#<?= e($slug) ?>"><?= partner_logo($pt) ?></a>
       <?php endforeach; ?>
     </div>
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Строка «Нас выбирают»: названия заказчиков с отраслью. Логотипы гос- и квазигос-клиентов только с их согласия') ?>>
+<section class="section section--tight"<?= note('«Нас выбирают»: логотипы с официальных сайтов заказчиков, где логотипа нет, название') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Нас выбирают')) ?></h2>
     <div class="clients clients--row">
-      <?php foreach ($CLIENTS as $c): ?>
-        <div class="client"><b><?= e(t($c[0])) ?></b><span><?= e(t($c[1])) ?></span></div>
-      <?php endforeach; ?>
+      <?php foreach ($CLIENTS as $c) echo client_tile($c, false); ?>
     </div>
   </div>
 </section>
@@ -116,7 +112,6 @@ page_start(array(
     <div class="band">
       <div class="band__text">
         <h2><?= e(t('Обсудить техническую задачу')) ?></h2>
-        <p><?= e(t('Ответим в течение рабочего дня, проконсультируем и предложим 2-3 варианта решения.')) ?></p>
       </div>
       <?= lead_form('band', 'home') ?>
     </div>

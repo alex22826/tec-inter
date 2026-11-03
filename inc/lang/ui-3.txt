@@ -1,0 +1,298 @@
+# Проекты со страницы «Проекты» на tec-inter.kz: русский ⟫ английский ⟫ казахский
+Серверное и вычислительное оборудование ⟫ Server and computing equipment ⟫ Серверлік және есептеу жабдығы
+Поставка серверного оборудования для хранения данных SAP в ЦОД ⟫ Server equipment supply for SAP data storage in a data center ⟫ Деректер орталығында SAP деректерін сақтауға арналған серверлік жабдық жеткізу
+Развернули серверный кластер ⟫ Deployed a server cluster ⟫ Серверлік кластерді өрістеттік
+Настроили отказоустойчивость между двумя ЦОД ⟫ Set up failover between two data centers ⟫ Екі деректер орталығы арасында ақауға төзімділікті баптадық
+Внедрили виртуализацию ресурсов ⟫ Implemented resource virtualization ⟫ Ресурстарды виртуализациялауды енгіздік
+Интегрировали систему в ИТ-инфраструктуру ⟫ Integrated the system into the IT infrastructure ⟫ Жүйені IT-инфрақұрылымға біріктірдік
+Настроили централизованное администрирование ⟫ Set up centralized administration ⟫ Орталықтандырылған әкімшілендіруді баптадық
+Подготовили эксплуатационные инструкции ⟫ Prepared operating instructions ⟫ Пайдалану нұсқаулықтарын дайындадық
+Обучили ИТ-персонал ⟫ Trained IT staff ⟫ IT-қызметкерлерді оқыттық
+Установили комплект ЗИП ⟫ Installed a spare parts kit ⟫ Қосалқы бөлшектер жиынтығын орнаттық
+Запустили систему мониторинга ⟫ Launched a monitoring system ⟫ Мониторинг жүйесін іске қостық
+Непрерывная работа SAP ⟫ Uninterrupted SAP operation ⟫ SAP үздіксіз жұмысы
+Устойчивость при сбоях ⟫ Resilience to failures ⟫ Ақаулар кезіндегі тұрақтылық
+Быстрое восстановление после аварий ⟫ Fast disaster recovery ⟫ Апаттан кейін жылдам қалпына келтіру
+Централизованное управление ⟫ Centralized management ⟫ Орталықтандырылған басқару
+Минимизация рисков ⟫ Risk minimization ⟫ Тәуекелдерді азайту
+Соответствие стандартам безопасности ⟫ Compliance with security standards ⟫ Қауіпсіздік стандарттарына сәйкестік
+Энергоэффективность ⟫ Energy efficiency ⟫ Энергия тиімділігі
+Продление срока службы ⟫ Longer service life ⟫ Қызмет мерзімін ұзарту
+Доверие к системе банка ⟫ Trust in the bank's system ⟫ Банк жүйесіне сенім
+Поддержка серверов и сетевого оборудования Cisco, Juniper, HPE ⟫ Support for Cisco, Juniper and HPE servers and network equipment ⟫ Cisco, Juniper, HPE серверлері мен желілік жабдығын қолдау
+Запустили поддержку 24/7 ⟫ Launched 24/7 support ⟫ 24/7 қолдауды іске қостық
+Продлили лицензии Cisco, Juniper, HPE ⟫ Renewed Cisco, Juniper and HPE licenses ⟫ Cisco, Juniper, HPE лицензияларын ұзарттық
+Внедрили Service Desk ⟫ Implemented a Service Desk ⟫ Service Desk енгіздік
+Настроили удаленную диагностику ⟫ Set up remote diagnostics ⟫ Қашықтан диагностиканы баптадық
+Провели инвентаризацию сети ⟫ Carried out a network inventory ⟫ Желіге түгендеу жүргіздік
+Обеспечили замену ЗИП ⟫ Provided spare parts replacement ⟫ Қосалқы бөлшектерді ауыстыруды қамтамасыз еттік
+Контролировали питание и климат в ЦОД ⟫ Monitored power and climate in the data center ⟫ Деректер орталығындағы қуат пен климатты бақыладық
+Обучили специалистов ⟫ Trained specialists ⟫ Мамандарды оқыттық
+Настроили SLA с реакцией по времени ⟫ Set up an SLA with guaranteed response times ⟫ Әрекет ету уақыты белгіленген SLA баптадық
+Подготовили регулярные отчеты ⟫ Prepared regular reports ⟫ Тұрақты есептер дайындадық
+Стабильная работа оборудования ⟫ Stable equipment operation ⟫ Жабдықтың тұрақты жұмысы
+Минимизация простоев ⟫ Minimal downtime ⟫ Тоқтап қалуды барынша азайту
+Быстрая реакция на инциденты ⟫ Fast incident response ⟫ Инциденттерге жылдам әрекет ету
+Своевременные обновления ⟫ Timely updates ⟫ Уақтылы жаңартулар
+Прозрачный контроль ⟫ Transparent control ⟫ Ашық бақылау
+Гарантия сохранности носителей ⟫ Guaranteed safety of storage media ⟫ Тасымалдағыштардың сақталуына кепілдік
+Планомерная модернизация ⟫ Planned modernization ⟫ Жоспарлы жаңғырту
+Рост компетенций персонала ⟫ Growth of staff competencies ⟫ Персонал құзыретінің өсуі
+Снижение затрат ⟫ Lower costs ⟫ Шығындарды азайту
+Уверенность в непрерывности бизнеса ⟫ Confidence in business continuity ⟫ Бизнес үздіксіздігіне сенімділік
+Поставка серверов HPE и сетевого оборудования Cisco ⟫ Supply of HPE servers and Cisco network equipment ⟫ HPE серверлері мен Cisco желілік жабдығын жеткізу
+Поставили Catalyst 9300/9200 ⟫ Supplied Catalyst 9300/9200 switches ⟫ Catalyst 9300/9200 жеткіздік
+Внедрили маршрутизаторы ISR 4331/4400 ⟫ Deployed ISR 4331/4400 routers ⟫ ISR 4331/4400 маршрутизаторларын енгіздік
+Установили серверы HPE ProLiant ⟫ Installed HPE ProLiant servers ⟫ HPE ProLiant серверлерін орнаттық
+Подключили лицензии Cisco ⟫ Activated Cisco licenses ⟫ Cisco лицензияларын қостық
+Проверили совместимость с сетью ⟫ Checked compatibility with the network ⟫ Желімен үйлесімділікті тексердік
+Настроили резервирование ⟫ Set up redundancy ⟫ Резервтеуді баптадық
+Интегрировали в ИТ-среду ⟫ Integrated into the IT environment ⟫ IT-ортаға біріктірдік
+Оформили гарантийные обязательства ⟫ Executed warranty obligations ⟫ Кепілдік міндеттемелерін рәсімдедік
+Подготовили документацию ⟫ Prepared documentation ⟫ Құжаттаманы дайындадық
+Провели инструктаж администраторов ⟫ Briefed administrators ⟫ Әкімшілерге нұсқама бердік
+Современная инфраструктура ⟫ Modern infrastructure ⟫ Заманауи инфрақұрылым
+Надежные сетевые сервисы ⟫ Reliable network services ⟫ Сенімді желілік сервистер
+Высокая производительность ⟫ High performance ⟫ Жоғары өнімділік
+Масштабируемая сеть ⟫ Scalable network ⟫ Масштабталатын желі
+Снижение эксплуатационных рисков ⟫ Lower operational risks ⟫ Пайдалану тәуекелдерін азайту
+Поддержка производителей ⟫ Vendor support ⟫ Өндірушілердің қолдауы
+Долгосрочная защищенность инвестиций ⟫ Long-term investment protection ⟫ Инвестициялардың ұзақ мерзімді қорғалуы
+Платформа для цифровых сервисов ⟫ Platform for digital services ⟫ Цифрлық сервистерге арналған платформа
+Поставка серверов HPE DL360 Gen10 ⟫ Supply of HPE DL360 Gen10 servers ⟫ HPE DL360 Gen10 серверлерін жеткізу
+Поставлены серверы HPE DL360 Gen10 и комплектующие: CPU Xeon, SSD, PSU, адаптеры ⟫ Supplied HPE DL360 Gen10 servers and components: Xeon CPUs, SSDs, PSUs, adapters ⟫ HPE DL360 Gen10 серверлері мен жинақтауыштар жеткізілді: Xeon CPU, SSD, PSU, адаптерлер
+Проведена сборка, тестирование и настройка серверов ⟫ Assembled, tested and configured the servers ⟫ Серверлер жиналып, тестіленіп, бапталды
+Выполнен ввод в эксплуатацию и передача документации ⟫ Commissioned the system and handed over the documentation ⟫ Пайдалануға беру және құжаттаманы тапсыру орындалды
+Организована установка ПО и сервисов HPE iLO ⟫ Installed the software and HPE iLO services ⟫ Бағдарламалық жасақтама мен HPE iLO сервистерін орнату ұйымдастырылды
+Обеспечено гарантийное сопровождение ⟫ Provided warranty support ⟫ Кепілдік сүйемелдеу қамтамасыз етілді
+Создана современная серверная инфраструктура ⟫ Created a modern server infrastructure ⟫ Заманауи серверлік инфрақұрылым құрылды
+Повышена производительность вычислений ⟫ Increased computing performance ⟫ Есептеу өнімділігі артты
+Обеспечено резервирование питания и хранилищ ⟫ Ensured power and storage redundancy ⟫ Қуат пен қоймаларды резервтеу қамтамасыз етілді
+Улучшена управляемость оборудования ⟫ Improved equipment manageability ⟫ Жабдықты басқару жақсарды
+Сокращено время обслуживания систем ⟫ Reduced system maintenance time ⟫ Жүйелерге қызмет көрсету уақыты қысқарды
+Поставка телекоммуникационного оборудования ⟫ Supply of telecommunications equipment ⟫ Телекоммуникациялық жабдық жеткізу
+Поставлены коммутаторы и серверные модули ⟫ Supplied switches and server modules ⟫ Коммутаторлар мен серверлік модульдер жеткізілді
+Настроены VLAN-сегменты и сеть безопасности ⟫ Configured VLAN segments and a security network ⟫ VLAN-сегменттер мен қауіпсіздік желісі бапталды
+Выполнен монтаж и пусконаладка ⟫ Completed installation and commissioning ⟫ Монтаж және іске қосу-баптау жұмыстары орындалды
+Обеспечена поддержка и гарантийное сопровождение ⟫ Provided support and warranty service ⟫ Қолдау және кепілдік сүйемелдеу қамтамасыз етілді
+Переданы акты и паспорта изделий ⟫ Handed over acceptance certificates and product passports ⟫ Актілер мен бұйым паспорттары тапсырылды
+Повышена отказоустойчивость корпоративной сети ⟫ Improved corporate network resilience ⟫ Корпоративтік желінің ақауға төзімділігі артты
+Снижено время на администрирование ⟫ Less time spent on administration ⟫ Әкімшілендіруге кететін уақыт азайды
+Централизовано управление сетевыми сервисами ⟫ Centralized management of network services ⟫ Желілік сервистерді басқару орталықтандырылды
+Обеспечена защита данных ⟫ Data protection ensured ⟫ Деректерді қорғау қамтамасыз етілді
+Система соответствует требованиям ИБ ⟫ The system meets information security requirements ⟫ Жүйе АҚ талаптарына сәйкес келеді
+Поставка коммутаторов Cisco с 16 портами SFP++ ⟫ Supply of Cisco switches with 16 SFP++ ports ⟫ 16 SFP++ порты бар Cisco коммутаторларын жеткізу
+Осуществлена поставка сетевых коммутаторов Cisco System ⟫ Supplied Cisco Systems network switches ⟫ Cisco System желілік коммутаторлары жеткізілді
+Подготовлены документы и техническая спецификация ⟫ Prepared the documents and technical specification ⟫ Құжаттар мен техникалық спецификация дайындалды
+Проверено соответствие техническим требованиям тендера ⟫ Verified compliance with the tender's technical requirements ⟫ Тендердің техникалық талаптарына сәйкестік тексерілді
+Обеспечено соблюдение срока поставки в 180 дней ⟫ Met the 180-day delivery deadline ⟫ 180 күндік жеткізу мерзімі сақталды
+Переданы гарантийные документы ⟫ Handed over warranty documents ⟫ Кепілдік құжаттары тапсырылды
+Заказчик получил современное сетевое оборудование Cisco ⟫ The customer received modern Cisco network equipment ⟫ Тапсырыс беруші заманауи Cisco желілік жабдығын алды
+Повышена стабильность внутренней сети ⟫ Improved internal network stability ⟫ Ішкі желінің тұрақтылығы артты
+Обеспечено резервирование каналов связи ⟫ Ensured redundant communication channels ⟫ Байланыс арналарын резервтеу қамтамасыз етілді
+Снижено количество сбоев при передаче данных ⟫ Fewer data transmission failures ⟫ Деректерді беру кезіндегі ақаулар саны азайды
+Гарантирована совместимость с существующей ИТ-инфраструктурой ⟫ Guaranteed compatibility with the existing IT infrastructure ⟫ Қолданыстағы IT-инфрақұрылыммен үйлесімділікке кепілдік берілді
+Техническая поддержка оборудования Cisco ⟫ Technical support for Cisco equipment ⟫ Cisco жабдығын техникалық қолдау
+Организовано сопровождение сетевого оборудования ASA, WS-C2960X, CP-3905 и другого ⟫ Provided support for ASA, WS-C2960X, CP-3905 and other network equipment ⟫ ASA, WS-C2960X, CP-3905 және басқа желілік жабдықты сүйемелдеу ұйымдастырылды
+Проведена проверка гарантий и лицензий ⟫ Checked warranties and licenses ⟫ Кепілдіктер мен лицензиялар тексерілді
+Выполнены обновления Cisco IOS® ⟫ Updated Cisco IOS® ⟫ Cisco IOS® жаңартулары орындалды
+Проведено техническое тестирование и аудит сети ⟫ Carried out technical testing and a network audit ⟫ Техникалық тестілеу және желі аудиті жүргізілді
+Обеспечена бесперебойная работа сетевой инфраструктуры ⟫ Ensured uninterrupted operation of the network infrastructure ⟫ Желілік инфрақұрылымның үздіксіз жұмысы қамтамасыз етілді
+Поддержан высокий уровень защиты данных ⟫ Maintained a high level of data protection ⟫ Деректерді қорғаудың жоғары деңгейі сақталды
+Снижены риски сетевых сбоев ⟫ Lower risk of network failures ⟫ Желілік ақаулар тәуекелі азайды
+Ускорено реагирование на инциденты ⟫ Faster incident response ⟫ Инциденттерге әрекет ету жылдамдады
+Получен отчет по текущему состоянию ИК-инфраструктуры ⟫ Received a report on the current state of the ICT infrastructure ⟫ АКТ-инфрақұрылымның ағымдағы жай-күйі бойынша есеп алынды
+Поставка сетевого оборудования Extreme Networks ⟫ Supply of Extreme Networks network equipment ⟫ Extreme Networks желілік жабдығын жеткізу
+Выполнена поставка и настройка коммутаторов серии X440/X450/X590 ⟫ Supplied and configured X440/X450/X590 series switches ⟫ X440/X450/X590 сериялы коммутаторлар жеткізіліп, бапталды
+Проведено тестирование и интеграция в существующую сеть ⟫ Tested and integrated into the existing network ⟫ Тестілеу және қолданыстағы желіге біріктіру жүргізілді
+Настроено резервирование и маршрутизация ⟫ Configured redundancy and routing ⟫ Резервтеу және маршруттау бапталды
+Проведено обновление прошивок и документация ⟫ Updated firmware and documentation ⟫ Микробағдарламалар мен құжаттама жаңартылды
+Выполнены акты ввода в эксплуатацию ⟫ Signed commissioning certificates ⟫ Пайдалануға беру актілері рәсімделді
+Обновлена ИТ-инфраструктура центра данных ⟫ Upgraded the data center IT infrastructure ⟫ Деректер орталығының IT-инфрақұрылымы жаңартылды
+Повышена производительность и безопасность ⟫ Improved performance and security ⟫ Өнімділік пен қауіпсіздік артты
+Сокращено время отклика сети ⟫ Reduced network response time ⟫ Желінің жауап беру уақыты қысқарды
+Создана единая система управления ⟫ Created a unified management system ⟫ Бірыңғай басқару жүйесі құрылды
+Реализована готовность к масштабированию ⟫ Ready for scaling ⟫ Масштабтауға дайындық іске асырылды
+Рабочие места и клиентская техника ⟫ Workplaces and client devices ⟫ Жұмыс орындары және клиенттік техника
+Поставка ПК, ультрабуков и ноутбуков ⟫ Supply of PCs, ultrabooks and laptops ⟫ ДК, ультрабуктар мен ноутбуктарды жеткізу
+Оснастили сотрудников устройствами ⟫ Equipped employees with devices ⟫ Қызметкерлерді құрылғылармен жабдықтадық
+Настроили ОС и прикладное ПО ⟫ Configured the OS and application software ⟫ ОЖ мен қолданбалы БЖ баптадық
+Интегрировали в корпоративную сеть ⟫ Integrated into the corporate network ⟫ Корпоративтік желіге біріктірдік
+Организовали централизованное управление ⟫ Organized centralized management ⟫ Орталықтандырылған басқаруды ұйымдастырдық
+Проверили уровень защиты ⟫ Checked the level of protection ⟫ Қорғау деңгейін тексердік
+Настроили мобильный доступ ⟫ Set up mobile access ⟫ Мобильді қолжетімділікті баптадық
+Обеспечили совместимость с банковскими сервисами ⟫ Ensured compatibility with banking services ⟫ Банк сервистерімен үйлесімділікті қамтамасыз еттік
+Подготовили инструкции ⟫ Prepared instructions ⟫ Нұсқаулықтар дайындадық
+Настроили автоматические обновления ⟫ Set up automatic updates ⟫ Автоматты жаңартуларды баптадық
+Установили антивирусные решения ⟫ Installed antivirus solutions ⟫ Антивирустық шешімдерді орнаттық
+Современные рабочие места ⟫ Modern workplaces ⟫ Заманауи жұмыс орындары
+Рост эффективности сотрудников ⟫ Higher employee productivity ⟫ Қызметкерлер тиімділігінің өсуі
+Высокая кибербезопасность ⟫ Strong cybersecurity ⟫ Жоғары киберқауіпсіздік
+Гибкость и мобильность ⟫ Flexibility and mobility ⟫ Икемділік пен мобильділік
+Централизованное администрирование ⟫ Centralized administration ⟫ Орталықтандырылған әкімшілендіру
+Снижение расходов на обслуживание ⟫ Lower maintenance costs ⟫ Қызмет көрсету шығындарын азайту
+Повышение удобства ⟫ Greater convenience ⟫ Ыңғайлылықты арттыру
+Унификация техники ⟫ Standardized equipment ⟫ Техниканы біріздендіру
+Ускорение процессов ⟫ Faster processes ⟫ Процестерді жеделдету
+Поддержка многозадачности ⟫ Multitasking support ⟫ Көпміндеттілікті қолдау
+Рабочие места диспетчеров и тренажерный комплекс ⟫ Air traffic controller workstations and a training simulator ⟫ Диспетчерлердің жұмыс орындары және тренажерлік кешен
+Смонтировали учебный комплекс ⟫ Installed a training complex ⟫ Оқу кешенін құрастырдық
+Оснастили РМ-АДП, РМ-Круг, РМ-Подход, РМ-РДЦ ⟫ Equipped the RM-ADP, RM-Krug, RM-Podkhod and RM-RDC workstations ⟫ РМ-АДП, РМ-Круг, РМ-Подход, РМ-РДЦ жабдықтадық
+Установили серверы и системы отображения ⟫ Installed servers and display systems ⟫ Серверлер мен бейнелеу жүйелерін орнаттық
+Интегрировали подсистемы РЛС, ADS-B, НОТАМ, метео ⟫ Integrated radar, ADS-B, NOTAM and weather subsystems ⟫ РЛС, ADS-B, НОТАМ, метео ішкі жүйелерін біріктірдік
+Настроили ПО для моделирования ⟫ Configured simulation software ⟫ Модельдеуге арналған БЖ баптадық
+Предоставили ЗИП ⟫ Provided spare parts ⟫ Қосалқы бөлшектер бердік
+Обучили 30 специалистов ⟫ Trained 30 specialists ⟫ 30 маманды оқыттық
+Настроили централизованный контроль ⟫ Set up centralized control ⟫ Орталықтандырылған бақылауды баптадық
+Провели тестовые учения ⟫ Held test exercises ⟫ Сынақ жаттығуларын өткіздік
+Подготовили методические материалы ⟫ Prepared training materials ⟫ Әдістемелік материалдар дайындадық
+Учебная база ICAO уровня ⟫ ICAO-level training facility ⟫ ICAO деңгейіндегі оқу базасы
+Реалистичная имитация воздушной обстановки ⟫ Realistic air traffic simulation ⟫ Әуе жағдайын шынайы имитациялау
+Отработка аварийных сценариев ⟫ Practice of emergency scenarios ⟫ Апаттық сценарийлерді пысықтау
+Рост квалификации диспетчеров ⟫ Higher controller qualifications ⟫ Диспетчерлер біліктілігінің өсуі
+Снижение ошибок в УВД ⟫ Fewer air traffic control errors ⟫ Әуе қозғалысын басқарудағы қателерді азайту
+Соответствие международным стандартам ⟫ Compliance with international standards ⟫ Халықаралық стандарттарға сәйкестік
+Масштабируемость комплекса ⟫ Scalable complex ⟫ Кешеннің масштабталуы
+Контроль учебных процессов ⟫ Control of training processes ⟫ Оқу процестерін бақылау
+Рост авиационной безопасности ⟫ Improved aviation safety ⟫ Авиациялық қауіпсіздіктің артуы
+Долгосрочная эксплуатация ⟫ Long-term operation ⟫ Ұзақ мерзімді пайдалану
+Системы безопасности и контроля ⟫ Security and control systems ⟫ Қауіпсіздік және бақылау жүйелері
+СКУД и СВН ⟫ Access control and video surveillance ⟫ СКУД және бейнебақылау жүйесі
+Смонтировали контроллеры и серверы ⟫ Installed controllers and servers ⟫ Контроллерлер мен серверлерді құрастырдық
+Проверили турникеты и считыватели ⟫ Checked turnstiles and readers ⟫ Турникеттер мен оқу құрылғыларын тексердік
+Провели профилактику ⟫ Performed preventive maintenance ⟫ Профилактика жүргіздік
+Обновили комплектующие ⟫ Upgraded components ⟫ Жинақтауыштарды жаңарттық
+Внедрили биометрические решения ⟫ Implemented biometric solutions ⟫ Биометриялық шешімдерді енгіздік
+Настроили архивирование данных ⟫ Set up data archiving ⟫ Деректерді мұрағаттауды баптадық
+Интегрировали с другими системами ⟫ Integrated with other systems ⟫ Басқа жүйелермен біріктірдік
+Обеспечили удаленный доступ ⟫ Provided remote access ⟫ Қашықтан қолжетімділікті қамтамасыз еттік
+Провели обучение операторов ⟫ Trained the operators ⟫ Операторларға оқыту өткіздік
+Бесперебойная работа СКУД и СВН ⟫ Uninterrupted access control and video surveillance ⟫ СКУД пен бейнебақылаудың үздіксіз жұмысы
+Повышение уровня защиты ⟫ Higher level of protection ⟫ Қорғау деңгейін арттыру
+Снижение простоев ⟫ Less downtime ⟫ Тоқтап қалуды азайту
+Контроль доступа в реальном времени ⟫ Real-time access control ⟫ Нақты уақыттағы қолжетімділікті бақылау
+Минимизация несанкционированного доступа ⟫ Minimal unauthorized access ⟫ Рұқсатсыз қолжетімділікті барынша азайту
+Удобство эксплуатации ⟫ Ease of operation ⟫ Пайдалану ыңғайлылығы
+Возможность аудита событий ⟫ Event auditing ⟫ Оқиғаларды аудиттеу мүмкіндігі
+Интеграция с видеонаблюдением ⟫ Integration with video surveillance ⟫ Бейнебақылаумен біріктіру
+Снижение расходов на охрану ⟫ Lower security guard costs ⟫ Күзет шығындарын азайту
+Система сканера уязвимостей ⟫ Vulnerability scanner system ⟫ Осалдық сканері жүйесі
+Разработана и поставлена централизованная система управления уязвимостями ⟫ Developed and supplied a centralized vulnerability management system ⟫ Осалдықтарды басқарудың орталықтандырылған жүйесі әзірленіп, жеткізілді
+Настроено шифрование и аутентификация LDAP/AD ⟫ Configured encryption and LDAP/AD authentication ⟫ Шифрлау және LDAP/AD аутентификациясы бапталды
+Реализовано управление пользователями и аудит действий ⟫ Implemented user management and action auditing ⟫ Пайдаланушыларды басқару және әрекеттер аудиті іске асырылды
+Проведены тесты безопасности и обучение персонала ⟫ Carried out security tests and staff training ⟫ Қауіпсіздік тестілері мен персоналды оқыту жүргізілді
+Подготовлены отчеты и инструкции по эксплуатации ⟫ Prepared reports and operating instructions ⟫ Есептер мен пайдалану нұсқаулықтары дайындалды
+Заказчик получил комплексную систему ИБ ⟫ The customer received a comprehensive information security system ⟫ Тапсырыс беруші кешенді АҚ жүйесін алды
+Повышен уровень защиты ИТ-инфраструктуры ⟫ Improved protection of the IT infrastructure ⟫ IT-инфрақұрылымды қорғау деңгейі артты
+Автоматизирован анализ уязвимостей и аудит ⟫ Automated vulnerability analysis and auditing ⟫ Осалдықтарды талдау мен аудит автоматтандырылды
+Сокращено время реакции на инциденты ⟫ Reduced incident response time ⟫ Инциденттерге әрекет ету уақыты қысқарды
+Созданы условия для соответствия требованиям ISO/IEC 27001 ⟫ Created the conditions for ISO/IEC 27001 compliance ⟫ ISO/IEC 27001 талаптарына сәйкестікке жағдай жасалды
+Продление лицензий Fortigate, Sandbox, Forticlient ⟫ Renewal of Fortigate, Sandbox and Forticlient licenses ⟫ Fortigate, Sandbox, Forticlient лицензияларын ұзарту
+Продлены лицензии и подписки Fortinet: Fortigate NGFW, Sandbox, Forticlient EMS ⟫ Renewed Fortinet licenses and subscriptions: Fortigate NGFW, Sandbox, Forticlient EMS ⟫ Fortinet лицензиялары мен жазылымдары ұзартылды: Fortigate NGFW, Sandbox, Forticlient EMS
+Обновлены ключи активации и сертификаты ⟫ Updated activation keys and certificates ⟫ Белсендіру кілттері мен сертификаттар жаңартылды
+Произведена настройка шлюзов и агентов ⟫ Configured gateways and agents ⟫ Шлюздер мен агенттер бапталды
+Выполнено тестирование взаимодействия модулей ⟫ Tested module interaction ⟫ Модульдердің өзара әрекеттесуі тестіленді
+Предоставлены отчеты и акты оказанных услуг ⟫ Provided reports and service completion certificates ⟫ Есептер мен көрсетілген қызметтер актілері ұсынылды
+Заказчик получил актуализированные лицензии и непрерывную работу систем информационной безопасности ⟫ The customer received up-to-date licenses and uninterrupted operation of information security systems ⟫ Тапсырыс беруші өзектендірілген лицензиялар мен ақпараттық қауіпсіздік жүйелерінің үздіксіз жұмысын алды
+Повышена защищенность корпоративной сети ⟫ Improved corporate network security ⟫ Корпоративтік желінің қорғалуы артты
+Обеспечено соответствие требованиям ИБ ⟫ Ensured compliance with information security requirements ⟫ АҚ талаптарына сәйкестік қамтамасыз етілді
+Исключены простои и утрата обновлений ⟫ No downtime and no missed updates ⟫ Тоқтап қалу мен жаңартуларды жоғалту болдырылмады
+Обеспечено централизованное управление защитой ⟫ Centralized security management ⟫ Қорғауды орталықтандырылған басқару қамтамасыз етілді
+Авиационные специализированные системы ⟫ Specialized aviation systems ⟫ Авиациялық мамандандырылған жүйелер
+КДВИ «Гранит-6» ⟫ Granit-6 recording system ⟫ «Гранит-6» дауыс пен ақпаратты құжаттау кешені
+Установили модули записи ⟫ Installed recording modules ⟫ Жазу модульдерін орнаттық
+Обеспечили запись голоса, видео и пультовой информации ⟫ Enabled recording of voice, video and console data ⟫ Дауыс, бейне және пульт ақпаратын жазуды қамтамасыз еттік
+Организовали хранение данных ⟫ Organized data storage ⟫ Деректерді сақтауды ұйымдастырдық
+Реализовали экспорт архивов ⟫ Implemented archive export ⟫ Мұрағаттарды экспорттауды іске асырдық
+Провели тестирование ⟫ Carried out testing ⟫ Тестілеу жүргіздік
+Интегрировали с системой УВД ⟫ Integrated with the ATC system ⟫ Әуе қозғалысын басқару жүйесімен біріктірдік
+Настроили защиту от потерь ⟫ Set up loss protection ⟫ Жоғалтудан қорғауды баптадық
+Обучили операторов ⟫ Trained operators ⟫ Операторларды оқыттық
+Полная фиксация событий ⟫ Complete event recording ⟫ Оқиғаларды толық тіркеу
+Синхронное воспроизведение информации ⟫ Synchronized playback ⟫ Ақпаратты синхронды ойнату
+Защита от потери данных ⟫ Protection against data loss ⟫ Деректерді жоғалтудан қорғау
+Удобство анализа ⟫ Easy analysis ⟫ Талдаудың ыңғайлылығы
+Совместимость со стандартами ⟫ Standards compatibility ⟫ Стандарттармен үйлесімділік
+Повышение доверия ⟫ Greater trust ⟫ Сенімді арттыру
+Централизованное хранение ⟫ Centralized storage ⟫ Орталықтандырылған сақтау
+Быстрый поиск информации ⟫ Fast information search ⟫ Ақпаратты жылдам іздеу
+Возможность расследований ⟫ Support for investigations ⟫ Тергеу жүргізу мүмкіндігі
+Снижение рисков ошибок ⟫ Lower risk of errors ⟫ Қателер тәуекелін азайту
+АС НОТАМ ⟫ NOTAM automated system ⟫ НОТАМ автоматтандырылған жүйесі
+Настроили резервирование компонентов ⟫ Set up component redundancy ⟫ Компоненттерді резервтеуді баптадық
+Организовали прием и обработку телеграмм НОТАМ ⟫ Organized reception and processing of NOTAM messages ⟫ НОТАМ жеделхаттарын қабылдау мен өңдеуді ұйымдастырдық
+Ввели синтаксический и семантический контроль ⟫ Introduced syntax and semantic checks ⟫ Синтаксистік және семантикалық бақылау енгіздік
+Настроили выпуск бюллетеней БПИ ⟫ Set up issuance of pre-flight information bulletins ⟫ Ұшу алдындағы ақпарат бюллетеньдерін шығаруды баптадық
+Реализовали offline-режим ⟫ Implemented offline mode ⟫ Offline-режимді іске асырдық
+Организовали поддержку 24/7 ⟫ Organized 24/7 support ⟫ 24/7 қолдауды ұйымдастырдық
+Провели обучение персонала ⟫ Trained the staff ⟫ Персоналды оқыттық
+Настроили мониторинг ⟫ Set up monitoring ⟫ Мониторингті баптадық
+Отказоустойчивый комплекс НОТАМ ⟫ Fault-tolerant NOTAM complex ⟫ Ақауға төзімді НОТАМ кешені
+Автоматизация обработки данных ⟫ Automated data processing ⟫ Деректерді өңдеуді автоматтандыру
+Снижение ошибок ⟫ Fewer errors ⟫ Қателерді азайту
+Своевременные брифинги ⟫ Timely briefings ⟫ Уақтылы брифингтер
+Соответствие ICAO ⟫ ICAO compliance ⟫ ICAO талаптарына сәйкестік
+Интеграция в международные сети ⟫ Integration with international networks ⟫ Халықаралық желілерге біріктіру
+Снижение рисков ⟫ Lower risks ⟫ Тәуекелдерді төмендету
+Устойчивость системы ⟫ System resilience ⟫ Жүйенің тұрақтылығы
+Радиолокаторы МВРЛ-СВК и АЗН-В ⟫ MVRL-SVK radars and ADS-B ⟫ МВРЛ-СВК радиолокаторлары және АЗН-В
+Провели диагностику ⟫ Ran diagnostics ⟫ Диагностика жүргіздік
+Выявили и устранили неисправности ⟫ Found and fixed faults ⟫ Ақауларды анықтап, жойдық
+Заменили модули ⟫ Replaced modules ⟫ Модульдерді ауыстырдық
+Настроили параметры по ЭТД ⟫ Adjusted parameters according to the operating documentation ⟫ Параметрлерді пайдалану-техникалық құжаттама бойынша баптадық
+Обновили ПО ⟫ Updated the software ⟫ БЖ жаңарттық
+Сопрягли с другими системами ⟫ Interfaced with other systems ⟫ Басқа жүйелермен түйістірдік
+Реализовали аварийные выезды ⟫ Provided emergency call-outs ⟫ Апаттық шығуларды іске асырдық
+Настроили резервные режимы ⟫ Set up backup modes ⟫ Резервтік режимдерді баптадық
+Подготовили отчетность ⟫ Prepared reporting ⟫ Есептілік дайындадық
+Стабильная работа радиолокаторов ⟫ Stable radar operation ⟫ Радиолокаторлардың тұрақты жұмысы
+Снижение рисков отказов ⟫ Lower risk of failures ⟫ Істен шығу тәуекелін азайту
+Соответствие ЭТД ⟫ Compliance with the operating documentation ⟫ Пайдалану-техникалық құжаттамаға сәйкестік
+Совместимость с другими системами ⟫ Compatibility with other systems ⟫ Басқа жүйелермен үйлесімділік
+Быстрое реагирование ⟫ Fast response ⟫ Жылдам әрекет ету
+Увеличение точности ⟫ Higher accuracy ⟫ Дәлдікті арттыру
+Минимизация сбоев ⟫ Minimal failures ⟫ Ақауларды барынша азайту
+Повышение уровня безопасности ⟫ Higher safety level ⟫ Қауіпсіздік деңгейін арттыру
+ПО PANDA, OMEGA, DELTA, ARAN, TOSSM, AMDB, eTOD ⟫ PANDA, OMEGA, DELTA, ARAN, TOSSM, AMDB, eTOD software ⟫ PANDA, OMEGA, DELTA, ARAN, TOSSM, AMDB, eTOD бағдарламалық жасақтамасы
+Обновили ядро PANDA ⟫ Updated the PANDA core ⟫ PANDA ядросын жаңарттық
+Интегрировали AMDB/eTOD ⟫ Integrated AMDB/eTOD ⟫ AMDB/eTOD біріктірдік
+Провели валидацию данных ⟫ Validated the data ⟫ Деректерді валидациялау жүргіздік
+Настроили экспорт в AIXM/GIS ⟫ Set up export to AIXM/GIS ⟫ AIXM/GIS форматына экспортты баптадық
+Контролировали целостность данных ⟫ Monitored data integrity ⟫ Деректер тұтастығын бақыладық
+Обеспечили совместимость с ICAO ⟫ Ensured ICAO compatibility ⟫ ICAO талаптарымен үйлесімділікті қамтамасыз еттік
+Автоматизировали отчеты ⟫ Automated reports ⟫ Есептерді автоматтандырдық
+Подготовили обучение ⟫ Prepared training ⟫ Оқытуды дайындадық
+Настроили систему мониторинга ⟫ Set up a monitoring system ⟫ Мониторинг жүйесін баптадық
+Актуальные навигационные процедуры ⟫ Up-to-date navigation procedures ⟫ Өзекті навигациялық рәсімдер
+Учет рельефа и препятствий ⟫ Terrain and obstacle data ⟫ Жер бедері мен кедергілерді ескеру
+Соответствие ICAO/ADQ ⟫ ICAO/ADQ compliance ⟫ ICAO/ADQ талаптарына сәйкестік
+Удобный обмен данными ⟫ Convenient data exchange ⟫ Деректермен ыңғайлы алмасу
+Повышение надежности ⟫ Greater reliability ⟫ Сенімділікті арттыру
+Возможность расширений ⟫ Room for expansion ⟫ Кеңейту мүмкіндігі
+Повышение авиационной безопасности ⟫ Higher aviation safety ⟫ Авиациялық қауіпсіздікті арттыру
+ПАК «Синтез»: АРМ-А, АРМ-Р, АР2, «Синтез-Т» ⟫ Sintez hardware and software complex: ARM-A, ARM-R, AR2, Sintez-T ⟫ «Синтез» бағдарламалық-аппараттық кешені: АРМ-А, АРМ-Р, АР2, «Синтез-Т»
+Настроили рабочие места ⟫ Set up workstations ⟫ Жұмыс орындарын баптадық
+Подключили РЛС и метеоисточники ⟫ Connected radars and weather sources ⟫ РЛС пен метеодереккөздерді қостық
+Настроили обработку данных ⟫ Set up data processing ⟫ Деректерді өңдеуді баптадық
+Реализовали визуализацию ⟫ Implemented visualization ⟫ Визуализацияны іске асырдық
+Ввели документирование ⟫ Introduced documenting ⟫ Құжаттауды енгіздік
+Организовали мониторинг ⟫ Organized monitoring ⟫ Мониторингті ұйымдастырдық
+Автоматизация процессов УВД ⟫ Automated ATC processes ⟫ Әуе қозғалысын басқару процестерін автоматтандыру
+Анализ конфликтов ⟫ Conflict analysis ⟫ Қақтығыстарды талдау
+Удобство для диспетчеров ⟫ Convenience for controllers ⟫ Диспетчерлер үшін ыңғайлылық
+Высокая надежность ⟫ High reliability ⟫ Жоғары сенімділік
+Возможность модернизации ⟫ Upgrade potential ⟫ Жаңғырту мүмкіндігі
+Совместимость с системами ⟫ Compatibility with systems ⟫ Жүйелермен үйлесімділік
+Рост эффективности ⟫ Higher efficiency ⟫ Тиімділіктің өсуі
+Повышение безопасности ⟫ Improved safety ⟫ Қауіпсіздікті арттыру
+Поставка оборудования для систем связи и наблюдения в Шымкенте и Зайсане ⟫ Supply of communication and surveillance equipment in Shymkent and Zaisan ⟫ Шымкент пен Зайсандағы байланыс және бақылау жүйелеріне жабдық жеткізу
+Проведена поставка оборудования связи и ВОЛС ⟫ Supplied communication equipment and fiber-optic lines ⟫ Байланыс жабдығы мен талшықты-оптикалық желілер жеткізілді
+Выполнены FAT-испытания у производителя ⟫ Carried out FAT tests at the manufacturer ⟫ Өндірушіде FAT-сынақтары өткізілді
+Подготовлены и согласованы технические спецификации ⟫ Prepared and approved technical specifications ⟫ Техникалық спецификациялар дайындалып, келісілді
+Проведен монтаж, наладка и тестирование оборудования ⟫ Installed, adjusted and tested the equipment ⟫ Жабдықты монтаждау, баптау және тестілеу жүргізілді
+Обучен персонал заказчика ⟫ Trained the customer's staff ⟫ Тапсырыс берушінің персоналы оқытылды
+Сформирована устойчивая сеть передачи данных ⟫ Built a resilient data network ⟫ Тұрақты деректер беру желісі құрылды
+Увеличена пропускная способность каналов ⟫ Increased channel capacity ⟫ Арналардың өткізу қабілеті артты
+Повышена надежность и резервирование ⟫ Improved reliability and redundancy ⟫ Сенімділік пен резервтеу артты
+Минимизированы простои оборудования ⟫ Minimized equipment downtime ⟫ Жабдықтың тоқтап қалуы барынша азайтылды
+Укреплена техническая база аэронавигации ⟫ Strengthened the technical base of air navigation ⟫ Аэронавигацияның техникалық базасы нығайтылды

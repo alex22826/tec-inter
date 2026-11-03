@@ -20,19 +20,19 @@ foreach ($DOCS as $doc) {
   <div class="container">
     <?= breadcrumbs(array(t('Партнеры') => '')) ?>
     <h1><?= e(t('Партнеры')) ?></h1>
-    <p class="lead"><?= e(t('Работаем напрямую с производителями: официальные цены, гарантия и поддержка вендора.')) ?></p>
   </div>
 </section>
 
 <section class="section section--tight">
   <div class="container">
     <?php $g = 0; foreach ($groups as $title => $items): $g++; ?>
-      <div class="pgroup"<?= $g === 1 ? note('Группировка по направлениям, под логотипом статус, ссылка на решения вендора') : '' ?>>
+      <div class="pgroup"<?= $g === 1 ? note('Группировка по направлениям: логотип, под ним название, статус и ссылка на решения вендора') : '' ?>>
         <h2 class="h3"><?= e(t($title)) ?></h2>
         <div class="partners">
           <?php foreach ($items as $slug => $pt): ?>
             <div class="partner" id="<?= e($slug) ?>">
-              <div class="partner__logo"><?= e(t($pt['name'])) ?></div>
+              <div class="partner__logo"><?= partner_logo($pt, false) ?></div>
+              <b class="partner__name"><?= e(t($pt['name'])) ?></b>
               <div class="partner__foot">
                 <?php if ($pt['status'] && isset($withCert[$slug])): ?>
                   <a class="status status--cert" href="<?= url('about/') ?>#cert-<?= e($slug) ?>" title="<?= e(t('Открыть сертификат')) ?>"><?= icon('check') ?><?= e($pt['status']) ?></a>
