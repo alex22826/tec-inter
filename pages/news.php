@@ -3,6 +3,7 @@ page_start(array(
     'title' => t('Новости и статьи об IT-инфраструктуре | TEC International'),
     'description' => t('Новости TEC International и экспертные статьи: сети, серверы, информационная безопасность, виртуализация, госзакупки.'),
     'nav' => 'news',
+    'art' => 'shield',
 ));
 $rubrics = array();
 $inds = array();

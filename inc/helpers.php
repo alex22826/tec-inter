@@ -272,6 +272,7 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
 <?php endif; ?>
 </head>
 <body>
+<div class="bg-scene" aria-hidden="true"><i></i><i></i><i></i></div>
 <?php if ($CFG['demo']): ?>
 <div class="demo-bar">
   <div class="container demo-bar__in">
@@ -315,7 +316,7 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 })();
 </script>
-<main id="main">
+<main id="main"<?= empty($meta['art']) ? '' : ' class="art art--' . e($meta['art']) . '"' ?>>
 <?php
 }
 

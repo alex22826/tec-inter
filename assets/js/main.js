@@ -50,6 +50,15 @@
     });
   }
 
+  /* ---------- фоновые рисунки: анимация только у тех, что сейчас на экране ---------- */
+  var arts = $$('.art');
+  if (arts.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var artWatch = new IntersectionObserver(function (items) {
+      items.forEach(function (it) { it.target.classList.toggle('is-live', it.isIntersecting); });
+    }, { rootMargin: '120px 0px' });
+    arts.forEach(function (el) { artWatch.observe(el); });
+  }
+
   /* ---------- кнопка «Наверх» на длинных страницах ---------- */
   var toTop = $('.to-top');
   if (toTop) {

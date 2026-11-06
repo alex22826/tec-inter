@@ -32,7 +32,7 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section"<?= note('Почему нам доверяют: с 2008 года, 120+ проектов, крупные проекты, эксперты, полный цикл') ?>>
+<section class="section art art--servers"<?= note('Почему нам доверяют: с 2008 года, 120+ проектов, крупные проекты, эксперты, полный цикл') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Почему нам доверяют')) ?></h2>
     <div class="trust">
@@ -61,7 +61,7 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section section--gray"<?= note('Комплексный подход: проектирование → оборудование → ПО → интеграция → настройка → запуск → поддержка') ?>>
+<section class="section section--gray art art--vpn"<?= note('Комплексный подход: проектирование → оборудование → ПО → интеграция → настройка → запуск → поддержка') ?>>
   <div class="container">
     <h2 class="h2"><?= e(t('Комплексный подход')) ?></h2>
     <ol class="steps">
@@ -72,7 +72,7 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section"<?= note('Наши проекты: подборка со страницы «Проекты»') ?>>
+<section class="section art art--shield art--left"<?= note('Наши проекты: подборка со страницы «Проекты»') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Наши проекты')) ?></h2>
@@ -84,7 +84,7 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Партнеры: логотипы ведут на страницу партнеров со статусами') ?>>
+<section class="section section--tight"<?= note('Партнеры: логотипы ведут на страницу партнеров') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Партнеры')) ?></h2>

@@ -23,6 +23,7 @@
   --r-lg: 10px;
   --shadow: 0 25px 30px -20px rgba(0, 0, 0, .1);
   --shadow-hover: 0 28px 34px -18px rgba(0, 0, 0, .18);
+  --card-bg: rgba(255, 255, 255, .9);
   --gut: 50px;
   --hh: 90px;
   --ease-out: cubic-bezier(.2, .7, .2, 1);
@@ -141,8 +142,8 @@ p { margin: 0 0 12px; }
 /* ---------- секции ---------- */
 .section { padding: 72px 0; }
 .section--tight { padding: 36px 0; }
-/* фон страницы серый, поэтому выделенная секция белая */
-.section--gray { background: #fff; }
+/* фон страницы серый, поэтому выделенная секция светлее, но не сплошная: за ней видны рисунки и свечение */
+.section--gray { background: rgba(255, 255, 255, .55); }
 .section__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 36px; }
 .section__head .h2 { margin-bottom: 0; }
 .h2 { font-size: clamp(28px, 1.6vw + 22px, 45px); font-weight: 600; line-height: 1.2; margin-bottom: 36px; }
@@ -151,9 +152,9 @@ p { margin: 0 0 12px; }
 .footnote { font-size: 13px; color: var(--muted); margin-top: 20px; }
 .footnote a { color: var(--accent-d); text-decoration: underline; }
 
-/* карточка как на старом сайте: белая, тонкая рамка, мягкая тень снизу */
+/* карточка как на старом сайте: тонкая рамка, мягкая тень снизу; чуть прозрачная, чтобы за ней был виден фон */
 .trust__item, .dir-tile, .card, .picker, .partner, .stat, .value, .advantage, .box, .side-box {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow);
+  background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow);
 }
 .trust { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
 .trust__item { padding: 26px 24px; }
@@ -227,7 +228,9 @@ p { margin: 0 0 12px; }
 .client--logo b { font-size: 12.5px; font-weight: 400; color: var(--muted); }
 
 /* ---------- форма-баннер ---------- */
-.band { background: var(--dark); color: #fff; border-radius: 30px; padding: 48px 50px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; }
+.band { position: relative; overflow: hidden; isolation: isolate; background: var(--dark); color: #fff; border-radius: 30px; padding: 48px 50px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; }
+/* рисунок с облаком внизу слева, как в форме на старом сайте */
+.band::before { content: ""; position: absolute; z-index: -1; left: 26px; bottom: -14px; width: min(300px, 34%); aspect-ratio: 640 / 565; background: url(../img/bg/cloud.webp) center / contain no-repeat; pointer-events: none; animation: art-float 12s ease-in-out infinite alternate; }
 .band h2 { color: #fff; font-size: 36px; font-weight: 600; margin-bottom: 12px; }
 .band p { color: rgba(255, 255, 255, .75); margin: 0; }
 .band--compact { grid-template-columns: 1fr auto; padding: 36px 50px; }
@@ -371,10 +374,10 @@ p { margin: 0 0 12px; }
 .proj-group__title { margin: 8px 0 28px; }
 .proj-jump { display: none; }
 .proj { scroll-margin-top: var(--hh); }
-.proj__head { background: var(--dark); color: #fff; padding-top: 48px; }
+/* черный фон заканчивается над волной: сама волна нарисована сверху вниз, а под ней виден фон страницы */
+.proj__head { --wave-h: 90px; background: linear-gradient(var(--dark), var(--dark)) top / 100% calc(100% - var(--wave-h) + 1px) no-repeat; color: #fff; padding-top: 48px; }
 .proj__head h3 { color: #fff; font-size: clamp(22px, 1vw + 16px, 30px); font-weight: 700; line-height: 1.25; max-width: 680px; }
-.proj__wave { display: block; width: 100%; height: 90px; margin-top: 28px; }
-.proj__wave path:last-child { fill: var(--bg); }
+.proj__wave { display: block; width: 100%; height: var(--wave-h); margin-top: 28px; }
 .proj__body { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 64px; padding-top: 12px; padding-bottom: 60px; }
 .proj__body h4 { margin: 0 0 22px; text-align: center; color: var(--accent); font-size: clamp(24px, .8vw + 18px, 30px); font-weight: 600; }
 .proj__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -480,6 +483,46 @@ p { margin: 0 0 12px; }
 .to-top:active { background: var(--accent-d); }
 body.is-locked { overflow: hidden; }
 
+/* ---------- фон страниц ---------- */
+/* Мягкое зеленое свечение за всей страницей, чтобы фон не был чистым листом.
+   Двигается только transform: браузер не перерисовывает страницу, и на телефоне это дешево. */
+.bg-scene { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.bg-scene i { position: absolute; display: block; border-radius: 50%; background: radial-gradient(closest-side, rgba(14, 137, 104, .2), rgba(14, 137, 104, 0)); }
+.bg-scene i:nth-child(1) { top: -24vmax; right: -16vmax; width: 66vmax; height: 66vmax; animation: glow-a 34s ease-in-out infinite alternate; }
+.bg-scene i:nth-child(2) { bottom: -30vmax; left: -20vmax; width: 74vmax; height: 74vmax; animation: glow-b 42s ease-in-out infinite alternate; }
+.bg-scene i:nth-child(3) { top: 30%; left: 34%; width: 42vmax; height: 42vmax; opacity: .7; animation: glow-c 28s ease-in-out infinite alternate; }
+@keyframes glow-a { to { transform: translate3d(-22vmax, 16vmax, 0) scale(1.15); } }
+@keyframes glow-b { to { transform: translate3d(26vmax, -14vmax, 0) scale(.9); } }
+@keyframes glow-c { to { transform: translate3d(-18vmax, -12vmax, 0) scale(1.25); } }
+
+/* Рисунки со старого сайта. Класс .art рисует за содержимым блока два слоя: серый рисунок и он же в зеленом.
+   Слои покачиваются, а зеленый то проявляется, то гаснет. Анимация идет только у блоков на экране:
+   класс is-live ставит main.js. Без него рисунок просто стоит на месте. */
+main { overflow-x: clip; }
+.art { position: relative; isolation: isolate; }
+.art::before, .art::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  top: var(--art-top, 0); left: var(--art-left, auto); right: var(--art-right, max(0px, calc((100% - 1440px) / 2)));
+  width: var(--art-w, min(640px, 46%)); aspect-ratio: var(--art-ar);
+  background: center / contain no-repeat;
+}
+.art::before { background-image: var(--art-grey); opacity: var(--art-grey-o, .34); }
+.art::after { background-image: var(--art-green); opacity: var(--art-green-o, .16); }
+.art.is-live::before { animation: art-float 14s ease-in-out infinite alternate; }
+.art.is-live::after { animation: art-float 14s ease-in-out infinite alternate, art-green 11s ease-in-out infinite; }
+@keyframes art-float { from { transform: translate3d(0, -12px, 0) rotate(-.5deg); } to { transform: translate3d(0, 12px, 0) rotate(.5deg); } }
+@keyframes art-green { 0%, 100% { opacity: 0; } 50% { opacity: var(--art-green-peak, .46); } }
+.art--servers { --art-grey: url(../img/bg/servers.webp); --art-green: url(../img/bg/servers-green.webp); --art-ar: 1032 / 620; }
+.art--vpn { --art-grey: url(../img/bg/vpn.webp); --art-green: url(../img/bg/vpn-green.webp); --art-ar: 1100 / 767; }
+.art--shield { --art-grey: url(../img/bg/shield.webp); --art-green: url(../img/bg/shield-green.webp); --art-ar: 1043 / 1100; }
+.art--left { --art-left: max(0px, calc((100% - 1440px) / 2)); --art-right: auto; }
+/* внутренние страницы: рисунок справа от заголовка, уходит за начало содержимого */
+main.art { --art-top: 28px; --art-w: min(600px, 42%); }
+/* «Решения»: рисунок за списком пунктов, как на старом сайте */
+.sol-item.art { --art-top: 56px; --art-right: 0px; --art-w: min(600px, 46%); }
+/* «Проекты»: между колонками «Что сделали» и «Что получили» */
+.proj.art { --art-top: 190px; --art-left: calc(50% - min(270px, 21%)); --art-right: auto; --art-w: min(540px, 42%); }
+
 /* ---------- плавные переходы ---------- */
 /* Между страницами: View Transitions (Chrome, Edge, Safari 18.2+). Шапка вынесена в отдельный
    слой и остается на месте, страница под ней гаснет и проявляется с небольшим подъемом. */
@@ -559,6 +602,7 @@ body.is-locked { overflow: hidden; }
   .dirs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .logos { grid-template-columns: repeat(4, 1fr); }
   .band { grid-template-columns: 1fr; }
+  .band::before { left: auto; right: 16px; bottom: auto; top: 10px; width: 150px; }
   .sol-item, .proj__body { grid-template-columns: 1fr; gap: 28px; }
   .advantages { grid-template-columns: repeat(2, 1fr); }
   .partners { grid-template-columns: repeat(3, 1fr); }
@@ -622,8 +666,8 @@ body.is-locked { overflow: hidden; }
   .sol-item { padding: 40px 0; }
   .sol-item__cta { flex-direction: column; align-items: flex-start; }
   .points b { font-size: 16px; }
-  .proj__head { padding-top: 32px; }
-  .proj__wave { height: 56px; margin-top: 18px; }
+  .proj__head { --wave-h: 56px; padding-top: 32px; }
+  .proj__wave { margin-top: 18px; }
   .proj__body { padding-bottom: 44px; }
   .proj__body h4 { text-align: left; }
   .partners { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
@@ -639,6 +683,13 @@ body.is-locked { overflow: hidden; }
   .modal__box { padding: 24px 18px; }
   .footer__grid { grid-template-columns: 1fr; gap: 24px; }
   .note-pin__bubble { width: 230px; }
+
+  /* рисунки: шире относительно экрана, но бледнее и немного за краем, чтобы не мешать тексту */
+  .art, main.art, .sol-item.art, .proj.art { --art-w: 92%; --art-right: -20%; --art-left: auto; --art-grey-o: .2; --art-green-o: .1; --art-green-peak: .28; }
+  main.art { --art-top: 40px; }
+  .sol-item.art { --art-top: 34%; }
+  .proj.art { --art-top: 34%; }
+  .band::before { width: 104px; top: 8px; right: 10px; }
 
   /* кнопки и ссылки под палец: высота не меньше 38-44px */
   .header__side .btn--accent { min-height: 38px; }
@@ -682,5 +733,5 @@ body.is-locked { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
-  .no-vt main, .tab-panel.is-enter, [data-filter-list] > .is-rise { animation: none !important; }
+  .no-vt main, .tab-panel.is-enter, [data-filter-list] > .is-rise, .bg-scene i, .band::before, .art.is-live::before, .art.is-live::after { animation: none !important; }
 }

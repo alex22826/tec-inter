@@ -29,6 +29,7 @@ page_start(array(
         'author' => array('@type' => 'Organization', 'name' => 'TEC International'),
         'publisher' => array('@type' => 'Organization', 'name' => 'TEC International'),
     ),
+    'art' => 'vpn',
 ));
 ?>
 <section class="page-head page-head--article">

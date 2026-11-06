@@ -3,6 +3,7 @@ page_start(array(
     'title' => t('Контакты | TEC International, Астана'),
     'description' => t('Телефон +7 (778) 975-63-35, info@tec-inter.kz. Обсудить проект или получить консультацию по IT-инфраструктуре.'),
     'nav' => 'contacts',
+    'art' => 'vpn',
 ));
 ?>
 <section class="page-head">

@@ -3,6 +3,7 @@ page_start(array(
     'title' => t('Страница не найдена | TEC International'),
     'description' => t('Страница не найдена.'),
     'nav' => '',
+    'art' => 'servers',
 ));
 ?>
 <section class="section notfound">

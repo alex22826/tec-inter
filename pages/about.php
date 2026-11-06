@@ -3,6 +3,7 @@ page_start(array(
     'title' => t('О компании | С 2008 года | TEC International'),
     'description' => t('Системный интегратор полного цикла TEC International работает с 2008 года. Преимущества, сертификаты партнеров и заказчики.'),
     'nav' => 'about',
+    'art' => 'servers',
 ));
 
 $now = date('Y-m');
@@ -62,6 +63,7 @@ foreach ($DOCS as $doc) {
       </div>
     </div>
 
+    <div class="art art--servers">
     <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
     <div class="stats stats--3"<?= note('Актуальные суммы пришлет TEC') ?>>
       <div class="stat"><b><?= e(t('15,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>
@@ -75,11 +77,15 @@ foreach ($DOCS as $doc) {
       <div class="value"><h3><?= e(t('Ценности')) ?></h3><p><?= e(t('Профессионализм, порядочность, честность, постоянное развитие, лояльность, конфиденциальность.')) ?></p></div>
     </div>
 
+    </div>
+
+    <div class="art art--vpn">
     <h2 class="h3"<?= note('Преимущества нашей компании со страницы «О компании» старого сайта') ?>><?= e(t('Преимущества нашей компании')) ?></h2>
     <div class="advantages">
       <?php foreach ($ADVANTAGES as $adv): ?>
         <div class="advantage"><?= icon('check', 'advantage__ico') ?><p><?= e(t($adv)) ?></p></div>
       <?php endforeach; ?>
+    </div>
     </div>
 
     <div class="box">
@@ -105,7 +111,7 @@ foreach ($DOCS as $doc) {
               $noteHtml = note('Лицензия с пометкой «дает право» и ссылкой на проверку в реестре');
               $licenseNoted = true;
           }
-          // якорь #cert-<вендор>: на него ведет статус на странице «Партнеры»
+          // якорь #cert-<вендор>: прямая ссылка на сертификат вендора
           $anchor = '';
           if (!empty($doc['vendor']) && !isset($vendorSeen[$doc['vendor']])) {
               $anchor = ' id="cert-' . e($doc['vendor']) . '"';

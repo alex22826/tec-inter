@@ -3,14 +3,19 @@ page_start(array(
     'title' => t('Проекты | Что сделали и что получили заказчики | TEC International'),
     'description' => t('Проекты TEC International: серверное и сетевое оборудование, рабочие места, системы безопасности, авиационные специализированные системы.'),
     'nav' => 'projects',
+    'art' => 'servers',
 ));
 
-// волна под темной шапкой проекта, как на старом сайте: три слоя серого и цвет фона страницы
+// волна под темной шапкой проекта, как на старом сайте. Слои нарисованы сверху вниз от черного края,
+// поэтому под нижней волной пусто и виден фон страницы с рисунками
 $wave = '<svg class="proj__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">'
-    . '<path d="M0 58C210 18 430 22 690 52S1180 96 1440 34V120H0Z" fill="#4b4b4b"/>'
-    . '<path d="M0 84C260 40 560 66 820 60S1250 44 1440 72V120H0Z" fill="#a3a3a3"/>'
-    . '<path d="M0 112C210 70 440 72 720 94S1190 104 1440 82V120H0Z" fill="#f6f6f6"/>'
+    . '<path d="M0 112C210 70 440 72 720 94S1190 104 1440 82V0H0Z" fill="#a3a3a3"/>'
+    . '<path d="M0 84C260 40 560 66 820 60S1250 44 1440 72V0H0Z" fill="#4b4b4b"/>'
+    . '<path d="M0 58C210 18 430 22 690 52S1180 96 1440 34V0H0Z" fill="#010101"/>'
     . '</svg>';
+// рисунки за проектами идут по кругу
+$arts = array('art--vpn', 'art--servers', 'art--shield');
+$pn = 0;
 ?>
 <section class="page-head">
   <div class="container">
@@ -31,7 +36,7 @@ $wave = '<svg class="proj__wave" viewBox="0 0 1440 120" preserveAspectRatio="non
       <h2 class="h2 proj-group__title"><?= $gn ?>. <?= e(t($g['title'])) ?></h2>
     </div>
     <?php foreach ($g['projects'] as $p): ?>
-      <article class="proj" id="<?= e($p['id']) ?>">
+      <article class="proj art <?= $arts[$pn++ % 3] ?>" id="<?= e($p['id']) ?>">
         <div class="proj__head">
           <div class="container"><h3><?= e(t($p['title'])) ?></h3></div>
           <?= $wave ?>

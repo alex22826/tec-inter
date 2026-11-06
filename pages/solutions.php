@@ -3,6 +3,7 @@ page_start(array(
     'title' => t('Решения | 10 направлений IT-интеграции | TEC International'),
     'description' => t('Сети, серверы и СХД, ЦОД, информационная безопасность, ПО, виртуализация и бэкап, СКУД и видеонаблюдение, рабочие места, спецсистемы, сервис 24/7.'),
     'nav' => 'solutions',
+    'art' => 'servers',
 ));
 ?>
 <section class="page-head">
@@ -37,7 +38,7 @@ page_start(array(
 <section class="section section--tight">
   <div class="container sol__list">
     <?php $n = 0; foreach ($DIRECTIONS as $slug => $d): $n++; ?>
-      <article class="sol-item" id="<?= e($slug) ?>" data-dir="<?= e($slug) ?>"<?= $n === 1 ? note('Оформление как на старом сайте: слева описание, справа пункты 01, 02 и производители-партнеры направления') : '' ?>>
+      <article class="sol-item art <?= $n % 2 ? 'art--vpn' : 'art--shield' ?>" id="<?= e($slug) ?>" data-dir="<?= e($slug) ?>"<?= $n === 1 ? note('Оформление как на старом сайте: слева описание, справа пункты 01, 02 и производители-партнеры направления') : '' ?>>
         <div class="sol-item__main">
           <h2><?= e(t($d['title'])) ?></h2>
           <?php foreach ((array)$d['text'] as $para): ?><p><?= e(t($para)) ?></p><?php endforeach; ?>
