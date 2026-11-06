@@ -130,9 +130,9 @@ p { margin: 0 0 12px; }
 /* ---------- первый экран ---------- */
 .hero { position: relative; isolation: isolate; overflow: hidden; background: var(--hero); color: #fff; padding: 120px 0 130px; }
 /* фоновое видео со старого сайта; пока оно грузится, виден постер, а без видео остается синий фон */
-.hero__video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
-/* слева темнее, чтобы читался текст, справа видно сервер и облако */
-.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(16, 18, 56, .94) 0%, rgba(16, 18, 56, .8) 36%, rgba(16, 18, 56, 0) 64%); }
+.hero__video { position: absolute; top: 0; right: 0; z-index: -2; width: 72%; height: 100%; object-fit: cover; object-position: 60% 40%; }
+/* видео стоит в правой части, его левый край растворяется в синем фоне под текстом */
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--hero) 28%, rgba(16, 18, 56, .7) 44%, rgba(16, 18, 56, 0) 58%); }
 .hero__text { max-width: 640px; }
 .eyebrow { color: var(--accent); font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
 .hero .eyebrow { color: var(--accent-on-dark); }
@@ -527,9 +527,9 @@ main.art--shield { --art-w: min(420px, 30%); }
 /* «Решения»: рисунок за списком пунктов, как на старом сайте */
 .sol-item.art { --art-top: 56px; --art-right: 0px; --art-w: min(600px, 46%); }
 .sol-item.art--shield { --art-w: min(400px, 32%); --art-right: 6%; }
-/* «Проекты»: между колонками «Что сделали» и «Что получили» */
-.proj.art { --art-top: 190px; --art-left: calc(50% - min(270px, 21%)); --art-right: auto; --art-w: min(540px, 42%); }
-.proj.art--shield { --art-left: calc(50% - min(190px, 15%)); --art-w: min(380px, 30%); }
+/* «Проекты»: справа от второй колонки, там списки короткие и рисунок не мешает тексту */
+.proj.art { --art-top: 200px; --art-w: min(500px, 34%); }
+.proj.art--shield { --art-w: min(340px, 25%); }
 
 /* ---------- плавные переходы ---------- */
 /* Между страницами: View Transitions (Chrome, Edge, Safari 18.2+). Шапка вынесена в отдельный
@@ -602,8 +602,9 @@ main.art--shield { --art-w: min(420px, 30%); }
   :root { --gut: 24px; --hh: 76px; }
   .logo img { height: 40px; }
   .hero { padding: 80px 0 90px; }
-  .hero__video { object-position: 68% 40%; }
-  .hero::after { background: linear-gradient(90deg, rgba(16, 18, 56, .94) 0%, rgba(16, 18, 56, .84) 46%, rgba(16, 18, 56, .1) 82%); }
+  .hero__text { max-width: 54%; }
+  .hero__video { width: 66%; object-position: 72% 40%; }
+  .hero::after { background: linear-gradient(90deg, var(--hero) 34%, rgba(16, 18, 56, .7) 48%, rgba(16, 18, 56, 0) 60%); }
   .steps { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
   .steps::before { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -647,7 +648,8 @@ main.art--shield { --art-w: min(420px, 30%); }
   .header__side .btn--accent { padding: 8px 14px; font-size: 13px; }
   /* на телефоне текст сверху, а видео под ним: иначе сервер оказался бы за текстом */
   .hero { padding: 44px 0 70vw; }
-  .hero__video { top: auto; height: 86vw; object-position: 72% 50%; }
+  .hero__text { max-width: none; }
+  .hero__video { top: auto; bottom: 0; width: 100%; height: 86vw; object-position: 72% 50%; }
   .hero::after { background: linear-gradient(180deg, var(--hero) calc(100% - 86vw), rgba(16, 18, 56, 0) calc(100% - 60vw)); }
   .hero__lead { font-size: 16px; }
   .hero__btns .btn { flex: 1 1 100%; }
@@ -700,7 +702,7 @@ main.art--shield { --art-w: min(420px, 30%); }
   /* рисунки: шире относительно экрана, но бледнее и немного за краем, чтобы не мешать тексту */
   .art, main.art, main.art--shield, .section--gray.art, .sol-item.art, .sol-item.art--shield, .proj.art, .proj.art--shield { --art-w: 92%; --art-right: -20%; --art-left: auto; --art-grey-o: .18; --art-green-o: .1; --art-green-peak: .26; }
   .art--shield, main.art--shield, .sol-item.art--shield, .proj.art--shield { --art-w: 66%; --art-right: -12%; }
-  main.art { --art-top: 40px; }
+  main.art { --art-top: 12px; --art-w: 66%; --art-right: -14%; }
   .sol-item.art { --art-top: 34%; }
   .proj.art { --art-top: 34%; }
   .band::before { width: 104px; top: 8px; right: 10px; }
