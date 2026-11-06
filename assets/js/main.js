@@ -51,8 +51,11 @@
   }
 
   /* ---------- фоновые рисунки: анимация только у тех, что сейчас на экране ---------- */
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroVideo = $('.hero__video');
+  if (heroVideo && calm) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
   var arts = $$('.art');
-  if (arts.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (arts.length && 'IntersectionObserver' in window && !calm) {
     var artWatch = new IntersectionObserver(function (items) {
       items.forEach(function (it) { it.target.classList.toggle('is-live', it.isIntersecting); });
     }, { rootMargin: '120px 0px' });

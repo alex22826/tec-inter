@@ -25,7 +25,6 @@ return array(
         'Любая IT-задача под ключ. От проекта до поддержки 24/7' => 'Any IT task, turnkey. From design to 24/7 support',
         'Проектирование, оборудование, ПО, интеграция, настройка и запуск для госсектора, промышленности и бизнеса с 2008 года.' => 'Design, equipment, software, integration, configuration and launch for the public sector, industry and business since 2008.',
         'Подобрать решение' => 'Find a solution',
-        'фото: ЦОД / инженеры на объекте' => 'photo: data centre / engineers on site',
         'Почему нам доверяют' => 'Why clients trust us',
         'с 2008' => 'since 2008',
         'года на рынке IT-интеграции' => 'in the IT integration market',

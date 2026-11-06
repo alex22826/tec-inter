@@ -15,8 +15,11 @@ foreach ($PROJECT_GROUPS as $g) {
     }
 }
 ?>
-<section class="hero"<?= note('Первый экран: заголовок и одна кнопка «Обсудить проект»') ?>>
-  <div class="container hero__grid">
+<section class="hero"<?= note('Первый экран: заголовок и одна кнопка «Обсудить проект», на фоне видео со старого сайта') ?>>
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= asset('assets/img/bg/hero-poster.webp') ?>" aria-hidden="true" tabindex="-1">
+    <source src="<?= asset('assets/img/bg/hero.mp4') ?>" type="video/mp4">
+  </video>
+  <div class="container">
     <div class="hero__text">
       <p class="eyebrow"><?= e(t('Системный интегратор полного цикла')) ?></p>
       <h1><?= e(t('Любая IT-задача под ключ. От проекта до поддержки 24/7')) ?></h1>
@@ -24,10 +27,6 @@ foreach ($PROJECT_GROUPS as $g) {
       <div class="hero__btns">
         <button class="btn btn--accent btn--lg" type="button" data-lead><?= e(t('Обсудить проект')) ?></button>
       </div>
-    </div>
-    <div class="hero__media">
-      <img src="<?= asset('assets/img/hero.svg') ?>" alt="" width="560" height="380">
-      <span class="photo-hint"><?= e(t('фото: ЦОД / инженеры на объекте')) ?></span>
     </div>
   </div>
 </section>

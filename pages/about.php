@@ -63,7 +63,7 @@ foreach ($DOCS as $doc) {
       </div>
     </div>
 
-    <div class="art art--servers">
+    <div class="art art--shield">
     <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
     <div class="stats stats--3"<?= note('Актуальные суммы пришлет TEC') ?>>
       <div class="stat"><b><?= e(t('15,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>

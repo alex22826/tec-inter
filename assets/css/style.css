@@ -128,16 +128,17 @@ p { margin: 0 0 12px; }
 .burger[aria-expanded="true"] .burger__close { display: block; }
 
 /* ---------- первый экран ---------- */
-.hero { background: radial-gradient(1100px 520px at 80% 0%, #24276d 0%, var(--hero) 60%); color: #fff; padding: 90px 0 100px; }
-.hero__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--hero); color: #fff; padding: 120px 0 130px; }
+/* фоновое видео со старого сайта; пока оно грузится, виден постер, а без видео остается синий фон */
+.hero__video { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+/* слева темнее, чтобы читался текст, справа видно сервер и облако */
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(16, 18, 56, .94) 0%, rgba(16, 18, 56, .8) 36%, rgba(16, 18, 56, 0) 64%); }
+.hero__text { max-width: 640px; }
 .eyebrow { color: var(--accent); font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
 .hero .eyebrow { color: var(--accent-on-dark); }
 .hero h1 { color: #fff; font-size: clamp(30px, 2.6vw + 17px, 54px); font-weight: 700; line-height: 1.19; margin-bottom: 24px; }
 .hero__lead { font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, .85); max-width: 600px; margin-bottom: 36px; }
 .hero__btns { display: flex; flex-wrap: wrap; gap: 14px; }
-.hero__media { position: relative; }
-.hero__media img { width: 100%; height: auto; border-radius: var(--r-lg); box-shadow: 0 24px 60px rgba(0,0,0,.35); }
-.photo-hint { position: absolute; left: 14px; bottom: 12px; font-size: 11px; color: rgba(255,255,255,.6); }
 
 /* ---------- секции ---------- */
 .section { padding: 72px 0; }
@@ -228,9 +229,10 @@ p { margin: 0 0 12px; }
 .client--logo b { font-size: 12.5px; font-weight: 400; color: var(--muted); }
 
 /* ---------- форма-баннер ---------- */
-.band { position: relative; overflow: hidden; isolation: isolate; background: var(--dark); color: #fff; border-radius: 30px; padding: 48px 50px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; }
-/* рисунок с облаком внизу слева, как в форме на старом сайте */
-.band::before { content: ""; position: absolute; z-index: -1; left: 26px; bottom: -14px; width: min(300px, 34%); aspect-ratio: 640 / 565; background: url(../img/bg/cloud.webp) center / contain no-repeat; pointer-events: none; animation: art-float 12s ease-in-out infinite alternate; }
+.band { position: relative; overflow: hidden; isolation: isolate; background: var(--dark); color: #fff; border-radius: 30px; padding: 48px 50px; min-height: 350px; display: grid; grid-template-columns: 1fr 1.15fr; gap: 40px; align-items: center; }
+.band__text { align-self: start; }
+/* рисунок с облаком внизу слева под заголовком, как в форме на старом сайте */
+.band::before { content: ""; position: absolute; z-index: -1; left: 44px; bottom: -12px; width: 256px; aspect-ratio: 640 / 565; background: url(../img/bg/cloud.webp) center / contain no-repeat; pointer-events: none; animation: art-float 12s ease-in-out infinite alternate; }
 .band h2 { color: #fff; font-size: 36px; font-weight: 600; margin-bottom: 12px; }
 .band p { color: rgba(255, 255, 255, .75); margin: 0; }
 .band--compact { grid-template-columns: 1fr auto; padding: 36px 50px; }
@@ -506,7 +508,7 @@ main { overflow-x: clip; }
   width: var(--art-w, min(640px, 46%)); aspect-ratio: var(--art-ar);
   background: center / contain no-repeat;
 }
-.art::before { background-image: var(--art-grey); opacity: var(--art-grey-o, .34); }
+.art::before { background-image: var(--art-grey); opacity: var(--art-grey-o, .3); }
 .art::after { background-image: var(--art-green); opacity: var(--art-green-o, .16); }
 .art.is-live::before { animation: art-float 14s ease-in-out infinite alternate; }
 .art.is-live::after { animation: art-float 14s ease-in-out infinite alternate, art-green 11s ease-in-out infinite; }
@@ -514,14 +516,20 @@ main { overflow-x: clip; }
 @keyframes art-green { 0%, 100% { opacity: 0; } 50% { opacity: var(--art-green-peak, .46); } }
 .art--servers { --art-grey: url(../img/bg/servers.webp); --art-green: url(../img/bg/servers-green.webp); --art-ar: 1032 / 620; }
 .art--vpn { --art-grey: url(../img/bg/vpn.webp); --art-green: url(../img/bg/vpn-green.webp); --art-ar: 1100 / 767; }
-.art--shield { --art-grey: url(../img/bg/shield.webp); --art-green: url(../img/bg/shield-green.webp); --art-ar: 1043 / 1100; }
+/* щит темнее и выше остальных рисунков: мельче и бледнее */
+.art--shield { --art-grey: url(../img/bg/shield.webp); --art-green: url(../img/bg/shield-green.webp); --art-ar: 1043 / 1100; --art-w: min(440px, 32%); --art-grey-o: .22; --art-green-peak: .34; }
 .art--left { --art-left: max(0px, calc((100% - 1440px) / 2)); --art-right: auto; }
 /* внутренние страницы: рисунок справа от заголовка, уходит за начало содержимого */
 main.art { --art-top: 28px; --art-w: min(600px, 42%); }
+main.art--shield { --art-w: min(420px, 30%); }
+/* главная: за шагами «Комплексного подхода» текст без карточек, поэтому рисунок бледнее */
+.section--gray.art { --art-top: 10px; --art-grey-o: .17; --art-green-o: .08; --art-green-peak: .24; }
 /* «Решения»: рисунок за списком пунктов, как на старом сайте */
 .sol-item.art { --art-top: 56px; --art-right: 0px; --art-w: min(600px, 46%); }
+.sol-item.art--shield { --art-w: min(400px, 32%); --art-right: 6%; }
 /* «Проекты»: между колонками «Что сделали» и «Что получили» */
 .proj.art { --art-top: 190px; --art-left: calc(50% - min(270px, 21%)); --art-right: auto; --art-w: min(540px, 42%); }
+.proj.art--shield { --art-left: calc(50% - min(190px, 15%)); --art-w: min(380px, 30%); }
 
 /* ---------- плавные переходы ---------- */
 /* Между страницами: View Transitions (Chrome, Edge, Safari 18.2+). Шапка вынесена в отдельный
@@ -593,8 +601,9 @@ main.art { --art-top: 28px; --art-w: min(600px, 42%); }
 @media (max-width: 1060px) {
   :root { --gut: 24px; --hh: 76px; }
   .logo img { height: 40px; }
-  .hero { padding: 64px 0 72px; }
-  .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero { padding: 80px 0 90px; }
+  .hero__video { object-position: 68% 40%; }
+  .hero::after { background: linear-gradient(90deg, rgba(16, 18, 56, .94) 0%, rgba(16, 18, 56, .84) 46%, rgba(16, 18, 56, .1) 82%); }
   .steps { grid-template-columns: repeat(4, 1fr); row-gap: 28px; }
   .steps::before { display: none; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
@@ -602,6 +611,7 @@ main.art { --art-top: 28px; --art-w: min(600px, 42%); }
   .dirs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .logos { grid-template-columns: repeat(4, 1fr); }
   .band { grid-template-columns: 1fr; }
+  .band { min-height: 0; }
   .band::before { left: auto; right: 16px; bottom: auto; top: 10px; width: 150px; }
   .sol-item, .proj__body { grid-template-columns: 1fr; gap: 28px; }
   .advantages { grid-template-columns: repeat(2, 1fr); }
@@ -635,7 +645,10 @@ main.art { --art-top: 28px; --art-w: min(600px, 42%); }
   .header__in { gap: 12px; }
   .logo img { height: 34px; }
   .header__side .btn--accent { padding: 8px 14px; font-size: 13px; }
-  .hero { padding: 44px 0 52px; }
+  /* на телефоне текст сверху, а видео под ним: иначе сервер оказался бы за текстом */
+  .hero { padding: 44px 0 70vw; }
+  .hero__video { top: auto; height: 86vw; object-position: 72% 50%; }
+  .hero::after { background: linear-gradient(180deg, var(--hero) calc(100% - 86vw), rgba(16, 18, 56, 0) calc(100% - 60vw)); }
   .hero__lead { font-size: 16px; }
   .hero__btns .btn { flex: 1 1 100%; }
   .section { padding: 48px 0; }
@@ -685,7 +698,8 @@ main.art { --art-top: 28px; --art-w: min(600px, 42%); }
   .note-pin__bubble { width: 230px; }
 
   /* рисунки: шире относительно экрана, но бледнее и немного за краем, чтобы не мешать тексту */
-  .art, main.art, .sol-item.art, .proj.art { --art-w: 92%; --art-right: -20%; --art-left: auto; --art-grey-o: .2; --art-green-o: .1; --art-green-peak: .28; }
+  .art, main.art, main.art--shield, .section--gray.art, .sol-item.art, .sol-item.art--shield, .proj.art, .proj.art--shield { --art-w: 92%; --art-right: -20%; --art-left: auto; --art-grey-o: .18; --art-green-o: .1; --art-green-peak: .26; }
+  .art--shield, main.art--shield, .sol-item.art--shield, .proj.art--shield { --art-w: 66%; --art-right: -12%; }
   main.art { --art-top: 40px; }
   .sol-item.art { --art-top: 34%; }
   .proj.art { --art-top: 34%; }
