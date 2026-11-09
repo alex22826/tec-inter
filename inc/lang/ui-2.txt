@@ -1,9 +1,9 @@
 # Переводы страниц: русский ⟫ английский ⟫ казахский. Казахский — черновик, нужна вычитка.
 
 # --- Решения
-Решения | 10 направлений IT-интеграции | TEC International ⟫ Solutions: 10 IT integration areas | TEC International ⟫ Шешімдер | IT-интеграцияның 10 бағыты | TEC International
-Сети, серверы и СХД, ЦОД, информационная безопасность, ПО, виртуализация и бэкап, СКУД и видеонаблюдение, рабочие места, спецсистемы, сервис 24/7. ⟫ Networks, servers and storage, data centres, information security, software, virtualisation and backup, access control and CCTV, workplaces, specialised systems, 24/7 service. ⟫ Желілер, серверлер мен деректер қоймалары, деректер орталықтары, ақпараттық қауіпсіздік, БҚ, виртуализация мен сақтық көшірме, кіруді бақылау және бейнебақылау, жұмыс орындары, арнайы жүйелер, 24/7 сервис.
-10 направлений и один подрядчик. Подбираем, поставляем, внедряем и сопровождаем. ⟫ 10 areas, one contractor. We select, supply, implement and support. ⟫ 10 бағыт және бір мердігер. Іріктейміз, жеткіземіз, енгіземіз және сүйемелдейміз.
+Решения | 11 направлений IT-интеграции | TEC International ⟫ Solutions: 11 IT integration areas | TEC International ⟫ Шешімдер | IT-интеграцияның 11 бағыты | TEC International
+Сети и телекоммуникации, серверы и СХД, ЦОД, кибербезопасность, резервное копирование, виртуализация и облака, корпоративное ПО, рабочие места, видеонаблюдение, отраслевые решения, сервис. ⟫ Networks and telecoms, servers and storage, data centres, cybersecurity, backup, virtualisation and cloud, enterprise software, workplaces, video surveillance, industry solutions, service. ⟫ Желілер және телекоммуникациялар, серверлер және деректер қоймалары, деректер орталықтары, киберқауіпсіздік, сақтық көшірме, виртуализация және бұлттар, корпоративтік БҚ, жұмыс орындары, бейнебақылау, салалық шешімдер, сервис.
+11 направлений и один подрядчик. Подбираем, поставляем, внедряем и сопровождаем. ⟫ 11 areas, one contractor. We select, supply, implement and support. ⟫ 11 бағыт және бір мердігер. Іріктейміз, жеткіземіз, енгіземіз және сүйемелдейміз.
 Выберите отрасль, и мы подсветим направления, которые обычно нужны. ⟫ Choose your industry and we will highlight the areas it usually needs. ⟫ Саланы таңдаңыз, әдетте қажет бағыттарды белгілеп көрсетеміз.
 Отрасль ⟫ Industry ⟫ Сала
 Обсудить задачу ⟫ Discuss your task ⟫ Міндетті талқылау
@@ -107,7 +107,6 @@ TEC International, системный интегратор полного цик
 проектов ⟫ projects ⟫ жоба
 вендоров ⟫ vendors ⟫ вендор
 инженеров ⟫ engineers ⟫ инженер
-фото команды / офиса ⟫ team / office photo ⟫ команда / кеңсе фотосы
 Опыт в госзакупках ⟫ Public procurement experience ⟫ Мемлекеттік сатып алудағы тәжірибе
 Подтвержденный объем выполненных контрактов позволяет участвовать в закупках с лимитами: ⟫ Our confirmed volume of completed contracts lets us bid in public tenders with limits of: ⟫ Орындалған келісімшарттардың расталған көлемі мынадай лимиттермен сатып алуларға қатысуға мүмкіндік береді:
 15,8 млрд ₸ ⟫ ₸15.8 bn ⟫ 15,8 млрд ₸

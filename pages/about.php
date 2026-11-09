@@ -49,17 +49,11 @@ foreach ($DOCS as $doc) {
 <div class="container tab-panels">
   <section class="tab-panel" data-panel="about" role="tabpanel">
     <div class="about-intro">
-      <div>
-        <p class="lead"><?= e(t('TEC International, системный интегратор полного цикла, с 2008 года проектирует, поставляет, внедряет и поддерживает IT-инфраструктуру для госсектора, промышленности и бизнеса по всему Казахстану.')) ?></p>
-        <div class="stats stats--3"<?= note('Ключевые цифры компании') ?>>
-          <div class="stat"><b>2008</b><span><?= e(t('год основания')) ?></span></div>
-          <div class="stat"><b>120+</b><span><?= e(t('проектов')) ?></span></div>
-          <div class="stat"><b>20+</b><span><?= e(t('вендоров')) ?></span></div>
-        </div>
-      </div>
-      <div class="photo-ph">
-        <?= icon('support', 'photo-ph__ico') ?>
-        <span><?= e(t('фото команды / офиса')) ?></span>
+      <p class="lead"><?= e(t('TEC International, системный интегратор полного цикла, с 2008 года проектирует, поставляет, внедряет и поддерживает IT-инфраструктуру для госсектора, промышленности и бизнеса по всему Казахстану.')) ?></p>
+      <div class="stats stats--3"<?= note('Ключевые цифры компании') ?>>
+        <div class="stat"><b>2008</b><span><?= e(t('год основания')) ?></span></div>
+        <div class="stat"><b>120+</b><span><?= e(t('проектов')) ?></span></div>
+        <div class="stat"><b>20+</b><span><?= e(t('вендоров')) ?></span></div>
       </div>
     </div>
 

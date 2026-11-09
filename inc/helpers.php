@@ -64,6 +64,7 @@ function icon($name, $cls = '')
         'shield'     => '<path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/>',
         'code'       => '<path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/>',
         'backup'     => '<ellipse cx="12" cy="5.5" rx="7" ry="2.5"/><path d="M5 5.5v13c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-13"/><path d="M5 12c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5"/>',
+        'cloud'      => '<path d="M7 19h10.5a4.5 4.5 0 0 0 .6-8.96A6.5 6.5 0 0 0 5.6 11.1 4 4 0 0 0 7 19z"/>',
         'camera'     => '<rect x="3" y="7" width="13" height="10" rx="2"/><path d="M16 11l5-3v8l-5-3"/>',
         'laptop'     => '<rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/>',
         'radar'      => '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12l6-6"/><circle cx="12" cy="12" r="1"/>',
@@ -113,6 +114,10 @@ function project_teaser($p, $group)
 // Логотип партнера. $alt = false, когда название и так написано рядом
 function partner_logo($pt, $alt = true)
 {
+    // логотип еще не добавлен: показываем название тем же блоком, что и картинку
+    if ($pt['logo'] === '') {
+        return '<span class="logo-text">' . e(t($pt['name'])) . '</span>';
+    }
     return '<img src="' . asset('assets/img/partners/' . $pt['logo']) . '" alt="' . ($alt ? e(t($pt['name'])) : '') . '" loading="lazy">';
 }
 

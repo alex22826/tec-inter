@@ -42,7 +42,7 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Направления: 10 плиток, каждая ведет на свое направление на странице «Решения»') ?>>
+<section class="section section--tight"<?= note('Направления: 11 плиток, каждая ведет на свое направление на странице «Решения»') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Направления')) ?></h2>
@@ -90,7 +90,8 @@ foreach ($PROJECT_GROUPS as $g) {
       <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнеры')) ?> →</a>
     </div>
     <div class="logos">
-      <?php foreach (array_slice($PARTNERS, 0, 12) as $slug => $pt): ?>
+      <?php // на главной только партнеры с логотипом
+      foreach (array_slice(array_filter($PARTNERS, function ($pt) { return $pt['logo'] !== ''; }), 0, 12) as $slug => $pt): ?>
         <a class="logo-tile" href="<?= url('partners/') ?>#<?= e($slug) ?>"><?= partner_logo($pt) ?></a>
       <?php endforeach; ?>
     </div>

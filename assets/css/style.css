@@ -165,7 +165,9 @@ p { margin: 0 0 12px; }
    а где браузер не умеет переносить язык, просто разрыв слова, чтобы текст не вылезал за карточку */
 .trust__item span, .client b, .client span { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
 
-.dirs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px; }
+.dirs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+/* направлений 11: последняя плитка на две колонки, чтобы ряды по 4, 3 и 2 были полными */
+.dirs > :last-child { grid-column: span 2; }
 .dir-tile {
   display: flex; flex-direction: column; gap: 12px;
   padding: 24px 22px; transition: border-color .2s, box-shadow .2s, transform .2s;
@@ -302,6 +304,9 @@ p { margin: 0 0 12px; }
 .sol-item__vendors { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 20px 0 0; font-size: 14px; }
 .vendor { display: inline-flex; align-items: center; height: 42px; padding: 6px 12px; background: #fff; border: 1px solid var(--line); border-radius: var(--r); transition: border-color .15s; }
 .vendor img { max-height: 26px; max-width: 92px; width: auto; height: auto; object-fit: contain; }
+/* партнер без логотипа: название вместо картинки */
+.logo-text { color: var(--ink); font-size: 15px; font-weight: 700; line-height: 1.2; text-align: center; overflow-wrap: anywhere; }
+.partner__logo .logo-text { font-size: 19px; }
 .vendor:hover { border-color: var(--accent); }
 .sol-item__cta { display: flex; align-items: center; gap: 22px; margin-top: 26px; }
 
@@ -329,15 +334,13 @@ p { margin: 0 0 12px; }
 .tab-panels { padding-top: 32px; overflow-x: clip; }
 .tab-panel { padding-bottom: 16px; }
 .tab-panel > .h3 { margin-top: 8px; }
-.about-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: stretch; margin-bottom: 40px; }
+.about-intro { margin-bottom: 40px; }
 .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
 .stats--3 { grid-template-columns: repeat(3, 1fr); max-width: 760px; margin-bottom: 40px; }
 .stat { padding: 18px 10px; text-align: center; }
 .stat b { display: block; font-size: 28px; font-weight: 700; color: var(--accent); line-height: 1.2; }
 .stat span { font-size: 13px; color: var(--muted); }
 .stat--todo b { color: #a5a5a5; }
-.photo-ph { min-height: 240px; border-radius: var(--r-lg); background: linear-gradient(135deg, #1c1e5a, #2e3283); color: #c9cbea; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; font-size: 14px; }
-.photo-ph__ico { width: 48px; height: 48px; opacity: .6; }
 .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
 .value { padding: 26px; }
 .value h3 { font-size: 20px; margin-bottom: 10px; color: var(--accent); }
@@ -617,7 +620,6 @@ main.art--shield { --art-w: min(420px, 30%); }
   .sol-item, .proj__body { grid-template-columns: 1fr; gap: 28px; }
   .advantages { grid-template-columns: repeat(2, 1fr); }
   .partners { grid-template-columns: repeat(3, 1fr); }
-  .about-intro { grid-template-columns: 1fr; }
   .docs { grid-template-columns: repeat(3, 1fr); }
   .article-wrap { grid-template-columns: 1fr; }
   .article-side { position: static; }
@@ -664,6 +666,7 @@ main.art--shield { --art-w: min(420px, 30%); }
   .trust__item b { font-size: 21px; overflow-wrap: anywhere; }
   /* на телефоне направления — список: длинные слова («Специализированные») не влезают в 2 колонки */
   .dirs { grid-template-columns: 1fr; gap: 8px; }
+  .dirs > :last-child { grid-column: auto; }
   .dir-tile { flex-direction: row; align-items: center; gap: 14px; padding: 12px 14px; }
   .dir-tile__ico { width: 40px; height: 40px; flex: none; }
   .dir-tile__more { margin: 0 0 0 auto; font-size: 0; }
