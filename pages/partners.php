@@ -20,13 +20,13 @@ foreach ($PARTNERS as $slug => $pt) {
 <section class="section section--tight">
   <div class="container">
     <?php $g = 0; foreach ($groups as $title => $items): $g++; ?>
-      <div class="pgroup"<?= $g === 1 ? note('Группировка по направлениям: логотип, под ним название и ссылка на решения вендора') : '' ?>>
+      <div class="pgroup"<?= $g === 1 ? note('Группировка по направлениям: логотип и ссылка на решения вендора') : '' ?>>
         <h2 class="h3"><?= e(t($title)) ?></h2>
         <div class="partners">
           <?php foreach ($items as $slug => $pt): ?>
             <div class="partner" id="<?= e($slug) ?>">
-              <div class="partner__logo"><?= partner_logo($pt, false) ?></div>
-              <b class="partner__name"><?= e(t($pt['name'])) ?></b>
+              <?php // название не повторяем под логотипом (правка TEC 2026-11-10): оно в alt картинки или вместо нее ?>
+              <div class="partner__logo"><?= partner_logo($pt) ?></div>
               <div class="partner__foot">
                 <a class="link" href="<?= dir_link($pt['dir']) ?>"><?= e(t('Решения')) ?> →</a>
               </div>

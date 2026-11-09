@@ -57,30 +57,40 @@ foreach ($DOCS as $doc) {
       </div>
     </div>
 
-    <div class="art art--shield">
-    <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
-    <div class="stats stats--3"<?= note('Актуальные суммы пришлет TEC') ?>>
-      <div class="stat"><b><?= e(t('15,8 млрд ₸')) ?></b><span><?= e(t('поставка товаров')) ?></span></div>
-      <div class="stat"><b><?= e(t('3,3 млрд ₸')) ?></b><span><?= e(t('выполнение работ')) ?></span></div>
-      <div class="stat"><b><?= e(t('3,6 млрд ₸')) ?></b><span><?= e(t('оказание услуг')) ?></span></div>
-    </div>
+    <?php // как на старом сайте: суммы на темных карточках поверх рисунка с серверами (правка TEC 2026-11-10) ?>
+    <section class="gov art art--servers"<?= note('Как на старом сайте: суммы на карточках поверх рисунка. Суммы те же, что сейчас на tec-inter.kz; актуальные пришлет TEC') ?>>
+      <div class="gov__head">
+        <h2 class="h3"><?= e(t('Опыт в госзакупках')) ?></h2>
+        <p><?= e(t('С 2008 года TEC International участвует в коммерческих и государственных проектах и успешно их завершает. Это подтверждает возможность участвовать в госзакупках с такими лимитами:')) ?></p>
+      </div>
+      <div class="gov__cards">
+        <?php foreach (array(
+            array('Проекты по поставке товаров', '15,8 млрд ₸'),
+            array('Проекты по выполнению работ', '3,3 млрд ₸'),
+            array('Проекты по оказанию услуг', '3,6 млрд ₸'),
+        ) as $g): ?>
+          <div class="gov-card"><?= icon('check', 'gov-card__ico') ?><span class="gov-card__label"><?= e(t($g[0])) ?></span><b class="gov-card__num"><?= e(t($g[1])) ?></b></div>
+        <?php endforeach; ?>
+      </div>
+    </section>
 
+    <div class="art art--shield">
     <div class="values"<?= note('Миссия, цель и ценности со старого сайта') ?>>
       <div class="value"><h3><?= e(t('Миссия')) ?></h3><p><?= e(t('Помочь заказчикам повысить эффективность и безопасность IT-инфраструктуры, чтобы они могли максимально реализовать потенциал своего бизнеса.')) ?></p></div>
       <div class="value"><h3><?= e(t('Цель')) ?></h3><p><?= e(t('Быть командой профессионалов, которой доверяют самые сложные и инновационные проекты.')) ?></p></div>
       <div class="value"><h3><?= e(t('Ценности')) ?></h3><p><?= e(t('Профессионализм, порядочность, честность, постоянное развитие, лояльность, конфиденциальность.')) ?></p></div>
     </div>
-
     </div>
 
-    <div class="art art--vpn">
-    <h2 class="h3"<?= note('Преимущества нашей компании со страницы «О компании» старого сайта') ?>><?= e(t('Преимущества нашей компании')) ?></h2>
-    <div class="advantages">
-      <?php foreach ($ADVANTAGES as $adv): ?>
-        <div class="advantage"><?= icon('check', 'advantage__ico') ?><p><?= e(t($adv)) ?></p></div>
-      <?php endforeach; ?>
-    </div>
-    </div>
+    <?php // преимущества в формате старого сайта: список с галочками поверх рисунка (правка TEC 2026-11-10) ?>
+    <section class="adv art art--vpn"<?= note('Преимущества как на старом сайте: список с галочками на фоне рисунка') ?>>
+      <h2 class="h3"><?= e(t('Преимущества нашей компании')) ?></h2>
+      <ul class="adv__list">
+        <?php foreach ($ADVANTAGES as $adv): ?>
+          <li><?= icon('check', 'adv__ico') ?><span><?= e(t($adv)) ?></span></li>
+        <?php endforeach; ?>
+      </ul>
+    </section>
 
     <div class="box">
       <h2 class="h3"><?= e(t('Нас выбирают')) ?></h2>
