@@ -53,7 +53,7 @@ foreach ($DOCS as $doc) {
       <div class="stats stats--3"<?= note('Ключевые цифры компании') ?>>
         <div class="stat"><b>2008</b><span><?= e(t('год основания')) ?></span></div>
         <div class="stat"><b>120+</b><span><?= e(t('проектов')) ?></span></div>
-        <div class="stat"><b>20+</b><span><?= e(t('вендоров')) ?></span></div>
+        <div class="stat"><b>30+</b><span><?= e(t('вендоров')) ?></span></div>
       </div>
     </div>
 
