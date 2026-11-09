@@ -16,7 +16,7 @@ foreach ($PROJECT_GROUPS as $g) {
 }
 ?>
 <section class="hero"<?= note('Первый экран: заголовок и одна кнопка «Обсудить проект», на фоне видео со старого сайта') ?>>
-  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= asset('assets/img/bg/hero-poster.webp') ?>" aria-hidden="true" tabindex="-1">
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="<?= asset('assets/img/bg/hero-poster.jpg') ?>" aria-hidden="true" tabindex="-1">
     <source src="<?= asset('assets/img/bg/hero.mp4') ?>" type="video/mp4">
   </video>
   <div class="container">
