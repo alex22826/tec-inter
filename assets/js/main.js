@@ -62,6 +62,45 @@
     arts.forEach(function (el) { artWatch.observe(el); });
   }
 
+  /* ---------- плавное появление блоков при прокрутке ---------- */
+  // Только блоки ниже первого экрана: то, что видно сразу, появляется вместе со страницей.
+  // Карточки в фильтрах не трогаем, у них своя анимация (is-rise).
+  if ('IntersectionObserver' in window && !calm) {
+    var revealSel = '.section__head, .dir-tile, .trust__item, .card, .post, .proj, .sol-item, .partner, .logo-tile, .client, ' +
+      '.stat, .value, .gov__head, .gov-card, .adv > .h3, .adv__list li, .box, .band, .pgroup > .h3, .contact-list li, .side-box';
+    var fold = window.innerHeight * 0.92;
+    var revealIO = new IntersectionObserver(function (entries) {
+      var rows = []; // очередь считаем внутри каждого ряда (общего родителя): плитки идут волной
+      entries.forEach(function (it) {
+        if (!it.isIntersecting) return;
+        var el = it.target, finished = false, row = null;
+        revealIO.unobserve(el);
+        for (var k = 0; k < rows.length; k++) if (rows[k].p === el.parentNode) row = rows[k];
+        if (!row) { row = { p: el.parentNode, n: 0 }; rows.push(row); }
+        el.style.setProperty('--ri', Math.min(row.n++, 5));
+        el.classList.add('is-in');
+        // после анимации снимаем классы, чтобы вернулись собственные transition блока (hover и т.п.)
+        function done() {
+          if (finished) return;
+          finished = true;
+          el.classList.remove('reveal', 'is-in');
+          el.style.removeProperty('--ri');
+        }
+        el.addEventListener('transitionend', function te(e) {
+          if (e.target === el && e.propertyName === 'opacity') { el.removeEventListener('transitionend', te); done(); }
+        });
+        setTimeout(done, 1500);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    $$(revealSel).forEach(function (el) {
+      if (el.closest('[data-filter-list], .modal, .lightbox, [hidden]')) return;
+      var r = el.getBoundingClientRect();
+      if (!r.height || r.top < fold) return;
+      el.classList.add('reveal');
+      revealIO.observe(el);
+    });
+  }
+
   /* ---------- кнопка «Наверх» на длинных страницах ---------- */
   var toTop = $('.to-top');
   if (toTop) {
@@ -87,6 +126,8 @@
   /* ---------- модальные окна ---------- */
   var lastFocus = null;
   function openModal(el) {
+    clearTimeout(el._hideTimer); // открыли снова, пока окно закрывалось
+    el.classList.remove('is-closing');
     lastFocus = document.activeElement;
     el.hidden = false;
     document.body.classList.add('is-locked');
@@ -94,9 +135,16 @@
     if (f) setTimeout(function () { f.focus(); }, 30);
   }
   function closeModal(el) {
-    el.hidden = true;
-    if (!(nav && nav.classList.contains('is-open'))) document.body.classList.remove('is-locked');
-    if (lastFocus) lastFocus.focus();
+    if (el.hidden || el.classList.contains('is-closing')) return;
+    function hide() {
+      el.classList.remove('is-closing');
+      el.hidden = true;
+      if (!(nav && nav.classList.contains('is-open'))) document.body.classList.remove('is-locked');
+      if (lastFocus) lastFocus.focus();
+    }
+    if (calm) { hide(); return; }
+    el.classList.add('is-closing'); // окно плавно уходит (pop-out в CSS), потом прячем
+    el._hideTimer = setTimeout(hide, 180);
   }
   $$('.modal, .lightbox').forEach(function (m) {
     m.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeModal(m); });
@@ -141,6 +189,7 @@
     if (phone.value.replace(/\D/g, '').length < 10) bad.push(phone.closest('.field'));
     if (!consent.checked) bad.push(consent.closest('.consent'));
     $$('.is-invalid', form).forEach(function (el) { el.classList.remove('is-invalid'); });
+    void form.offsetWidth; // перезапуск анимации: поле вздрагивает при каждой неудачной отправке
     bad.forEach(function (el) { el.classList.add('is-invalid'); });
     return bad.length === 0;
   }

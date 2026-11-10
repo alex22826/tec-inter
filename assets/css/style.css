@@ -565,6 +565,33 @@ main.art--shield { --art-w: min(420px, 30%); }
 [data-filter-list] > .is-rise { animation: rise-in .4s var(--ease-out) backwards; animation-delay: calc(var(--i, 0) * 30ms); }
 @keyframes rise-in { from { opacity: 0; transform: translateY(12px); } }
 
+/* Появление блоков при прокрутке: класс .reveal ставит main.js только блокам ниже первого экрана,
+   .is-in — когда блок доехал до экрана; после анимации оба класса снимаются (--ri — очередь в пачке) */
+.reveal { opacity: 0; transform: translateY(18px); }
+.reveal.is-in { opacity: 1; transform: none; transition: opacity .6s var(--ease-out), transform .6s var(--ease-out); transition-delay: calc(var(--ri, 0) * 70ms); }
+@media print { .reveal { opacity: 1; transform: none; } }
+
+/* Модальное окно и просмотр сертификата: фон темнеет, окно всплывает; при закрытии main.js ставит .is-closing */
+.modal:not([hidden]) .modal__backdrop, .lightbox:not([hidden]) .modal__backdrop { animation: fade-in .25s ease both; }
+.modal:not([hidden]) .modal__box, .lightbox:not([hidden]) .lightbox__box { animation: pop-in .32s var(--ease-out) both; }
+.modal.is-closing .modal__backdrop, .lightbox.is-closing .modal__backdrop { animation: fade-out .18s ease both; }
+.modal.is-closing .modal__box, .lightbox.is-closing .lightbox__box { animation: pop-out .18s ease both; }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes pop-in { from { opacity: 0; transform: translateY(16px) scale(.97); } }
+@keyframes drop-in { from { opacity: 0; transform: translateY(-8px); } }
+@keyframes pop-out { to { opacity: 0; transform: translateY(8px) scale(.98); } }
+
+/* Формы: «Заявка отправлена» всплывает с галочкой, незаполненное поле слегка вздрагивает */
+.form-done { animation: pop-in .35s var(--ease-out) both; }
+.form-done .ico { animation: done-check .5s .12s var(--ease-out) both; }
+@keyframes done-check { from { opacity: 0; transform: scale(.4); } 60% { opacity: 1; transform: scale(1.12); } }
+.field.is-invalid, .consent.is-invalid { animation: shake .36s ease; }
+@keyframes shake { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+
+/* «Подобрать решение»: результат появляется плавно */
+.picker__result:not([hidden]) { animation: rise-in .35s var(--ease-out); }
+
 /* ---------- адаптив ---------- */
 @media (max-width: 1200px) {
   .header__sd { display: none; }
@@ -582,7 +609,7 @@ main.art--shield { --art-w: min(420px, 30%); }
     height: calc(100vh - var(--nav-top, var(--hh))); height: calc(100dvh - var(--nav-top, var(--hh))); flex-direction: column; gap: 0; background: #fff;
     padding: 12px var(--gut) 24px; overflow-y: auto; font-size: 17px; border-top: 1px solid var(--line);
   }
-  .nav.is-open { display: flex; }
+  .nav.is-open { display: flex; animation: drop-in .25s var(--ease-out); }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
   .nav__mobile-extra { display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
   .nav__mobile-extra a { border: 0; }
@@ -601,7 +628,7 @@ main.art--shield { --art-w: min(420px, 30%); }
   height: calc(100vh - var(--nav-top, var(--hh))); height: calc(100dvh - var(--nav-top, var(--hh))); flex-direction: column; gap: 0; background: #fff;
   padding: 12px var(--gut) 24px; overflow-y: auto; font-size: 17px; border-top: 1px solid var(--line);
 }
-.header.is-compact .nav.is-open { display: flex; }
+.header.is-compact .nav.is-open { display: flex; animation: drop-in .25s var(--ease-out); }
 .header.is-compact .nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
 .header.is-compact .nav__mobile-extra { display: flex; flex-direction: column; gap: 14px; padding-top: 20px; }
 .header.is-compact .nav__mobile-extra a { border: 0; }
@@ -767,4 +794,7 @@ main.art--shield { --art-w: min(420px, 30%); }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
   .no-vt main, .tab-panel.is-enter, [data-filter-list] > .is-rise, .bg-scene i, .band::before, .art.is-live::before, .art.is-live::after { animation: none !important; }
+  .modal .modal__backdrop, .modal .modal__box, .lightbox .modal__backdrop, .lightbox .lightbox__box, .form-done, .form-done .ico,
+  .field.is-invalid, .consent.is-invalid, .picker__result, .nav.is-open { animation: none !important; }
+  .reveal { opacity: 1 !important; transform: none !important; }
 }
