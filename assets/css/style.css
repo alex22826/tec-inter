@@ -709,6 +709,8 @@ main.art--shield { --art-w: min(420px, 30%); }
   .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .clients--row, .clients { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .client { padding: 12px 10px; }
+  /* подпись отрасли на телефоне 12px вместо 11px: мельче читается плохо */
+  .client span { font-size: 12px; letter-spacing: .6px; }
   .band, .band--compact { padding: 28px 20px; border-radius: 20px; grid-template-columns: 1fr; }
   .band h2 { font-size: 26px; }
   .form-grid { grid-template-columns: 1fr; }
