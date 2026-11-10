@@ -278,14 +278,7 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
 </head>
 <body>
 <div class="bg-scene" aria-hidden="true"><i></i><i></i><i></i></div>
-<?php if ($CFG['demo']): ?>
-<div class="demo-bar">
-  <div class="container demo-bar__in">
-    <span><b><?= e(t('Демо по презентации.')) ?></b> <?= e(t('Тексты, цифры, статусы и фото даны для примера и обсуждения.')) ?></span>
-    <button class="demo-bar__btn" type="button" data-notes-toggle aria-pressed="false"><?= e(t('Показать пометки ТЗ')) ?></button>
-  </div>
-</div>
-<?php endif; ?>
+<?php // полоса «Демо по презентации» с кнопкой «Показать пометки ТЗ» убрана по просьбе TEC (2026-11-10) ?>
 <header class="header">
   <div class="container header__in">
     <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International: на главную')) ?>"><img src="<?= asset('assets/img/logo-dark.png') ?>" width="109" height="46" alt="TEC International"></a>

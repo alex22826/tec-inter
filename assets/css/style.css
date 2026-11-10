@@ -82,14 +82,7 @@ p { margin: 0 0 12px; }
 .tag--dark { background: #ebebeb; color: var(--ink); }
 .tag--light { background: #fff; color: var(--muted); font-weight: 600; border: 1px solid var(--line); }
 
-/* ---------- демо-полоса и пометки ТЗ ---------- */
-.demo-bar { background: #eaf4f0; border-bottom: 1px solid #cfe5dc; font-size: 13px; color: #2c5a4b; }
-.demo-bar__in { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 7px; padding-bottom: 7px; }
-.demo-bar__btn {
-  border: 1px solid var(--accent); background: #fff; color: var(--accent-d);
-  border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap;
-}
-.demo-bar__btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+/* ---------- пометки ТЗ (полоса «Демо» убрана, пометки остались в разметке) ---------- */
 .note-pin {
   position: absolute; top: -12px; left: -12px; z-index: 30;
   width: 28px; height: 28px; border-radius: 50%;
@@ -658,7 +651,6 @@ main.art--shield { --art-w: min(420px, 30%); }
 }
 @media (max-width: 640px) {
   :root { --gut: 16px; --hh: 64px; }
-  .demo-bar__in { flex-direction: column; align-items: flex-start; gap: 6px; }
   .header__in { gap: 12px; }
   .logo img { height: 34px; }
   .header__side .btn--accent { padding: 8px 14px; font-size: 13px; }
