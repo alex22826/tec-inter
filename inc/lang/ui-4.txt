@@ -61,7 +61,6 @@
 Контейнерные платформы ⟫ Container platforms ⟫ Контейнерлік платформалар
 Корпоративная почта и совместная работа ⟫ Corporate email and collaboration ⟫ Корпоративтік пошта және бірлескен жұмыс
 Распознавание и обработка документов ⟫ Document recognition and processing ⟫ Құжаттарды тану және өңдеу
-Veritas, сейчас Cohesity и Arctera ⟫ Veritas, now Cohesity and Arctera ⟫ Veritas, қазір Cohesity және Arctera
 Фирма «НИТА» ⟫ NITA Company ⟫ «НИТА» фирмасы
 Серверы, СХД и ЦОД ⟫ Servers, storage and data centres ⟫ Серверлер, деректер қоймалары және деректер орталықтары
 Резервное копирование и виртуализация ⟫ Backup and virtualisation ⟫ Сақтық көшірме және виртуализация

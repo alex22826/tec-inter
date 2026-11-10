@@ -90,8 +90,8 @@ foreach ($PROJECT_GROUPS as $g) {
       <a class="link" href="<?= url('partners/') ?>"><?= e(t('Все партнеры')) ?> →</a>
     </div>
     <div class="logos">
-      <?php // на главной только партнеры с логотипом
-      foreach (array_slice(array_filter($PARTNERS, function ($pt) { return $pt['logo'] !== ''; }), 0, 12) as $slug => $pt): ?>
+      <?php // на главной 12 партнеров из $PARTNERS_HOME
+      foreach ($PARTNERS_HOME as $slug): $pt = $PARTNERS[$slug]; ?>
         <a class="logo-tile" href="<?= url('partners/') ?>#<?= e($slug) ?>"><?= partner_logo($pt) ?></a>
       <?php endforeach; ?>
     </div>

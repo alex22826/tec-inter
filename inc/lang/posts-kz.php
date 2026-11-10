@@ -24,7 +24,7 @@ return array(
 <thead><tr><th>Сала</th><th>Үлгілік шешім</th></tr></thead>
 <tbody>
 <tr><td>Периметрді қорғау</td><td>Fortinet NGFW</td></tr>
-<tr><td>Сақтық көшірме</td><td>Veeam, Veritas</td></tr>
+<tr><td>Сақтық көшірме</td><td>Veeam, Commvault, Cohesity, Arctera</td></tr>
 <tr><td>Осалдықтар</td><td>Осалдық сканері</td></tr>
 </tbody>
 </table>

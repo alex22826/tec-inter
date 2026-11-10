@@ -24,7 +24,7 @@ return array(
 <thead><tr><th>Area</th><th>Typical solution</th></tr></thead>
 <tbody>
 <tr><td>Perimeter protection</td><td>Fortinet NGFW</td></tr>
-<tr><td>Backup</td><td>Veeam, Veritas</td></tr>
+<tr><td>Backup</td><td>Veeam, Commvault, Cohesity, Arctera</td></tr>
 <tr><td>Vulnerabilities</td><td>Vulnerability scanner</td></tr>
 </tbody>
 </table>

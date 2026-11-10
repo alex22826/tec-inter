@@ -47,7 +47,7 @@ $DIRECTIONS = array(
         'short' => 'Бэкап 3-2-1, аварийное восстановление, архивирование',
         'text'  => 'Строим резервное копирование по правилу 3-2-1 и аварийное восстановление, чтобы после сбоя, ошибки или атаки данные и сервисы можно было быстро вернуть.',
         'items' => array('Резервное копирование по правилу 3-2-1', 'Аварийное восстановление после сбоев', 'Защита резервных копий от шифровальщиков', 'Архивирование данных'),
-        'vendors' => array('veeam', 'commvault', 'veritas'),
+        'vendors' => array('veeam', 'commvault', 'cohesity', 'arctera'),
     ),
     'virtualization' => array(
         'title' => 'Виртуализация и облачные платформы',
@@ -135,42 +135,47 @@ $TRUST = array(
 
 // group: раздел на странице «Партнеры»; dir: направление для ссылки «Решения»;
 // logo: файл в assets/img/partners, пусто — вместо логотипа выводится название; status: статус партнерства (уточнить у TEC)
-// Состав по списку TEC от 2026-11-10. В группе сначала те, у кого есть логотип: главная берет первые 12 с логотипом.
+// Состав по списку TEC от 2026-11-10; Veritas разделен на Cohesity и Arctera. Логотипы: официальные,
+// с сайтов вендоров или Wikimedia Commons (у Arctera из шапки arctera.io, у H3C без китайского слогана).
 $PARTNERS = array(
     'cisco'     => array('name' => 'Cisco',              'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'cisco.png', 'status' => 'Registered'),
     'huawei'    => array('name' => 'Huawei',             'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'huawei.png', 'status' => ''),
     'juniper'   => array('name' => 'Juniper Networks',   'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'juniper.png', 'status' => ''),
     'extreme'   => array('name' => 'Extreme Networks',   'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'extreme.png', 'status' => ''),
     'engenius'  => array('name' => 'EnGenius',           'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'engenius.png', 'status' => ''),
-    'h3c'       => array('name' => 'H3C',                'group' => 'Сети',                                  'dir' => 'networks',       'logo' => '', 'status' => ''),
+    'h3c'       => array('name' => 'H3C',                'group' => 'Сети',                                  'dir' => 'networks',       'logo' => 'h3c.png', 'status' => ''),
     'hpe'       => array('name' => 'HPE',                'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'servers',        'logo' => 'hpe.png', 'status' => 'Business Partner'),
     'dell'      => array('name' => 'Dell Technologies',  'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'servers',        'logo' => 'dell.png', 'status' => 'Authorized'),
     'lenovo'    => array('name' => 'Lenovo',             'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'servers',        'logo' => 'lenovo.png', 'status' => 'Authorized'),
     'ibm'       => array('name' => 'IBM',                'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'servers',        'logo' => 'ibm.svg', 'status' => ''),
-    'schneider' => array('name' => 'Schneider Electric', 'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'datacenter',     'logo' => '', 'status' => ''),
+    'schneider' => array('name' => 'Schneider Electric', 'group' => 'Серверы, СХД и ЦОД',                    'dir' => 'datacenter',     'logo' => 'schneider.svg', 'status' => ''),
     'fortinet'  => array('name' => 'Fortinet',           'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => 'fortinet.png', 'status' => ''),
     'paloalto'  => array('name' => 'Palo Alto Networks', 'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => 'paloalto.png', 'status' => 'Registered'),
-    'trellix'   => array('name' => 'Trellix',            'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => '', 'status' => ''),
-    'skyhigh'   => array('name' => 'Skyhigh Security',   'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => '', 'status' => ''),
+    'trellix'   => array('name' => 'Trellix',            'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => 'trellix.svg', 'status' => ''),
+    'skyhigh'   => array('name' => 'Skyhigh Security',   'group' => 'Кибербезопасность',                     'dir' => 'security',       'logo' => 'skyhigh.png', 'status' => ''),
     'veeam'     => array('name' => 'Veeam',              'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup',         'logo' => 'veeam.png', 'status' => 'Authorized Reseller'),
-    'veritas'   => array('name' => 'Veritas, сейчас Cohesity и Arctera', 'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup', 'logo' => 'veritas.png', 'status' => ''),
+    'commvault' => array('name' => 'Commvault',          'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup',         'logo' => 'commvault.svg', 'status' => ''),
+    'cohesity'  => array('name' => 'Cohesity',           'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup',         'logo' => 'cohesity.svg', 'status' => ''),
+    'arctera'   => array('name' => 'Arctera',            'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup',         'logo' => 'arctera.svg', 'status' => ''),
     'redhat'    => array('name' => 'Red Hat',            'group' => 'Резервное копирование и виртуализация', 'dir' => 'virtualization', 'logo' => 'redhat.svg', 'status' => ''),
-    'commvault' => array('name' => 'Commvault',          'group' => 'Резервное копирование и виртуализация', 'dir' => 'backup',         'logo' => '', 'status' => ''),
     'adobe'     => array('name' => 'Adobe',              'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'adobe.png', 'status' => ''),
-    'microsoft' => array('name' => 'Microsoft',          'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => '', 'status' => ''),
-    'opentext'  => array('name' => 'OpenText',           'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => '', 'status' => ''),
-    'abbyy'     => array('name' => 'ABBYY',              'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => '', 'status' => ''),
-    'zimbra'    => array('name' => 'Zimbra',             'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => '', 'status' => ''),
-    'thinkcell' => array('name' => 'think-cell',         'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => '', 'status' => ''),
-    'acer'      => array('name' => 'Acer',               'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => '', 'status' => ''),
-    'asus'      => array('name' => 'ASUS',               'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => '', 'status' => ''),
-    'xerox'     => array('name' => 'Xerox',              'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => '', 'status' => ''),
-    'canon'     => array('name' => 'Canon',              'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => '', 'status' => ''),
-    'hp'        => array('name' => 'HP',                 'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => '', 'status' => ''),
+    'microsoft' => array('name' => 'Microsoft',          'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'microsoft.svg', 'status' => ''),
+    'opentext'  => array('name' => 'OpenText',           'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'opentext.svg', 'status' => ''),
+    'abbyy'     => array('name' => 'ABBYY',              'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'abbyy.svg', 'status' => ''),
+    'zimbra'    => array('name' => 'Zimbra',             'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'zimbra.png', 'status' => ''),
+    'thinkcell' => array('name' => 'Think-cell',         'group' => 'Программное обеспечение',               'dir' => 'software',       'logo' => 'thinkcell.svg', 'status' => ''),
+    'acer'      => array('name' => 'Acer',               'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => 'acer.svg', 'status' => ''),
+    'asus'      => array('name' => 'ASUS',               'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => 'asus.svg', 'status' => ''),
+    'xerox'     => array('name' => 'Xerox',              'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => 'xerox.svg', 'status' => ''),
+    'canon'     => array('name' => 'Canon',              'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => 'canon.svg', 'status' => ''),
+    'hp'        => array('name' => 'HP',                 'group' => 'Рабочие места и оргтехника',            'dir' => 'workplace',      'logo' => 'hp.svg', 'status' => ''),
     'milestone' => array('name' => 'Milestone Systems',  'group' => 'Видео и спецсистемы',                   'dir' => 'video',          'logo' => 'milestone.png', 'status' => 'Authorized'),
     'vniira'    => array('name' => 'ВНИИРА-ОВД',         'group' => 'Видео и спецсистемы',                   'dir' => 'special',        'logo' => 'vniira.png', 'status' => ''),
     'nita'      => array('name' => 'Фирма «НИТА»',       'group' => 'Видео и спецсистемы',                   'dir' => 'special',        'logo' => 'nita.png', 'status' => ''),
 );
+
+// Партнеры в блоке на главной: те же 12, что были до расширения списка
+$PARTNERS_HOME = array('cisco', 'huawei', 'juniper', 'extreme', 'engenius', 'hpe', 'dell', 'lenovo', 'ibm', 'fortinet', 'paloalto', 'veeam');
 
 // Проекты со страницы «Проекты» на tec-inter.kz: группа, затем «Что сделали» и «Что получили».
 // id: якорь на странице проектов, по нему ведут карточки на главной.
@@ -330,7 +335,7 @@ $POSTS = array(
 <thead><tr><th>Область</th><th>Типовое решение</th></tr></thead>
 <tbody>
 <tr><td>Защита периметра</td><td>NGFW Fortinet</td></tr>
-<tr><td>Резервное копирование</td><td>Veeam, Veritas</td></tr>
+<tr><td>Резервное копирование</td><td>Veeam, Commvault, Cohesity, Arctera</td></tr>
 <tr><td>Уязвимости</td><td>Сканер уязвимостей</td></tr>
 </tbody>
 </table>
