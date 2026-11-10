@@ -144,7 +144,7 @@ function post_card($slug, $p)
     // data-rubric — русское значение (по нему фильтруем), подпись — перевод
     $h  = '<article class="card post" data-type="' . e($p['type']) . '" data-rubric="' . e($p['rubric']) . '" data-industry="' . e($p['industry']) . '">';
     $h .= '<a class="post__link" href="' . url('news/' . $slug . '/') . '">';
-    $h .= cover($icon, t('обложка'), $isNews ? 'cover--news' : '');
+    $h .= cover($icon, '', $isNews ? 'cover--news' : '');
     $h .= '<div class="post__body"><div class="post__meta"><span class="tag' . ($isNews ? ' tag--dark' : '') . '">' . e($isNews ? t('Новость') : t('Статья')) . '</span> ' . e(t($p['rubric'])) . ' · ' . fmt_date($p['date']) . '</div>';
     $h .= '<h3>' . e(t_post($slug, 'title', $p['title'])) . '</h3></div></a></article>';
     return $h;

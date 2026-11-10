@@ -424,7 +424,6 @@ p { margin: 0 0 12px; }
 .prose table { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15px; background: #fff; }
 .prose th, .prose td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; }
 .prose th { background: #efefef; color: var(--ink); }
-.post-note { font-size: 13px; color: var(--muted); border-left: 3px solid var(--line); padding-left: 12px; margin-top: 24px; }
 .share { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 15px; }
 .share a { font-weight: 700; color: var(--ink); }
 .share a:hover { color: var(--accent); }

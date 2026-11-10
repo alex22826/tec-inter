@@ -42,7 +42,7 @@ page_start(array(
   <article class="article">
     <div class="post__meta"><span class="tag<?= $isNews ? ' tag--dark' : '' ?>"><?= e($isNews ? t('Новость') : t('Статья')) ?></span> <?= fmt_date($post['date']) ?> · <?= e(sprintf(t('%d мин чтения'), $post['read'])) ?> · TEC International</div>
     <h1<?= note('H1 с поисковым запросом, дата, время чтения') ?>><?= e($title) ?></h1>
-    <?= cover($dir ? $dir['icon'] : 'docs', t('обложка'), 'cover--article' . ($isNews ? ' cover--news' : '')) ?>
+    <?= cover($dir ? $dir['icon'] : 'docs', '', 'cover--article' . ($isNews ? ' cover--news' : '')) ?>
     <div class="prose"<?= note('Подзаголовки H2/H3, списки и таблицы: удобно читать и индексировать') ?>>
       <?= t_post($SLUG, 'body', $post['body']) /* HTML из data.php / lang, пишется вручную */ ?>
     </div>

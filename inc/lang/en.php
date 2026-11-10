@@ -315,7 +315,6 @@ return array(
         'Отрасль: все' => 'Industry: all',
         'Виртуализация' => 'Virtualisation',
         'Закупки' => 'Procurement',
-        'обложка' => 'cover',
         'Статья' => 'Article',
         'Новость' => 'News',
         'По выбранным фильтрам материалов пока нет.' => 'No materials match the selected filters yet.',

@@ -28,7 +28,6 @@ return array(
 <tr><td>Vulnerabilities</td><td>Vulnerability scanner</td></tr>
 </tbody>
 </table>
-<p class="post-note">Demo text for the mock-up: check against the current version of the requirements before publishing.</p>
 HTML
     ),
     'vmware-broadcom' => array(
@@ -48,7 +47,6 @@ HTML
 <p>This makes sense if your infrastructure depends heavily on the ecosystem. It is important to count cores correctly and choose the right bundle, since it is easy to overpay.</p>
 <h3>Move to an alternative platform</h3>
 <p>Migration needs a pilot and a plan, but it can reduce the total cost of ownership. Backup during the migration is a must.</p>
-<p class="post-note">Demo text for the mock-up.</p>
 HTML
     ),
     'server-1c-sap' => array(
@@ -67,7 +65,6 @@ HTML
 </ul>
 <h2>Fault tolerance</h2>
 <p>Redundant power supplies, RAID and a backup plan are the minimum for an accounting system.</p>
-<p class="post-note">Demo text for the mock-up.</p>
 HTML
     ),
     'goszakupki-it' => array(
@@ -85,7 +82,6 @@ HTML
 </ul>
 <h2>Timing</h2>
 <p>Allow time for delivery: for some equipment it takes several months.</p>
-<p class="post-note">Demo text for the mock-up.</p>
 HTML
     ),
 );
