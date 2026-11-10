@@ -643,7 +643,7 @@ return array(
         'Системный интегратор полного цикла TEC International работает с 2008 года. Преимущества, сертификаты партнеров и заказчики.' => 'Full-cycle system integrator TEC International has been working since 2008. Advantages, partner certificates and customers.',
         '* Скан увеличивается по клику. Просроченные документы скрываются автоматически по дате.' => '* Click a scan to enlarge it. Expired documents are hidden automatically by date.',
         'Преимущества нашей компании' => 'Our advantages',
-        'Мы решаем поставленные задачи решениями под ключ, экономя ваше время и делая вас эффективнее' => 'We solve your tasks with turnkey solutions, saving your time and making you more efficient',
+        'Решаем задачи под ключ, экономя ваше время' => 'We deliver turnkey solutions, saving your time',
         'Мы команда профессионалов, которая работает на качественный результат, выполненный в срок' => 'We are a team of professionals focused on quality results delivered on time',
         'Мы успешно реализовали более 120 проектов с 2008 года' => 'We have successfully completed more than 120 projects since 2008',
         'Мы даем вам гибкость, предоставляя несколько альтернативных решений в зависимости от ваших задач' => 'We give you flexibility by offering several alternative solutions for your tasks',
