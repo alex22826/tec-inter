@@ -157,19 +157,48 @@ p { margin: 0 0 12px; }
 /* длинные слова («сертифицированные», «Казаэронавигация») в узких карточках телефона: перенос по слогам,
    а где браузер не умеет переносить язык, просто разрыв слова, чтобы текст не вылезал за карточку */
 .trust__item span, .client b, .client span { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
+/* «Почему нам доверяют» как «Миссия» и «Цель» на старом сайте: темные карточки поверх рисунка,
+   при наведении зеленые (правка TEC 2026-11-11) */
+.trust-panel { background: #ececec; border-radius: var(--r-lg); padding: 44px 40px; overflow: hidden; }
+.trust-panel.art { --art-top: 18px; --art-right: 2%; --art-w: min(760px, 62%); --art-grey-o: .9; --art-green-o: .2; --art-green-peak: .5; }
+.trust-panel .trust { margin-top: 28px; }
+.trust-panel .trust__item {
+  display: flex; flex-direction: column; min-height: 200px; border: 0; border-radius: var(--r-lg); box-shadow: none;
+  background: rgba(58, 60, 64, .78); color: #fff; -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); transition: background .2s, transform .2s;
+}
+.trust-panel .trust__item:hover { background: rgba(14, 137, 104, .88); transform: translateY(-2px); }
+.trust-panel .trust__item b { color: #fff; }
+.trust-panel .trust__item span { color: rgba(255, 255, 255, .85); }
+.trust__ico { width: 30px; height: 30px; margin-bottom: 14px; color: var(--accent-on-dark); stroke-width: 3; transition: color .2s; }
+.trust-panel .trust__item:hover .trust__ico { color: #fff; }
 
 .dirs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
 /* направлений 11: последняя плитка на две колонки, чтобы ряды по 4, 3 и 2 были полными */
 .dirs > :last-child { grid-column: span 2; }
+/* Плитки направлений как «Наши IT решения» на старом сайте: крупная иконка, рисунок в углу,
+   при наведении плитка зеленая, «Подробнее» становится кнопкой (правка TEC 2026-11-11).
+   Рисунок задается в $DIRECTIONS[...]['image'] */
 .dir-tile {
-  display: flex; flex-direction: column; gap: 12px;
-  padding: 24px 22px; transition: border-color .2s, box-shadow .2s, transform .2s;
+  position: relative; isolation: isolate; overflow: hidden; min-height: 230px;
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 24px 22px; transition: background .25s, border-color .2s, box-shadow .2s, transform .2s;
 }
-.dir-tile:hover { border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-.dir-tile__ico { width: 50px; height: 50px; border-radius: 50%; background: var(--accent-l); color: var(--accent); display: grid; place-items: center; }
-.dir-tile__ico .ico { width: 24px; height: 24px; }
-.dir-tile b { color: var(--ink); font-size: 17px; font-weight: 600; line-height: 1.35; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; }
-.dir-tile__more { margin-top: auto; color: var(--accent-d); font-size: 15px; font-weight: 600; }
+.dir-tile:hover { background: var(--accent); border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.dir-tile__img {
+  position: absolute; z-index: -1; right: -12%; bottom: -14%; width: min(66%, 240px); aspect-ratio: 1; pointer-events: none;
+  background: right bottom / contain no-repeat; opacity: .2; filter: grayscale(1); transition: opacity .25s, transform .5s var(--ease-out), filter .25s;
+}
+.dir-tile:hover .dir-tile__img { opacity: .22; transform: scale(1.06); filter: grayscale(1) brightness(2.2); }
+.dir-tile__ico { width: 64px; height: 64px; border-radius: 50%; background: var(--accent-l); color: var(--accent); display: grid; place-items: center; transition: background .25s, color .25s; }
+.dir-tile__ico .ico { width: 32px; height: 32px; stroke-width: 1.6; }
+.dir-tile:hover .dir-tile__ico { background: rgba(255, 255, 255, .18); color: #fff; }
+.dir-tile b { color: var(--ink); font-size: 17px; font-weight: 600; line-height: 1.35; -webkit-hyphens: auto; hyphens: auto; overflow-wrap: anywhere; transition: color .25s; }
+.dir-tile:hover b { color: #fff; }
+.dir-tile__more {
+  align-self: flex-start; margin-top: auto; padding: 6px 0; border-radius: 30px;
+  color: var(--accent-d); font-size: 15px; font-weight: 600; transition: background .25s, color .25s, padding .25s;
+}
+.dir-tile:hover .dir-tile__more { background: #fff; color: var(--accent-d); padding: 6px 16px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 10px; }
 .chip {
@@ -201,6 +230,11 @@ p { margin: 0 0 12px; }
 .project p { font-size: 15px; color: var(--muted); margin-bottom: 4px; }
 .project p b { color: var(--ink); }
 .project .link { display: inline-block; margin-top: 14px; }
+/* при наведении карточка проекта зеленая, как карточки на старом сайте */
+.card.project { transition: background .25s, border-color .2s, box-shadow .2s, transform .2s; }
+.card.project:hover { background: var(--accent); border-color: var(--accent); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.card.project:hover h3, .card.project:hover .project__got li, .card.project:hover .project__got .ico, .card.project:hover .link { color: #fff; }
+.card.project:hover .tag { background: rgba(255, 255, 255, .18); color: #fff; }
 .project__got { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .project__got li { display: flex; gap: 10px; font-size: 15px; line-height: 1.45; color: var(--text); }
 .project__got .ico { width: 18px; height: 18px; margin-top: 2px; color: var(--accent); stroke-width: 2.6; }
@@ -596,6 +630,10 @@ main.art--shield { --art-w: min(420px, 30%); }
   .header__sd { display: none; }
   .dirs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .trust { grid-template-columns: repeat(3, 1fr); }
+  /* 5 карточек в 3 колонки: нижние две пополам, чтобы не было пустой клетки */
+  .trust-panel .trust { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .trust-panel .trust__item { grid-column: span 2; }
+  .trust-panel .trust__item:nth-child(n+4) { grid-column: span 3; }
   .clients--row { grid-template-columns: repeat(4, 1fr); }
   .docs { grid-template-columns: repeat(4, 1fr); }
 }
@@ -693,14 +731,24 @@ main.art--shield { --art-w: min(420px, 30%); }
   .section__head { flex-wrap: wrap; margin-bottom: 22px; }
   .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trust__item:last-child { grid-column: 1 / -1; }
+  .trust-panel .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust-panel .trust__item, .trust-panel .trust__item:nth-child(n+4) { grid-column: auto; }
+  .trust-panel .trust__item:last-child { grid-column: 1 / -1; }
   .trust__item { padding: 18px 16px; }
   /* «Сарапшылар», «Эксперты» — длинные слова крупным шрифтом в половине ширины телефона */
   .trust__item b { font-size: 21px; overflow-wrap: anywhere; }
   /* на телефоне направления — список: длинные слова («Специализированные») не влезают в 2 колонки */
   .dirs { grid-template-columns: 1fr; gap: 8px; }
   .dirs > :last-child { grid-column: auto; }
-  .dir-tile { flex-direction: row; align-items: center; gap: 14px; padding: 12px 14px; }
-  .dir-tile__ico { width: 40px; height: 40px; flex: none; }
+  .dir-tile { flex-direction: row; align-items: center; gap: 14px; padding: 12px 14px; min-height: 0; }
+  .dir-tile__ico { width: 44px; height: 44px; flex: none; }
+  .dir-tile__ico .ico { width: 24px; height: 24px; }
+  .dir-tile__img { right: -4%; bottom: -60%; width: min(34%, 130px); opacity: .14; }
+  .dir-tile:hover .dir-tile__more { padding: 0; background: none; color: #fff; }
+  .trust-panel { padding: 28px 18px; }
+  .trust-panel .trust { margin-top: 20px; }
+  .trust-panel .trust__item { min-height: 0; }
+  .trust__ico { width: 24px; height: 24px; margin-bottom: 10px; }
   .dir-tile__more { margin: 0 0 0 auto; font-size: 0; }
   .dir-tile__more::after { content: "→"; font-size: 18px; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -747,6 +795,7 @@ main.art--shield { --art-w: min(420px, 30%); }
   main.art { --art-top: 12px; --art-w: 66%; --art-right: -14%; }
   .sol-item.art { --art-top: 34%; }
   /* «О компании»: рисунок под карточками и списком, а не под заголовком */
+  .trust-panel.art { --art-top: 26%; --art-w: 125%; --art-right: -38%; --art-grey-o: .6; --art-green-o: .12; --art-green-peak: .3; }
   .gov.art { --art-top: 30%; --art-w: 125%; --art-right: -38%; --art-grey-o: .6; --art-green-o: .12; --art-green-peak: .3; }
   .adv.art { --art-top: 22%; --art-w: 125%; --art-right: -45%; --art-grey-o: .3; --art-green-o: .08; --art-green-peak: .2; }
   .proj.art { --art-top: 34%; }

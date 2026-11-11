@@ -31,18 +31,21 @@ foreach ($PROJECT_GROUPS as $g) {
   </div>
 </section>
 
-<section class="section art art--servers"<?= note('Почему нам доверяют: с 2008 года, 120+ проектов, крупные проекты, эксперты, полный цикл') ?>>
+<?php // как «Миссия» и «Цель» на старом сайте: темные карточки поверх рисунка, при наведении зеленые (правка TEC 2026-11-11) ?>
+<section class="section"<?= note('Почему нам доверяют: с 2008 года, 120+ проектов, крупные проекты, эксперты, полный цикл. Оформление как на старом сайте') ?>>
   <div class="container">
-    <h2 class="h2"><?= e(t('Почему нам доверяют')) ?></h2>
-    <div class="trust">
-      <?php foreach ($TRUST as $tr): ?>
-        <div class="trust__item"><b><?= e(t($tr[0])) ?></b><span><?= e(t($tr[1])) ?></span></div>
-      <?php endforeach; ?>
+    <div class="trust-panel art art--servers">
+      <h2 class="h2"><?= e(t('Почему нам доверяют')) ?></h2>
+      <div class="trust">
+        <?php foreach ($TRUST as $tr): ?>
+          <div class="trust__item"><?= icon('check', 'trust__ico') ?><b><?= e(t($tr[0])) ?></b><span><?= e(t($tr[1])) ?></span></div>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section section--tight"<?= note('Направления: 11 плиток, каждая ведет на свое направление на странице «Решения»') ?>>
+<section class="section section--tight"<?= note('Направления: 11 плиток с картинками, при наведении зеленые, как «Наши IT решения» на старом сайте; каждая ведет на свое направление') ?>>
   <div class="container">
     <div class="section__head">
       <h2 class="h2"><?= e(t('Направления')) ?></h2>
@@ -51,6 +54,7 @@ foreach ($PROJECT_GROUPS as $g) {
     <div class="dirs">
       <?php foreach ($DIRECTIONS as $slug => $d): ?>
         <a class="dir-tile" href="<?= dir_link($slug) ?>">
+          <?php if (!empty($d['image'])): ?><span class="dir-tile__img" style="background-image: url('<?= asset('assets/img/' . $d['image']) ?>')" aria-hidden="true"></span><?php endif; ?>
           <span class="dir-tile__ico"><?= icon($d['icon']) ?></span>
           <b><?= e(t($d['title'])) ?></b>
           <span class="dir-tile__more"><?= e(t('Подробнее')) ?> →</span>
