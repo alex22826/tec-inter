@@ -387,7 +387,7 @@ p { margin: 0 0 12px; }
 .gov-card__label { margin-top: 14px; font-size: 19px; font-weight: 600; line-height: 1.3; }
 .gov-card__num { margin-top: auto; padding-top: 22px; font-size: clamp(30px, 2.4vw + 10px, 42px); font-weight: 700; line-height: 1.1; text-align: center; }
 /* две карточки (поставка и услуги, правка TEC 2026-11-11): крупнее, суммы читаются издалека */
-.gov__cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 980px; }
+.gov__cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 980px; margin-left: auto; margin-right: auto; }
 .gov__cards--2 .gov-card { min-height: 280px; padding: 32px 34px 36px; }
 .gov__cards--2 .gov-card__ico { width: 42px; height: 42px; }
 .gov__cards--2 .gov-card__label { margin-top: 18px; font-size: 24px; }
