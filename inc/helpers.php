@@ -71,6 +71,7 @@ function icon($name, $cls = '')
         'support'    => '<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1-1.5 2-4 2h-2"/>',
         'docs'       => '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
         'arrow'      => '<path d="M5 12h14M13 6l6 6-6 6"/>',
+        'chevron'    => '<path d="M6 9l6 6 6-6"/>', // стрелка выпадающего меню в шапке
         'phone'      => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
         'mail'       => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
         'clock'      => '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
@@ -225,7 +226,7 @@ function lang_switch($cls = '')
 
 function page_start($meta)
 {
-    global $CFG, $LANG, $LANGS, $PAGE_PATH;
+    global $CFG, $LANG, $LANGS, $PAGE_PATH, $DIRECTIONS, $PROJECT_GROUPS;
     $nav = isset($meta['nav']) ? $meta['nav'] : '';
     $canonical = $CFG['site_url'] . url($PAGE_PATH);
     $menu = array(
@@ -237,6 +238,17 @@ function page_start($meta)
         'news'      => 'Новости и статьи',
         'contacts'  => 'Контакты',
     );
+    // выпадающие подпункты: сразу к направлению, группе проектов или вкладке (правка TEC 2026-11-19)
+    $subs = array('solutions' => array(), 'projects' => array(), 'about' => array());
+    foreach ($DIRECTIONS as $dslug => $d) {
+        $subs['solutions'][] = array(t($d['title']), url('solutions/') . '#' . $dslug);
+    }
+    foreach ($PROJECT_GROUPS as $gi => $g) {
+        $subs['projects'][] = array(t($g['title']), url('projects/') . '#group-' . ($gi + 1));
+    }
+    foreach (array('about' => 'О нас', 'certificates' => 'Сертификаты и благодарности', 'clients' => 'Нас выбирают') as $tab => $tl) {
+        $subs['about'][] = array(t($tl), url('about/') . '#' . $tab);
+    }
     $org = array(
         '@context' => 'https://schema.org',
         '@type' => 'Organization',
@@ -283,8 +295,15 @@ if (!window.CSSViewTransitionRule) document.documentElement.className += ' no-vt
   <div class="container header__in">
     <a class="logo" href="<?= url() ?>" aria-label="<?= e(t('TEC International: на главную')) ?>"><img src="<?= asset('assets/img/logo-dark.png') ?>" width="109" height="46" alt="TEC International"></a>
     <nav class="nav" id="nav" aria-label="<?= e(t('Главное меню')) ?>">
-      <?php foreach ($menu as $slug => $label): ?>
-        <a href="<?= url($slug ? $slug . '/' : '') ?>"<?= $slug === $nav ? ' class="is-active" aria-current="page"' : '' ?>><?= e(t_menu($label)) ?></a>
+      <?php foreach ($menu as $slug => $label):
+        $link = '<a href="' . url($slug ? $slug . '/' : '') . '"' . ($slug === $nav ? ' class="is-active" aria-current="page"' : '') . '>' . e(t_menu($label)) . '</a>';
+        if (empty($subs[$slug])) { echo $link; continue; } ?>
+        <div class="nav__item has-sub">
+          <?= $link ?><button class="nav__toggle" type="button" aria-expanded="false" aria-label="<?= e(t('Подразделы') . ': ' . t_menu($label)) ?>"><?= icon('chevron') ?></button>
+          <div class="nav__sub">
+            <?php foreach ($subs[$slug] as $sub): ?><a href="<?= e($sub[1]) ?>"><?= e($sub[0]) ?></a><?php endforeach; ?>
+          </div>
+        </div>
       <?php endforeach; ?>
       <div class="nav__mobile-extra">
         <?= lang_switch('lang--mobile') ?>

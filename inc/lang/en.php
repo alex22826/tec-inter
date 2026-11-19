@@ -697,6 +697,7 @@ return array(
         'Проекты по поставке товаров' => 'Supply of goods projects',
         'Проекты по выполнению работ' => 'Works projects',
         'Проекты по оказанию услуг' => 'Services projects',
+        'Подразделы' => 'Subsections',
     ),
     'posts' => require __DIR__ . '/posts-en.php',
 );

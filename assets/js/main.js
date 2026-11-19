@@ -50,6 +50,44 @@
     });
   }
 
+  /* ---------- выпадающие подпункты меню (Решения, Проекты, О компании) ---------- */
+  // На компьютере список открывается при наведении (CSS), стрелка нужна для касаний и клавиатуры.
+  // В «бургере» список раскрывается под пунктом по стрелке.
+  var subItems = $$('.nav__item.has-sub');
+  function setSub(item, open) {
+    item.classList.toggle('is-open', open);
+    $('.nav__toggle', item).setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  subItems.forEach(function (item) {
+    $('.nav__toggle', item).addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = !item.classList.contains('is-open');
+      subItems.forEach(function (other) { if (other !== item) setSub(other, false); });
+      setSub(item, open);
+    });
+    // переход по подпункту: закрываем список и «бургер», иначе на той же странице меню осталось бы поверх раздела
+    $$('.nav__sub a', item).forEach(function (a) {
+      a.addEventListener('click', function () {
+        setSub(item, false);
+        if (nav && nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('is-locked');
+        }
+        if (document.activeElement) document.activeElement.blur(); // чтобы :focus-within не держал список открытым
+      });
+    });
+  });
+  if (subItems.length) {
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav__item.has-sub')) subItems.forEach(function (it) { setSub(it, false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      // фокус снимаем: пока он внутри пункта, список держит открытым :focus-within
+      if (e.key === 'Escape') subItems.forEach(function (it) { if (it.classList.contains('is-open') || it.contains(document.activeElement)) { setSub(it, false); document.activeElement.blur(); } });
+    });
+  }
+
   /* ---------- фоновые рисунки: анимация только у тех, что сейчас на экране ---------- */
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var heroVideo = $('.hero__video');
